@@ -18,14 +18,14 @@
 | M2 | `docs/01`、`docs/02`、`docs/06` §2 與 §6 | `docs/03` §6 |
 | M3 | `docs/03`、`docs/01` §5–§7、`contracts/policy-v1.json` 的 `product`、`docs/06` §2–§5（**T035 小型工程與內容 QA**） | `docs/05` 的題目來源與審查要求、`docs/08` 可參考的做法 |
 | M4 | `docs/04`（含 §9 模擬驗收門檻）、`docs/03` §6、`docs/01` §4–6、`contracts/policy-v1.json` 的 `product` | `docs/08` 可參考的做法 |
-| M5 | `docs/05`、`docs/06`、`docs/01` R03／R16、`docs/privacy-data-collection.md` 的單次內容回報邊界 | 前面各階段的文件 |
-| M6 | `docs/06` §5–§8、`docs/privacy-data-collection.md` | `docs/08` |
+| M5 | `docs/05`、`docs/06` §2、§6–8、`docs/01` R03／R16、`contracts/policy-v1.json` 的 release_channels | `docs/privacy-data-collection.md` 的 Beta 主動分享邊界、前面各階段文件 |
+| M6 | `docs/06` §5–§8、`docs/privacy-data-collection.md`、`contracts/policy-v1.json` 的 release_channels、`contracts/tasks.json` 的 T033／T036／T037 | `docs/08` |
 
-每個 milestone 的任務與驗收條件一律以 `contracts/tasks.json` 為準。`optional_for_v1: true` 的 T029–T031 是有測試者時才執行的自願真人研究任務；未執行時標記為**延後／未驗證**，不把它們當正式 V1 發布依賴，也不能宣稱已證明真人學習效果。
+每個 milestone 的任務與驗收條件一律以 `contracts/tasks.json` 為準。`optional_for_v1: true` 的 T029–T031 屬可選 Beta 發佈與真人研究（沒有測試者可跳過），標記為**延後／未驗證**不擋正式版；**T037 是正式版發布 gate，必須驗收正式專用的 T033 多方安全聚合與 T036 HTTPS 內容回報服務**。M5 T027 不得反向依賴 T036。
 
 ## 範圍
 - 專案品牌與 App 顯示名稱為 `lexvane`；新建 Xcode 專案／Target 使用 `Lexvane`、Swift App 入口使用 `LexvaneApp` 命名。勿再使用過去的暫用名稱或專案舊名稱。
-- iOS-first、完全離線核心。不要自行新增登入、OCR、照片解析、runtime LLM、廣告或付費。研究用 backend 只有在對應 milestone 明確要求時才可加入，且必須遵守 `docs/privacy-data-collection.md`，不能變成 user-level telemetry。
+- iOS-first、完全離線核心。不要自行新增登入、OCR、照片解析、runtime LLM、廣告或付費。**Beta 不建自家缺詞回報伺服器、不自動傳研究 contribution；Beta 缺詞由使用者預覽後自行 Share Sheet／郵件／複製文字，不能假稱匿名。**正式版 T033／T036 才加入對應後端，需通過 `docs/privacy-data-collection.md`，不可變成 user-level telemetry。
 - 日常由系統排程，不能用「選 deck / 選模式 / 自評熟悉度」繞過需求。
 - 學生表現是最終目的：有考試時尊重完整指定範圍、期限與每日時間，優先看未見語境選詞能力；無期限時重視長期有用性。不要為了固定 retention、完成打卡或清空 backlog 機械地加工作業。
 - 未加入詞的查詢不會自動 enrollment，大小寫永不扣分。
@@ -54,7 +54,7 @@
 - 超時是未知，不是通過；缺 Xcode/授權/真機不能寫成已驗證。
 - 收到 API 或 symbol 不確定時查官方文件/依賴源碼，再修改。
 - 保留既有 OpenCode + OMO 配置，新增 MCP 只 merge 對應欄位。
-- 不上傳 raw/private user learning data、不建立個人研究 profile；跨使用者研究只能在明確 opt-in 下依 `docs/privacy-data-collection.md` 取得群體 aggregate。**使用者單次主動回報缺詞／錯題是不同的有限內容報告通道**，不得與研究同意混用，也不可默默附整份詞表或作答歷史。
+- 不上傳 raw/private user learning data、不建立個人研究 profile；**Beta 研究上傳始終關閉**。正式版跨使用者研究必須在明確 opt-in 下依 `docs/privacy-data-collection.md` 的 DAP／VDAF 類多方聚合、OHTTP／等效來源分離與實際獨立營運／金鑰權限驗收取得群體 aggregate。使用者單次主動回報缺詞／錯題是不同資料用途：Beta 由系統分享，正式版由獨立 HTTPS 接收服務；不得互用同意、附整份詞表或作答歷史。
 - 不接受付費合約、不修改正式簽名團隊，除非取得明確授權。
 
 ## 內容
