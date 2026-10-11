@@ -1,6 +1,6 @@
 {
-  "schema_version": 3,
-  "policy_version": "baseline-4",
+  "schema_version": 4,
+  "policy_version": "baseline-5",
   "product": {
     "_note": "產品規則：使用者看得到的行為，必須遵守；數值可在 beta 後調整，但程式要能不改碼就調整。",
     "self_rating_enabled": false,
@@ -29,17 +29,10 @@
     "desired_retention_is_product_outcome": false,
     "one_presentation_max_independent_primary_grade": 1,
     "individual_parameters_stay_on_device": true,
-    "retention_target_is_dynamic": true,
-    "individual_memory_fit_on_device_in_v1": true,
     "individual_fit_requires_sufficient_local_data": true,
     "individual_fit_requires_heldout_improvement": true,
     "individual_fit_must_avoid_abrupt_rescheduling": true,
     "memory_model_conformance_tests_required": true,
-    "memory_model": "FSRS-6 (21 parameters, S09)",
-    "ratings": {
-      "correct_unaided": 3,
-      "incorrect_unaided": 1
-    },
     "simulation_acceptance": {
       "planned_next_activity_must_fit_estimated_remaining_time": true,
       "actual_time_overrun_from_finishing_started_item_allowed": true,
@@ -49,9 +42,10 @@
       "exam_scope_denominator_must_not_shrink": true,
       "partial_sessions_missed_days_and_changed_budget_required": true,
       "meaningful_progress_under_partial_sessions_required": true,
-      "param_update_mean_schedule_change_max": 0.1,
-      "param_update_max_schedule_change_max": 0.2,
-      "deterministic": true
+      "deterministic": true,
+      "compare_to_fair_simple_baseline": true,
+      "allow_optional_advanced_strategy_disabled_without_evidence": true,
+      "original_scope_includes_unsupported_confirmed_items": true
     },
     "daily_budget_is_estimated_target_not_forced_stop": true,
     "normal_daily_budget_is_editable": true,
@@ -63,7 +57,26 @@
     "stale_presentation_after_inactive_hours": 72,
     "stale_presentation_replacement_must_not_grade_unanswered_item": true,
     "opening_old_question_alone_does_not_extend_expiry": true,
-    "old_draft_submission_cannot_fabricate_delayed_recall": true
+    "old_draft_submission_cannot_fabricate_delayed_recall": true,
+    "initial_memory_model_baseline": "FSRS-6 (21 parameters, S09)",
+    "initial_baseline_grading_adapter": {
+      "correct_independent": 3,
+      "incorrect_independent": 1
+    },
+    "pre_answer_solve_hints_enabled": false,
+    "post_answer_correct_explanation_required": true,
+    "grade_mapping_versioned_and_replayable": true,
+    "unscored_exposure_cannot_count_as_success_or_failure": true,
+    "explicit_primary_target_and_tested_ability_required": true,
+    "fixed_or_simple_retention_allowed_until_advanced_strategy_validated": true,
+    "dynamic_retention_requires_comparison_before_default": true,
+    "individual_parameter_refitting_not_required_for_core_release": true,
+    "official_ceec_wordlist_complete_learnable_coverage_required_for_v1": true,
+    "user_confirmed_unlisted_exam_terms_remain_in_scope_denominator": true,
+    "missing_word_report_requires_explicit_per_item_preview_and_consent": true,
+    "content_report_cannot_share_research_consent": true,
+    "early_small_human_pilot_before_mass_content": true,
+    "validated_simple_baseline_must_remain_available": true
   },
   "reference_starting_points": {
     "_note": "可參考的起始值，不是要求；實作可替換，替換時記錄理由。說明見 docs/08「可參考的做法」。",
@@ -78,7 +91,9 @@
       "long_horizon_days": 90,
       "delayed_min_seconds": 86400,
       "intervening_distinct_targets": 3,
-      "reanchor_validation_max_days": 7
+      "reanchor_validation_max_days": 7,
+      "optional_param_update_mean_schedule_change_reference": 0.1,
+      "optional_param_update_max_schedule_change_reference": 0.2
     },
     "evidence": {
       "foundation": {
