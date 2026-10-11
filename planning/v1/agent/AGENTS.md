@@ -16,7 +16,7 @@
 | M0 | `PLAN.md`、`agent/START-M0.md`、`docs/02`、tasks.json 的 M0 | — |
 | M1 | `docs/05`、`docs/03` §2–§6、`contracts/sources.json` | `docs/08` |
 | M2 | `docs/01`、`docs/02`、`docs/06` §2 與 §6 | `docs/03` §6 |
-| M3 | `docs/03`、`docs/01` §5–§7、`contracts/policy-v1.json` 的 `product`、`docs/06` §2–§5（**T035 早期真人 gate**） | `docs/05` 的題目來源與審查要求、`docs/08` 可參考的做法 |
+| M3 | `docs/03`、`docs/01` §5–§7、`contracts/policy-v1.json` 的 `product`、`docs/06` §2–§5（**T035 小型工程與內容 QA**） | `docs/05` 的題目來源與審查要求、`docs/08` 可參考的做法 |
 | M4 | `docs/04`（含 §9 模擬驗收門檻）、`docs/03` §6、`docs/01` §4–6、`contracts/policy-v1.json` 的 `product` | `docs/08` 可參考的做法 |
 | M5 | `docs/05`、`docs/06`、`docs/01` R03／R16、`docs/privacy-data-collection.md` 的單次內容回報邊界 | 前面各階段的文件 |
 | M6 | `docs/06` §5–§8、`docs/privacy-data-collection.md` | `docs/08` |
@@ -29,7 +29,7 @@
 - 日常由系統排程，不能用「選 deck / 選模式 / 自評熟悉度」繞過需求。
 - 學生表現是最終目的：有考試時尊重完整指定範圍、期限與每日時間，優先看未見語境選詞能力；無期限時重視長期有用性。不要為了固定 retention、完成打卡或清空 backlog 機械地加工作業。
 - 未加入詞的查詢不會自動 enrollment，大小寫永不扣分。
-- 只實作被指定的 milestone；完成後報驗收，不順手展開全部後續系統。**例外：M3 的 T035 在 T017、T012、T007 完成後可立即進行，不等待 T018、完整 M4/M5 或遠端研究**；T025 不得在 T035 主要測量／內容安全風險未解前大量擴充。
+- 只實作被指定的 milestone；完成後報驗收，不順手展開全部後續系統。**M3 的 T035 在 T017、T012、T007 完成後即可執行自動化與內容 QA，不需真人參與**；T025 的大量擴充須先處理 T035 發現的重大錯題、資料或內容問題。**T029–T031 真人 beta 與教學成效比較為可延後事項，不能要求開發者現在招募測試者才允許繼續開發或發布。**
 
 ## 架構
 - 學習排程、評分與 planner 的核心邏輯不 import SwiftUI、UIKit、CloudKit 或資料庫套件；具體 module 形式由實作決定。
