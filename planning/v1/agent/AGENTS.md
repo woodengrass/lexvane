@@ -21,7 +21,7 @@
 | M5 | `docs/05`、`docs/06`、`docs/01` R03／R16、`docs/privacy-data-collection.md` 的單次內容回報邊界 | 前面各階段的文件 |
 | M6 | `docs/06` §5–§8、`docs/privacy-data-collection.md` | `docs/08` |
 
-每個 milestone 的任務與驗收條件一律以 `contracts/tasks.json` 為準。
+每個 milestone 的任務與驗收條件一律以 `contracts/tasks.json` 為準。`optional_for_v1: true` 的 T029–T031 是有測試者時才執行的自願真人研究任務；未執行時標記為**延後／未驗證**，不把它們當正式 V1 發布依賴，也不能宣稱已證明真人學習效果。
 
 ## 範圍
 - 專案品牌與 App 顯示名稱為 `lexvane`；新建 Xcode 專案／Target 使用 `Lexvane`、Swift App 入口使用 `LexvaneApp` 命名。勿再使用過去的暫用名稱或專案舊名稱。
