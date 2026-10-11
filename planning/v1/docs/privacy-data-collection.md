@@ -11,8 +11,8 @@ lexvane 採用「方案 A」：
 - 個人化學習本身完全在本機運作，不需要把個人模型上傳。
 - 跨使用者的演算法改進只使用使用者明確同意後產生的研究 contribution。
 - contribution 先在裝置上轉成有限、預先定義的統計或模型更新；不傳 raw events。
-- 收集鏈路必須讓研究端無法讀取任何單一使用者的 contribution，也不應取得能把 contribution 與來源裝置／IP 長期連結的識別資訊。
-- 只有達到最低群體門檻後的 aggregate 才能被研究端讀取。
+- **正式版**收集鏈路必須讓研究端不能讀取任一單獨使用者 contribution，也不能將貢獻與來源裝置／IP 長期連結。**Beta 例外**：僅在獨立同意後，單一接收端會於收集時看見一份已限額、去識別化的個別彙總；其保證較弱且須明示，不包含 raw learning history。
+- **正式版**只有達到最低群體門檻後的 aggregate 才可被研究端讀取；Beta 單方接收端可能看到單份個別彙總，只可按最低群體門檻釋出預先定義的總體結果。
 - App 不因使用者拒絕研究資料分享而限制任何核心功能；撤回同意後停止未來 contribution。
 - 不建立 user-level telemetry、research profile、個人雲端 FSRS 參數或「匿名 user ID + 完整歷史」資料庫。
 
@@ -109,7 +109,7 @@ Beta 參與者若日後有個人付費方案，享有**不少於連續 12 個月
 
 ## 正式版 Privacy-preserving aggregation 的結果要求
 
-**Beta 沒有自動研究上傳／單一聚合方過渡服務；以下是正式版 T033 的要求。** 實作技術由 agent 在正式版階段研究與選擇，但最後必須滿足以下性質：
+**Beta 可在獨立 opt-in 後使用較弱的單一統計接收端，但不具備以下密碼學性質。以下僅是正式版 T033 的要求。** 實作技術由 agent 在正式版階段研究與選擇，但最後必須滿足以下性質：
 
 1. **沒有單一使用者可讀資料落在研究 backend。**  
    Application server、資料庫、dashboard 或一般 log 被完整取得時，不應出現某個人的 raw history、個人參數或可讀 contribution。
@@ -176,12 +176,12 @@ Apple App Review Guideline 5.1.1(ii) 要求收集 user / usage data 時取得使
 
 ## Threat model
 
-這個方案要能合理承諾：
+**正式版**經 T033／T037 threat model 驗收後，才可承諾：
+- lexvane application backend／database／dashboard 被攻破，不會得到可讀的單一使用者**原始學習歷史**或個人參數。
+- 任一單一 aggregation party 被攻破，不足以還原個別 contribution（假設未串通與其他實際保護條件成立）。
+- 研究端無法取得「來源 IP ↔ 可讀 contribution」的對應表，最終只讀取滿足最低群體門檻的預定 aggregate。
 
-- lexvane application backend / database / dashboard 被攻破，不會得到可讀的單一使用者學習資料。
-- 正式版任一單一 aggregation party 被攻破，不足以還原 individual contribution；Beta 不建立研究聚合服務或上傳個別 contribution。
-- 研究端拿不到「來源 IP ↔ 可讀 contribution」的對應表。
-- 最終只有滿足最低群體門檻的預定 aggregate。
+**Beta 的保證較弱**：即使不保存單份貢獻，單一接收端在收集時仍可能讀到該份受限的彙總統計及網路 metadata；不能保證單一 backend 被攻破時也無法取得正在接收的統計。Beta 同樣不得上傳原始作答歷史、完整詞彙清單或個人模型；這不是完整匿名或正式版多方防護。
 
 這個方案**不**宣稱：
 - 使用者自己的 iPhone 已被攻破時仍能保護該裝置內的資料。
@@ -205,7 +205,7 @@ Apple App Review Guideline 5.1.1(ii) 要求收集 user / usage data 時取得使
 - 一般 access/error logs 不保存足以把 contribution 重新連回來源的 metadata。
 - consent、withdrawal 與 privacy-policy 文案和實際技術行為一致。
 - 同一份 report 重送只計一次，資料格式與配額／濫用防護有驗收；群體指標的計數單位、加權與納入條件明確，失敗／退出樣本不能被默默排除後宣稱全體準備程度。
-- 正式版實際兩方的營運、金鑰與管理權限具有可驗證的獨立性；Beta 無聚合服務，不宣稱提供群體研究結果。
+- 正式版實際兩方的營運、金鑰與管理權限具有可驗證的獨立性；Beta 只有較弱的單一統計接收端，可以在群體門檻通過後產生有限統計，但不得宣稱已達多方安全聚合保證。
 - 正式版缺詞／錯題回報只有逐次預覽、主動提交才送可讀內容，且有與群體研究不同的網路路徑、存取權限及 retention；Beta 則只讓使用者自行分享，兩者均不受研究開關影響、不觸發自動回報。
 
 ## 可研究的技術
