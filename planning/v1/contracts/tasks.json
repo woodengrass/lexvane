@@ -7,7 +7,7 @@
   {"id":"T006","milestone":"M1","depends_on":["T005"],"title":"50 詞內容流水線試跑","acceptance":"生成／審查可恢復；試行義項／用法三層優先度及合理語境選詞題審查；記錄成本與可發布率，不把 credits 當 API 無限額。"},
   {"id":"T007","milestone":"M1","depends_on":["T006"],"title":"200 詞 + 30 片語 pilot","acceptance":"完成 200 詞＋30 片語 pilot，含多義、重要第二義、詞形與搭配難例，初教／答題後正解與錯因回饋正確，V1 不製作作答前解題提示；有不同 family 與一批相對獨立的延遲檢查題，高風險及一般隨機抽查，建立未見題消耗與內容缺陷的試驗紀錄。"},
   {"id":"T008","milestone":"M1","depends_on":["T007"],"title":"內容包建置器","acceptance":"可重現的內容包：搜尋索引、版本 manifest、完整性檢查與授權標示一起產生；所有 cross-reference 有效。"},
-  {"id":"T009","milestone":"M2","depends_on":["T008"],"title":"離線搜尋與字典頁","acceptance":"離線英文 prefix／alias／詞形與多義／片語查詢，大小寫不敏感；未知字明示無資料與可點選外部查詢，提供逐項回報入口的可預覽 UI（正式回報服務於 T036 完成，不阻擋純離線查字）。"},
+  {"id":"T009","milestone":"M2","depends_on":["T008"],"title":"離線搜尋與字典頁","acceptance":"離線英文 prefix／alias／詞形與多義／片語查詢，大小寫不敏感；未知字明示無資料及可點選外部查詢。提供逐次預覽單一缺詞與內容版本的回報 UI，**Beta 透過 iOS 系統分享／郵件草稿或複製文字由使用者自主送出，App 不直接發送**；無外部郵件 App 仍可複製，取消分享不影響本機查字。正式版 HTTPS 內容回報服務在 T036，T009 不依賴後端。"},
   {"id":"T010","milestone":"M2","depends_on":["T009"],"title":"明確一鍵加入與批次輸入","acceptance":"搜尋與批次輸入可去重、撤銷、保留片語、處理歧義；沒有查詢自動加入。已確認去重的考試範圍中未收錄項要以本機「未支援缺口」保留，不建立假的學習單元、不縮小考試進度分母；只有使用者明確修改範圍才更新。"},
   {"id":"T011","milestone":"M2","depends_on":["T010"],"title":"個人 DB 與原子作答基礎","acceptance":"enrollment／exam scope gap／presentation／raw answer／exposure／draft／event 可原子保存；記錄主要義項 × 實測能力、family、題目必要不可變快照、內容與模型映射版本；跨日草稿提交不虛增回想，重複事件 ID 不重複寫入。衍生 FSRS grade 不取代原始回答。"},
   {"id":"T012","milestone":"M2","depends_on":["T011"],"title":"本地備份/匯出/還原","acceptance":"一致性快照＋可攜式匯出，空白安裝可恢復，損毀檔不毀原資料；舊題內容包不存在時仍能靠已展示的必要題目快照與映射版本解讀歷史，不要求備份整個詞庫。"},
