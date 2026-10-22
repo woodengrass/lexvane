@@ -1,2 +1,25 @@
 __pycache__/
 *.pyc
+.build/
+tools/ContentKit/.build/
+DerivedData/
+*.xcuserdata
+build/
+native-build/
+CACHEDIR.TAG
+*.pif
+*.lock
+*.d
+*.dia
+
+# Keep only lexicon content, rules, code and rights records in git.
+# Agent work logs, review rounds and job receipts stay on local disk.
+.omo/
+content/jobs/
+content/reviews/*
+!content/reviews/REVIEW-INSTRUCTIONS.md
+content/records/*/*
+!content/records/*/merged/
+# Original authored word/phrase batches (read by WordPilot/PhrasePilot tests).
+!content/records/pilot-230/words-*.jsonl
+!content/records/pilot-230/phrases-*.jsonl

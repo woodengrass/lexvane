@@ -1,0 +1,56 @@
+{
+  "schema": "lexvane.pilot-supply-report.v1",
+  "scope": "real-pilot-50-trial-replay-and-fixture-only-pack-regressions",
+  "dataset": "content/records/pilot-50/merged",
+  "dataset_record_count": 666,
+  "profile": "content/policies/pilot-quality-v1.json",
+  "profile_sha256": "781c6558dd5067c7993371d201776757b58a00b05231b1d8bf30849b49ce2e6e",
+  "scenarios": "content/policies/pilot-supply-scenarios.json",
+  "scenarios_sha256": "90a8adabcd84e8a3cba736b53372b7bd389a2e0f623d73cae37577b62cdf7d00",
+  "seed": 111,
+  "inventory_basis": "editorial-only-hypothetical-unseen",
+  "eligible_question_bindings": 98,
+  "target_count": 50,
+  "allocation_count": 100,
+  "scenario_inventory_resets": true,
+  "persisted_learner_exposure_evaluated": false,
+  "accepted_count": 0,
+  "release_eligible": false,
+  "human_review_pending": true,
+  "rights_status": "pending",
+  "cost_status": "unknown",
+  "cost_amount": null,
+  "srs_efficacy": null,
+  "real_pack_verified": false,
+  "pilot_230_supply_verified": false,
+  "pilot_230_blockers": ["Task16 private-pack gate failed", "Frozen supply scenarios bind pilot-50, not pilot-230", "Task18 produced no real pack"],
+  "determinism": {
+    "run_a": ".omo/evidence/m1-content-pilot/a1-task19/supply-a.json",
+    "run_b": ".omo/evidence/m1-content-pilot/a1-task19/supply-b.json",
+    "run_exit_codes": [0, 0],
+    "cmp_exit_code": 0,
+    "byte_identical": true,
+    "sha256": "511ed60896af72566567e90f9219ac327f236da24f885c04593a7bb6d0982ef3"
+  },
+  "check_stock_ledger": ".omo/evidence/m1-content-pilot/a1-task19/supply-a.json",
+  "identity_ledger": {
+    "path": "content/ids/ledger.jsonl",
+    "events": 290,
+    "sha256": "c1b5f9c1d26da52d8266fccf225044b21fe14d89fba57810e5d2e83dabe964a6",
+    "consumed_by_simulator": false
+  },
+  "quarantine": {
+    "target_id": "lx:target:bf7b049b-a730-4601-bbb5-66aca9719be1",
+    "question_ids": ["lx:question:3751e6fa-6dcc-460f-9bb0-66d681bf6b2a", "lx:question:e0c837c6-9845-4394-bdc5-2fc6b7647d08"],
+    "source": ".omo/evidence/m1-content-pilot/a1-task9/writing-isolation.jsonl",
+    "raw_passed_questions": 98,
+    "raw_quarantined_questions": 2,
+    "independent_pairs": 49,
+    "contaminated_pairs": 1
+  },
+  "scenario_totals": [
+    {"scenario": "trial-one-train-one-check", "targets": 50, "train_shortfall": 1, "consumed_check_families": 49, "check_shortfall": 1, "remaining_unseen_check_families": 0},
+    {"scenario": "one-extra-unseen-check", "targets": 50, "train_shortfall": 1, "consumed_check_families": 49, "check_shortfall": 51, "remaining_unseen_check_families": 0}
+  ],
+  "regressions": {"new_tests": 6, "full_suite_tests": 185, "failures": 0, "red_basis": "compile-red before test fixture support existed; not a demonstrated production defect"}
+}

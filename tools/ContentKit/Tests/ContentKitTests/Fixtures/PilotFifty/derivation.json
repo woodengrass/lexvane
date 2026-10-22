@@ -1,0 +1,14 @@
+{
+  "question_id": "lx:question:03dd6afe-5dfe-4035-b57f-59ebe06961d6",
+  "quota_invariant": "JobLedger rejects validated transition after resumable quota failure without received receipt; binding uses the real question revision/hash and a labeled synthetic prompt, not a claimed dispatch.",
+  "rights": "Self-authored trial rows; S01 metadata references only, no restricted source bytes.",
+  "sense_id": "lx:sense:004d2ed5-8b48-4711-aa03-5194a37b6e66",
+  "sources": [
+    "content/records/pilot-50/batch-2.jsonl#L244",
+    "content/records/pilot-50/check-fix2-1.jsonl#L1",
+    "content/reviews/pilot-50/review-batch-2.jsonl#L123",
+    "content/reviews/pilot-50/review-recheck2-1.jsonl#L1",
+    "content/reviews/pilot-50/blind-check-r3.jsonl#L1",
+    "content/reviews/pilot-50/blind-inputs-check/blind-03dd6afe-5dfe-4035-b57f-59ebe06961d6.json"
+  ]
+}

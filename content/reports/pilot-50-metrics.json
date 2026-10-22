@@ -1,0 +1,1362 @@
+{
+  "ability_target_counts": {
+    "contextual_choice": 42,
+    "meaning_recognition": 6,
+    "writing": 2
+  },
+  "accepted_confirmed": 0,
+  "accepted_tool_reported": null,
+  "accounting": {
+    "cost": "unknown; subscription credits not unlimited API",
+    "receipt_declared_fields": [
+      {
+        "declared_fields": {
+          "cost_amount": null,
+          "cost_status": "unknown"
+        },
+        "receipt": "content/jobs/pilot-50/receipts/blind-projection-r5.json"
+      },
+      {
+        "declared_fields": {
+          "cost_amount": null,
+          "cost_status": "unknown"
+        },
+        "receipt": "content/jobs/pilot-50/receipts/blind-projection-r6.json"
+      },
+      {
+        "declared_fields": {
+          "cost_amount": null,
+          "cost_status": "unknown"
+        },
+        "receipt": "content/jobs/pilot-50/receipts/blind-projection-r7.json"
+      },
+      {
+        "declared_fields": {
+          "cost_amount": null,
+          "cost_status": "unknown"
+        },
+        "receipt": "content/jobs/pilot-50/receipts/blind-projection-r8.json"
+      },
+      {
+        "declared_fields": {
+          "costs_status": "unknown"
+        },
+        "receipt": "content/jobs/pilot-50/receipts/blind-r4-1.json"
+      },
+      {
+        "declared_fields": {
+          "costs_status": "unknown"
+        },
+        "receipt": "content/jobs/pilot-50/receipts/blind-r4-2.json"
+      },
+      {
+        "declared_fields": {
+          "costs_status": "unknown"
+        },
+        "receipt": "content/jobs/pilot-50/receipts/blind-r4-3.json"
+      },
+      {
+        "declared_fields": {
+          "cost_amount": null,
+          "cost_status": "unknown"
+        },
+        "receipt": "content/jobs/pilot-50/receipts/blind-r5-1.json"
+      },
+      {
+        "declared_fields": {
+          "cost_amount": null,
+          "cost_status": "unknown"
+        },
+        "receipt": "content/jobs/pilot-50/receipts/blind-r6-1.json"
+      },
+      {
+        "declared_fields": {
+          "cost_amount": null,
+          "cost_status": "unknown"
+        },
+        "receipt": "content/jobs/pilot-50/receipts/blind-r7-1.json"
+      },
+      {
+        "declared_fields": {
+          "cost_amount": null,
+          "cost_status": "unknown"
+        },
+        "receipt": "content/jobs/pilot-50/receipts/blind-r8-1.json"
+      },
+      {
+        "declared_fields": {
+          "cost_amount": null,
+          "cost_status": "unknown"
+        },
+        "receipt": "content/jobs/pilot-50/receipts/check-fix3.json"
+      },
+      {
+        "declared_fields": {
+          "cost": "unknown",
+          "tokens": "unknown"
+        },
+        "receipt": "content/jobs/pilot-50/receipts/check-fix4.json"
+      },
+      {
+        "declared_fields": {
+          "cost": "unknown",
+          "tokens": "unknown"
+        },
+        "receipt": "content/jobs/pilot-50/receipts/check-fix5.json"
+      },
+      {
+        "declared_fields": {
+          "cost": "unknown",
+          "tokens": "unknown"
+        },
+        "receipt": "content/jobs/pilot-50/receipts/check-fix6.json"
+      },
+      {
+        "declared_fields": {
+          "cost": "unknown",
+          "tokens": "unknown"
+        },
+        "receipt": "content/jobs/pilot-50/receipts/check-fix7.json"
+      },
+      {
+        "declared_fields": {
+          "completed_at_utc": "2026-10-11T19:53:28.610630+00:00",
+          "cost": "unknown_not_reported",
+          "tokens": "unknown_not_reported"
+        },
+        "receipt": "content/jobs/pilot-50/receipts/check-rewrite.json"
+      },
+      {
+        "declared_fields": {
+          "cost": "unknown",
+          "tokens": "unknown"
+        },
+        "receipt": "content/jobs/pilot-50/receipts/fix-batch-3.json"
+      },
+      {
+        "declared_fields": {
+          "costs": null
+        },
+        "receipt": "content/jobs/pilot-50/receipts/merge-acceptance-r4.json"
+      },
+      {
+        "declared_fields": {
+          "costs": null
+        },
+        "receipt": "content/jobs/pilot-50/receipts/merge-acceptance-r5.json"
+      },
+      {
+        "declared_fields": {
+          "costs": null
+        },
+        "receipt": "content/jobs/pilot-50/receipts/merge-acceptance-r6.json"
+      },
+      {
+        "declared_fields": {
+          "costs": null
+        },
+        "receipt": "content/jobs/pilot-50/receipts/merge-acceptance-r7.json"
+      },
+      {
+        "declared_fields": {
+          "costs": null
+        },
+        "receipt": "content/jobs/pilot-50/receipts/merge-acceptance-r8.json"
+      },
+      {
+        "declared_fields": {
+          "cost_amount": null,
+          "cost_status": "unknown"
+        },
+        "receipt": "content/jobs/pilot-50/receipts/reverify-round4.json"
+      },
+      {
+        "declared_fields": {
+          "cost_amount": null,
+          "cost_status": "unknown"
+        },
+        "receipt": "content/jobs/pilot-50/receipts/reverify-round5.json"
+      },
+      {
+        "declared_fields": {
+          "cost_amount": null,
+          "cost_status": "unknown"
+        },
+        "receipt": "content/jobs/pilot-50/receipts/reverify-round6.json"
+      },
+      {
+        "declared_fields": {
+          "cost_amount": null,
+          "cost_status": "unknown"
+        },
+        "receipt": "content/jobs/pilot-50/receipts/reverify-round7.json"
+      },
+      {
+        "declared_fields": {
+          "cost_amount": null,
+          "cost_status": "unknown"
+        },
+        "receipt": "content/jobs/pilot-50/receipts/reverify-round8.json"
+      }
+    ],
+    "time": "no trustworthy complete trial elapsed-time total; receipt-declared values retained separately",
+    "tokens": "no complete metered trial total"
+  },
+  "active_target_supply": [
+    {
+      "ability": "meaning_recognition",
+      "independent_check_families": 1,
+      "target_id": "lx:target:0797a6a4-aa00-4dc2-a695-c229b4701b85",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:0be02e96-24af-4866-83fe-ec1d7b7c37a9",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:0e390fb1-c6d1-4cda-b362-9a19a217b6c4",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:1527e6a4-b1f1-4e80-8219-41b608a90872",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:1fc107ae-7148-401d-86dc-51374257122d",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:2262d584-d90a-40af-a2e4-4a7df3ef3104",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:29a7d134-a4ef-4ebe-99e6-fff6ca9e4709",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:2b8ae164-aea4-4049-a9eb-a61170823de7",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:38815205-fc7a-44ed-a2c3-c1461a0bc478",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:3c3fe5cc-8ef9-4554-946f-dd0869ec00ef",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:41911101-b993-4dcf-b08f-c560093ce2ef",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:435550c0-5f9b-4b23-926b-07602a399c24",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:4e834f05-c411-4f97-bc92-243790dc86a7",
+      "train_families": 1
+    },
+    {
+      "ability": "meaning_recognition",
+      "independent_check_families": 1,
+      "target_id": "lx:target:612bb3bc-09da-4425-95e8-91cdd2a633b5",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:65c37c4a-0503-42a2-83e2-f9c7ea6e657e",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:6c4aeaf5-e7c0-45d7-949d-bc0ff66b6de8",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:6d557f33-7134-4eca-b1f4-86b6e82a54d8",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:6d9e77fd-b5b3-4318-a16b-fbcb45f29b6e",
+      "train_families": 1
+    },
+    {
+      "ability": "meaning_recognition",
+      "independent_check_families": 1,
+      "target_id": "lx:target:6e41092b-a022-44aa-9968-28e1e78b4d38",
+      "train_families": 1
+    },
+    {
+      "ability": "meaning_recognition",
+      "independent_check_families": 1,
+      "target_id": "lx:target:791c2ddc-328b-466c-a089-96f00d635998",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:807f67b4-58ea-4fa3-8041-761cc1b59f91",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:911abedd-a88a-4d11-8520-8cec16095e34",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:93db2022-fac6-4ccb-9d53-070d641d446a",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:972b6428-6167-4297-a3e8-05f43575d836",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:a3e3d8f2-3fe6-4252-a9ea-fa12a9f4a2b4",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:a4531efb-0c14-413e-9c84-b40d04a7ccc1",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:a5303802-f1c7-4bb5-a49f-7bf7fad7b741",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:a713b8bd-51e0-4bbd-bf24-03b0dfe8a175",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:aba5389c-1367-49af-8b64-f7d67212c32d",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:aba96ad8-79fb-45cd-9cba-e9a672a82308",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:acf67d28-a922-4729-8f4c-353a0a415d07",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:b352b921-80a3-4ca0-9cba-ff89fbf895cf",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:b38a15c0-d922-428a-8f6c-dac47c2f8cb6",
+      "train_families": 1
+    },
+    {
+      "ability": "writing",
+      "independent_check_families": 0,
+      "target_id": "lx:target:bf7b049b-a730-4601-bbb5-66aca9719be1",
+      "train_families": 0
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:c3ddcded-f719-4377-8c38-176d1ebf40d2",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:c542793a-c176-4628-b58e-ab19a722fa67",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:c6812be3-9156-4f27-a725-0aff77b7fdaf",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:c700cba8-fa9c-4edc-bb9f-dcbca2509bc4",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:cc70aede-4b90-4218-a816-a090f7e261a6",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:d85f1304-1e53-4f90-bbc1-b65ccf3971ae",
+      "train_families": 1
+    },
+    {
+      "ability": "writing",
+      "independent_check_families": 1,
+      "target_id": "lx:target:d9b72d9f-9c59-4f79-8a6f-de0c7359d3ec",
+      "train_families": 1
+    },
+    {
+      "ability": "meaning_recognition",
+      "independent_check_families": 1,
+      "target_id": "lx:target:de1d3070-daaa-4ff3-89b5-0f233c5c42ec",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:de34b25a-ced6-4d47-aca4-8f14120b34e2",
+      "train_families": 1
+    },
+    {
+      "ability": "meaning_recognition",
+      "independent_check_families": 1,
+      "target_id": "lx:target:e1ead327-78fd-471b-8641-bf4d5aa2793b",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:e27c68ee-31a7-4084-8edc-f36c2fb10e5e",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:e6582068-da06-44d0-8364-d9df2fdf7f70",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:e7c4abdb-af73-4422-be09-af4597bcc17e",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:f556a8de-66d6-49b1-9fde-bb0f04b10f21",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:f97195fc-07a2-499f-a278-23c3cee014e6",
+      "train_families": 1
+    },
+    {
+      "ability": "contextual_choice",
+      "independent_check_families": 1,
+      "target_id": "lx:target:fd52dc71-19bd-4183-b744-65482be8831e",
+      "train_families": 1
+    }
+  ],
+  "blind": {
+    "basis": ".omo/notepads/m1-content-pilot/learnings.md:269-271; writing responses are not unique-answer agreement",
+    "covered_current": 100,
+    "current_multiple_choice_matches": 98,
+    "current_writings_protocol_only": 2,
+    "denominator": 100,
+    "divergent_trial_wide": 0
+  },
+  "cost_amount": null,
+  "cost_status": "unknown",
+  "critical_count_basis": "No new critical findings reported in round8; unresolved writings are known-blocked major/contract defects and block independently of severity label",
+  "editorial_family_counts": {
+    "contaminated": 1,
+    "independent": 49
+  },
+  "editorial_question_verdict_counts": {
+    "passed": 98,
+    "quarantined": 2
+  },
+  "editorial_word_acceptance_claim": {
+    "accepted": 49,
+    "denominator": 50,
+    "isolated": 1
+  },
+  "elapsed_seconds": null,
+  "facet_counts": [
+    {
+      "accepted_confirmed": 0,
+      "accepted_tool_reported": null,
+      "basis": "selection facet tags; isolation word-level claim, not native acceptance",
+      "candidate": 50,
+      "editorial_accepted_claim": 49,
+      "facet": "all_words",
+      "isolated": 1
+    },
+    {
+      "accepted_confirmed": 0,
+      "accepted_tool_reported": null,
+      "basis": "selection facet tags; isolation word-level claim, not native acceptance",
+      "candidate": 1,
+      "editorial_accepted_claim": 1,
+      "facet": "collocation",
+      "isolated": 0
+    },
+    {
+      "accepted_confirmed": 0,
+      "accepted_tool_reported": null,
+      "basis": "selection facet tags; isolation word-level claim, not native acceptance",
+      "candidate": 1,
+      "editorial_accepted_claim": 1,
+      "facet": "general",
+      "isolated": 0
+    },
+    {
+      "accepted_confirmed": 0,
+      "accepted_tool_reported": null,
+      "basis": "selection facet tags; isolation word-level claim, not native acceptance",
+      "candidate": 1,
+      "editorial_accepted_claim": 1,
+      "facet": "morphology",
+      "isolated": 0
+    },
+    {
+      "accepted_confirmed": 0,
+      "accepted_tool_reported": null,
+      "basis": "selection facet tags; isolation word-level claim, not native acceptance",
+      "candidate": 1,
+      "editorial_accepted_claim": 1,
+      "facet": "polysemy",
+      "isolated": 0
+    },
+    {
+      "accepted_confirmed": 0,
+      "accepted_tool_reported": null,
+      "basis": "selection facet tags; isolation word-level claim, not native acceptance",
+      "candidate": 1,
+      "editorial_accepted_claim": 1,
+      "facet": "second_sense",
+      "isolated": 0
+    },
+    {
+      "accepted_confirmed": 0,
+      "accepted_tool_reported": null,
+      "basis": "selection facet tags; isolation word-level claim, not native acceptance",
+      "candidate": 1,
+      "editorial_accepted_claim": 0,
+      "facet": "spelling_hyphen",
+      "isolated": 1
+    },
+    {
+      "accepted_confirmed": 0,
+      "accepted_tool_reported": null,
+      "basis": "selection facet tags; isolation word-level claim, not native acceptance",
+      "candidate": 44,
+      "editorial_accepted_claim": 44,
+      "facet": "unflagged_selection",
+      "isolated": 0
+    }
+  ],
+  "family_binding_disclosures": {
+    "latest_family_row_question_binding_gaps": [],
+    "merge_carried_pairs_with_hash_binding_gap": 3,
+    "reverify_round8_carry_forward_assertions_retained": true
+  },
+  "fix_rounds": [
+    {
+      "blind": {
+        "covered": 100,
+        "questions": 100,
+        "r4_solve_bindings": 57
+      },
+      "evidence": "content/jobs/pilot-50/receipts/merge-acceptance-r4.json",
+      "families": {
+        "contaminated": 10,
+        "independent": 40
+      },
+      "gates": {
+        "candidate": 0,
+        "content": 65,
+        "coverage": 65
+      },
+      "ledger": {
+        "events": 244,
+        "sha256": "65a3754c3ed3a1251aa8a8d2c50582bb66c45fda86d1d8e04cfa1c21132bef6c"
+      },
+      "questions": {
+        "passed": 75,
+        "quarantined": 25
+      },
+      "round": 4
+    },
+    {
+      "blind": {
+        "covered": 100,
+        "questions": 100,
+        "r5_solve_bindings": 24
+      },
+      "evidence": "content/jobs/pilot-50/receipts/merge-acceptance-r5.json",
+      "families": {
+        "contaminated": 6,
+        "independent": 44
+      },
+      "gates": {
+        "candidate": 0,
+        "content": 65,
+        "coverage": 65
+      },
+      "ledger": {
+        "events": 244,
+        "sha256": "65a3754c3ed3a1251aa8a8d2c50582bb66c45fda86d1d8e04cfa1c21132bef6c"
+      },
+      "questions": {
+        "passed": 86,
+        "quarantined": 14
+      },
+      "round": 5
+    },
+    {
+      "blind": {
+        "covered": 100,
+        "questions": 100,
+        "r6_solve_bindings": 13
+      },
+      "evidence": "content/jobs/pilot-50/receipts/merge-acceptance-r6.json",
+      "families": {
+        "contaminated": 3,
+        "independent": 47
+      },
+      "gates": {
+        "candidate": 0,
+        "content": 65,
+        "coverage": 65
+      },
+      "ledger": {
+        "events": 244,
+        "sha256": "65a3754c3ed3a1251aa8a8d2c50582bb66c45fda86d1d8e04cfa1c21132bef6c"
+      },
+      "questions": {
+        "passed": 92,
+        "quarantined": 8
+      },
+      "round": 6
+    },
+    {
+      "blind": {
+        "covered": 100,
+        "questions": 100,
+        "r7_solve_bindings": 7
+      },
+      "evidence": "content/jobs/pilot-50/receipts/merge-acceptance-r7.json",
+      "families": {
+        "contaminated": 2,
+        "independent": 48
+      },
+      "gates": {
+        "candidate": 0,
+        "content": 65,
+        "coverage": 65
+      },
+      "ledger": {
+        "events": 244,
+        "sha256": "65a3754c3ed3a1251aa8a8d2c50582bb66c45fda86d1d8e04cfa1c21132bef6c"
+      },
+      "questions": {
+        "passed": 96,
+        "quarantined": 4
+      },
+      "round": 7
+    },
+    {
+      "blind": {
+        "covered": 100,
+        "questions": 100,
+        "r8_solve_bindings": 2
+      },
+      "evidence": "content/jobs/pilot-50/receipts/merge-acceptance-r8.json",
+      "families": {
+        "contaminated": 1,
+        "independent": 49
+      },
+      "gates": {
+        "candidate": 0,
+        "content": 65,
+        "coverage": 65
+      },
+      "ledger": {
+        "events": 244,
+        "sha256": "65a3754c3ed3a1251aa8a8d2c50582bb66c45fda86d1d8e04cfa1c21132bef6c"
+      },
+      "questions": {
+        "passed": 98,
+        "quarantined": 2
+      },
+      "round": 8
+    }
+  ],
+  "gates": {
+    "candidate": {
+      "accepted_count_reported": null,
+      "argv": [
+        "tools/ContentKit/.build/debug/contentkit",
+        "validate",
+        "--dataset",
+        "content/records/pilot-50/merged",
+        "--stage",
+        "candidate",
+        "--evidence",
+        ".omo/evidence/m1-content-pilot/a1-task9/merged-candidate-r8.json"
+      ],
+      "command": "tools/ContentKit/.build/debug/contentkit validate --dataset content/records/pilot-50/merged --stage candidate --evidence .omo/evidence/m1-content-pilot/a1-task9/merged-candidate-r8.json",
+      "exit_code": 0,
+      "native_evidence_written": true,
+      "quarantined_count_reported": null,
+      "stderr": "",
+      "stdout": "valid=true stage=candidate records=666 acceptance_evaluated=false\n"
+    },
+    "content": {
+      "accepted_count_reported": null,
+      "argv": [
+        "tools/ContentKit/.build/debug/contentkit",
+        "validate",
+        "--dataset",
+        "content/records/pilot-50/merged",
+        "--stage",
+        "agent-accepted",
+        "--reviews",
+        "content/reviews/pilot-50",
+        "--profile",
+        "content/policies/pilot-trial-v0.json",
+        "--expected-words",
+        "50",
+        "--expected-phrases",
+        "0",
+        "--evidence",
+        ".omo/evidence/m1-content-pilot/a1-task9/task-9-content-r8.json"
+      ],
+      "command": "tools/ContentKit/.build/debug/contentkit validate --dataset content/records/pilot-50/merged --stage agent-accepted --reviews content/reviews/pilot-50 --profile content/policies/pilot-trial-v0.json --expected-words 50 --expected-phrases 0 --evidence .omo/evidence/m1-content-pilot/a1-task9/task-9-content-r8.json",
+      "exit_code": 65,
+      "native_evidence_written": false,
+      "quarantined_count_reported": null,
+      "stderr": "ReviewCoverageFailure(reason=review_not_passed:lx:sense:4ce7d12e-49f7-4135-a134-3aac1dc30b60)\n",
+      "stdout": ""
+    },
+    "coverage": {
+      "accepted_count_reported": null,
+      "argv": [
+        "tools/ContentKit/.build/debug/contentkit",
+        "reviews",
+        "audit",
+        "--dataset",
+        "content/records/pilot-50/merged",
+        "--reviews",
+        "content/reviews/pilot-50",
+        "--profile",
+        "content/policies/pilot-trial-v0.json",
+        "--evidence",
+        ".omo/evidence/m1-content-pilot/a1-task9/task-9-coverage-r8.json"
+      ],
+      "command": "tools/ContentKit/.build/debug/contentkit reviews audit --dataset content/records/pilot-50/merged --reviews content/reviews/pilot-50 --profile content/policies/pilot-trial-v0.json --evidence .omo/evidence/m1-content-pilot/a1-task9/task-9-coverage-r8.json",
+      "exit_code": 65,
+      "native_evidence_written": true,
+      "quarantined_count_reported": null,
+      "stderr": "ReviewCoverageFailure(reason=review_not_passed:lx:sense:ce1d84ba-b62b-4a3f-98da-b02eaf0ed95b)\n",
+      "stdout": ""
+    }
+  },
+  "historical_failed_checklist_observations": {
+    "ability-target-match": 9,
+    "alias-variant-boundaries": 1,
+    "case-variant-boundaries": 2,
+    "distractor-rationale-option-a": 2,
+    "distractor-rationale-option-b": 2,
+    "distractor-rationale-option-c": 3,
+    "distractor-rationales": 12,
+    "example-3-alignment": 2,
+    "example-alignment": 17,
+    "family-independence": 164,
+    "feedback-answer-explanation": 3,
+    "feedback-consistency": 6,
+    "gloss-precision": 6,
+    "lemma-pos-alias": 1,
+    "no-pre-answer-hint": 18,
+    "option-option-b-assessment": 1,
+    "option-option-c-assessment": 2,
+    "options-no-leak": 8,
+    "revision-lineage": 15,
+    "sense-coverage": 16,
+    "session-independence-evidence": 274,
+    "single-answer-or-listed": 20,
+    "stem-tests-sense": 26,
+    "target-ability-match": 6,
+    "train-check-noncontamination": 14
+  },
+  "historical_finding_severity_observations": {
+    "major": 648,
+    "minor": 2
+  },
+  "human_review_pending": true,
+  "human_sample_policy": {
+    "actual_human_response_ref": null,
+    "basis": "Every trial question/teaching references pending S01; census ceiling measured from current records, minimum one mandated by protocol, seed 111 explicitly supplied, not an efficacy estimate",
+    "denominator": 150,
+    "high_risk_count": 150,
+    "high_risk_ids": [
+      "lx:question:03dd6afe-5dfe-4035-b57f-59ebe06961d6",
+      "lx:question:04b5aa2f-f0f4-47e9-b32b-3f36dfe6cc36",
+      "lx:question:08fdc53c-b6d6-40b1-a7c6-59837e8f6f81",
+      "lx:question:0a1c63dd-7b85-463e-8d04-e477ac8de58e",
+      "lx:question:0cc4903f-f0f0-44f7-8100-0959c63cb7e7",
+      "lx:question:13f1b7f1-792a-4cc1-9fc5-30bbc73899d3",
+      "lx:question:16240c47-676f-46e2-aa56-a95404c5db34",
+      "lx:question:17f16e2b-36bc-42ae-b04d-bc292d86346b",
+      "lx:question:1d229ec9-ddc3-4765-9ff6-bd7fdc616834",
+      "lx:question:1f387fa1-7b59-44c8-a60b-ba45266201df",
+      "lx:question:212691f8-894c-427b-b748-255410e79dd1",
+      "lx:question:23003285-3da0-47fb-b84f-4a6ac70849fe",
+      "lx:question:2324b8cf-27f9-451f-a8bf-f57da5ea4844",
+      "lx:question:23a8adff-22f5-477c-a303-1c5615fee484",
+      "lx:question:257df3e6-8aba-4ebe-af7a-3aab642e1b2b",
+      "lx:question:286a2493-4fa2-48f6-836e-c2ca7ffac2a1",
+      "lx:question:29cd6fe3-c84e-4a0c-b193-e0faa20dc513",
+      "lx:question:2d775665-e35c-47e4-9cf1-23134b8e273a",
+      "lx:question:2ee73cbb-73a3-4852-a9cf-f9dc9bd85169",
+      "lx:question:32331447-9db8-4d16-a491-6558eea443c2",
+      "lx:question:3751e6fa-6dcc-460f-9bb0-66d681bf6b2a",
+      "lx:question:39927719-6821-4b14-a3ee-0afc98f81be9",
+      "lx:question:3a3db22d-f5bb-4178-9876-aba4e1baad19",
+      "lx:question:3fb78631-c88f-4a46-8f98-6268f01047a4",
+      "lx:question:40953897-6bc3-4ff7-a0c5-b573f29f0634",
+      "lx:question:42fdccfa-fb33-4671-b77e-f2f287cb3451",
+      "lx:question:43e7fdc6-57e6-4088-883d-be532a1a2742",
+      "lx:question:46a50a14-b7bd-43ea-befd-93c0b0486790",
+      "lx:question:481aa81a-2490-446a-b4ab-00d4628d2ccf",
+      "lx:question:4b5bedbf-92dc-4e2c-aa1c-62e1508ecd31",
+      "lx:question:4f9b7f34-17d4-4024-a874-1e0e17e3e24a",
+      "lx:question:509b7fb4-233e-4fda-87ff-6a1651898c3f",
+      "lx:question:58ade7e1-aee5-4d8e-bb30-cbd9657bc7ee",
+      "lx:question:5b93e627-63dc-4f06-940a-8cf90cdd4dd7",
+      "lx:question:5bf6e184-bbcf-4f10-973d-6117efefbc78",
+      "lx:question:5ca33009-0859-4c2e-a5cc-750d5675078c",
+      "lx:question:5db900b6-f732-4b38-9e3d-e7e074e04e16",
+      "lx:question:5e0b5fe2-8713-4f1c-8cbc-ffb231168787",
+      "lx:question:64e45383-9aed-46a8-a894-c4078e337a09",
+      "lx:question:656b1135-dba0-48d1-b1e7-1c1be8339e80",
+      "lx:question:666f5e5a-8a40-4025-970f-eb14061db63e",
+      "lx:question:69304c50-3d2c-466d-bdd3-df4a99d8e2f1",
+      "lx:question:6a2a8a1a-5100-4b28-ad68-37cff7322999",
+      "lx:question:6a8dff44-26b2-43aa-99d8-a4d297a1092e",
+      "lx:question:6d4352b7-7571-41b8-b9f8-ab9c8a91a456",
+      "lx:question:6f30fb5c-f840-4e38-8538-c695b727179f",
+      "lx:question:7b2e4d2b-3d9b-4950-91c6-304d49637cd8",
+      "lx:question:7cb892c2-d3c1-4d12-9f76-33086b36aff7",
+      "lx:question:7d4deea2-bbec-4f9c-a795-6bf368984735",
+      "lx:question:7e3b09f3-64b5-426d-b2eb-3514cde3a480",
+      "lx:question:80d2c262-0174-49cf-b868-d7128c1c4f3f",
+      "lx:question:8110d6c0-5583-4b1e-a388-78bdf9369425",
+      "lx:question:8150eb31-b332-4d8c-b3a8-74c2d6866128",
+      "lx:question:833988d0-c36c-4e28-96b3-2a80e6ac9ede",
+      "lx:question:83ef9b0e-230d-4620-98d2-7fc81c95f79c",
+      "lx:question:85b470ac-f4dd-4b0d-893a-92a82638a6fc",
+      "lx:question:8747ccc3-af5a-4ad1-8da2-077259ccc0c5",
+      "lx:question:8e73bbfc-4af2-4b3b-b9eb-78bf4308c49b",
+      "lx:question:8f433bea-17e3-4852-b5dd-0fda0ccee31f",
+      "lx:question:903f776c-1687-4f34-9a3a-59484a220039",
+      "lx:question:96634db5-a510-4a10-b9f4-03f4afb1d9c9",
+      "lx:question:96ce1a21-2ad8-4bcd-9c07-cd1967c7426d",
+      "lx:question:9915cf55-1418-4246-a2dc-939e779de499",
+      "lx:question:9a0bdfe8-7237-4fb3-9b3f-4e833c229550",
+      "lx:question:9c77b333-de91-4847-82d1-432a6759c7dc",
+      "lx:question:a109e4a1-af71-4287-81f4-a5f865756750",
+      "lx:question:a3f15f2a-0888-46fe-a1ea-a5d13f6a3009",
+      "lx:question:a63621bb-7594-42d7-b594-704fcc6ca1e2",
+      "lx:question:afecd769-4823-49d5-a519-1ba202128b9c",
+      "lx:question:b128b18a-c7a1-48a8-99fa-ac88884dc0e5",
+      "lx:question:b1b520ab-2759-4ded-abfa-2e5e7b0c9b8a",
+      "lx:question:b3a3c554-a8f2-4dd8-a8a1-b76f02d4159d",
+      "lx:question:b3c8c6bd-0e1e-40f9-90b7-764421a2654a",
+      "lx:question:b425e032-b16b-4a5a-8713-a0a94255d436",
+      "lx:question:b72b9c18-8fc7-489d-b1e9-3bd113441ff2",
+      "lx:question:b79f72dd-75b6-4a43-b13a-0e9e97f466ca",
+      "lx:question:b9d86b24-d972-4772-8e4f-1356b82bb7f8",
+      "lx:question:bc168dd7-7938-47f9-b641-fb1cfbc32e9e",
+      "lx:question:be56abfb-c6cd-486d-a170-d5943aadff17",
+      "lx:question:c337eb48-ea8c-4f6d-af78-7172822bb0d5",
+      "lx:question:c8da43d4-e5a9-463e-a98f-c4afd36db7c6",
+      "lx:question:c90d0313-6544-49b4-b693-db9931f217e7",
+      "lx:question:c9a38087-bb4a-4820-be2b-41d353340f13",
+      "lx:question:ca5dba38-5a71-4965-8a90-fa90c1ee1ae9",
+      "lx:question:ca5ffe2c-7618-47cd-a106-afb44b614495",
+      "lx:question:ca7391b0-e011-409e-856a-86d7fc33d465",
+      "lx:question:cc009b68-552b-4550-992a-af994b1c7d97",
+      "lx:question:cfd8e266-90d7-49f4-ac55-ba820fa8cd0a",
+      "lx:question:d1bb2bc5-ed9a-4f34-9129-fc5a8aa84ff5",
+      "lx:question:d2e48691-5eb9-4d04-9f10-f8ee05862b2b",
+      "lx:question:d80640c0-e807-4156-94f7-ad3c4da6a65a",
+      "lx:question:da532e6d-8034-4d73-a22f-5733409699e4",
+      "lx:question:dcb82b2b-7299-431d-9169-bb1bc5bf2282",
+      "lx:question:dd2d4bbe-0818-4403-b178-e8661a3a762c",
+      "lx:question:ddf490e9-b887-4974-85ea-3b57fdbbad84",
+      "lx:question:e0c837c6-9845-4394-bdc5-2fc6b7647d08",
+      "lx:question:e42faaa1-3314-4892-8809-b11ad42c8799",
+      "lx:question:ecc56fac-d938-4f3d-a53c-09fad0684f44",
+      "lx:question:f6b42362-9f1e-42b9-9155-5d750456ac97",
+      "lx:question:f74f5c37-767c-487a-b8ce-7741c0d192c1",
+      "lx:usage:0365d652-92ea-467c-8b30-7816d92e6927",
+      "lx:usage:0507df34-4de5-4eeb-bc36-c2094e44e58a",
+      "lx:usage:07c3df26-12fb-484b-bfa6-efd11f402277",
+      "lx:usage:07c58889-6e77-4efb-a75f-2b9c576dd8ac",
+      "lx:usage:0a4d0b0e-af68-4a49-83e4-4bec34d4e54a",
+      "lx:usage:137fc8b5-ef8a-4df0-9eb3-1bd424ac4495",
+      "lx:usage:173d5a85-0391-4227-95c3-4985b2a6779f",
+      "lx:usage:20b0558f-918f-41dd-bec8-2a3b9118d624",
+      "lx:usage:258cd6a4-d94d-4c99-b473-2b5e82a11902",
+      "lx:usage:2aab3654-b856-4c3d-a8e5-8fa5003a36ea",
+      "lx:usage:36756aeb-b1bb-47b6-a6f2-675f4e2347ba",
+      "lx:usage:36d37672-8973-4bee-80d8-48c0e260e603",
+      "lx:usage:390e9d19-da7b-4bc0-8448-28a59039086e",
+      "lx:usage:3dd68ead-1dc0-4ae9-831b-379e5f2d382a",
+      "lx:usage:3f124dc0-dec4-42a1-888f-9af1f09ee635",
+      "lx:usage:451930bc-89f9-40af-9b8b-696db88e96a0",
+      "lx:usage:49facfd5-5719-4041-b331-d30b170f03b0",
+      "lx:usage:4f077e10-7aa1-4a97-8067-2b6b4bb5c9fa",
+      "lx:usage:51d2a6e1-0537-424d-91a2-bfa28b573d7b",
+      "lx:usage:5c0287fe-a95a-4348-ba0b-cf44f2f19532",
+      "lx:usage:5f02e7f5-d076-4d40-bc8e-4d9a58c9817c",
+      "lx:usage:648d1045-7dde-4c61-831e-4e6e4982138b",
+      "lx:usage:6cf21c4e-e6db-4f6c-8177-17d63f7e1284",
+      "lx:usage:74d4d507-ed02-42e2-857f-2a84062518a9",
+      "lx:usage:7fb4e59f-59d7-43ab-ab28-1c51f3f22b4b",
+      "lx:usage:8218e3ae-3d2e-46a7-bc07-a3cad634eead",
+      "lx:usage:85f6a330-b83f-4dd9-ace7-2d9c51553375",
+      "lx:usage:8a4767d2-9b42-44f4-a913-97ca514300dd",
+      "lx:usage:8d2eaf4e-a560-4221-83fa-aa812f78f408",
+      "lx:usage:9156e7e9-d7a5-4fb9-86c4-6708b7c074c7",
+      "lx:usage:92e43ed3-cf44-43c0-94fd-3c97cde551ba",
+      "lx:usage:a0a7b82f-2311-4965-805a-41452602c7d8",
+      "lx:usage:a45ef516-f631-4a63-879c-488340f6ab07",
+      "lx:usage:ab3a9ad9-8ef2-4438-911e-2640b221e252",
+      "lx:usage:ac799343-211f-4af3-91ab-28f7664a1ecb",
+      "lx:usage:ae8b56b2-da22-4ead-b237-c57ebc62fbba",
+      "lx:usage:af11fe4d-def3-491c-a06a-916e1481982e",
+      "lx:usage:b51c239e-2481-4274-99f7-93b3868925ab",
+      "lx:usage:bd61dbed-280e-4c1e-8439-bdc043405c57",
+      "lx:usage:be54a19c-b4ee-430c-8dba-19d8d74e8658",
+      "lx:usage:ce2c9258-88ed-4112-9fcb-b23639eb5279",
+      "lx:usage:d0e9f636-f773-474e-9aaa-23deca62bb40",
+      "lx:usage:dc16e0cb-69f1-4b6c-a5e9-d20cdc0922a5",
+      "lx:usage:e84a9d9c-2614-4459-94d1-e79fe30aca9b",
+      "lx:usage:f37d9531-566c-4ca8-9c5b-b35c61d12c69",
+      "lx:usage:f46fe7aa-5b78-4689-9725-5b42d0b5e56e",
+      "lx:usage:f8f7714d-b2c5-45cd-b847-4b4878cd1d92",
+      "lx:usage:f90200b5-6318-4267-9b85-a2ebdfbfbda6",
+      "lx:usage:fa422671-c26f-4104-afd0-b4d1bc7e4d00",
+      "lx:usage:ff9ad54e-3bb6-4ecc-84b4-b804dd416f6d"
+    ],
+    "human_accepted_count": 0,
+    "human_status": "pending",
+    "maximum": 150,
+    "ordinary_draw_count": 0,
+    "planned_count": 150,
+    "seed": 111,
+    "selection_rule": "all source-rights warning question/teaching records; ordinary strata minimum 1 when a nonflagged population exists; SHA256(seed|stratum|record_id) rank, ID tie-break; high-risk census never capped away",
+    "strata": {
+      "question:contextual_choice": 1,
+      "question:meaning_recognition": 1,
+      "question:writing": 1,
+      "teaching:contextual_choice": 1,
+      "teaching:meaning_recognition": 1,
+      "teaching:writing": 1
+    },
+    "unflagged_population_count": 0
+  },
+  "input_tokens": null,
+  "ledger": {
+    "events": 244,
+    "sha256": "65a3754c3ed3a1251aa8a8d2c50582bb66c45fda86d1d8e04cfa1c21132bef6c"
+  },
+  "measurement_basis": "read-only round-8 trial artifact accounting, not native acceptance",
+  "model_prompt_session_labels": [
+    {
+      "model": "openai/gpt-6.1-sol",
+      "prompt_hash": "9d4c4e62a64e65382eadcf92174de019179b4ca857d051f37cf3a6bb5b130618",
+      "receipt": "content/jobs/pilot-50/receipts/batch-author-1.json",
+      "session": null,
+      "session_identity": {
+        "basis": "Actual delegated task in this session; platform session identifier is not exposed to the worker. Coordinator must bind the genuine task return.",
+        "platform_session_id": null,
+        "role": "AUTHOR BATCH 1"
+      },
+      "sha256": "03cb9815e4e2046a9e82a98e839cfb0e56c40894d6b21149326179fe4ff4c723"
+    },
+    {
+      "model": "openai/gpt-6.1-sol",
+      "prompt_hash": "9d4c4e62a64e65382eadcf92174de019179b4ca857d051f37cf3a6bb5b130618",
+      "receipt": "content/jobs/pilot-50/receipts/batch-author-2.json",
+      "session": null,
+      "session_identity": {
+        "agent": "Sisyphus-Junior",
+        "role": "AUTHOR BATCH 2",
+        "session_id": null,
+        "session_id_basis": "The delegated runtime does not expose its own session identifier; coordinator must bind this receipt to the actual dispatch session. No session ID is fabricated."
+      },
+      "sha256": "2c83b39aa6534265b81359aa4dc90f9783444735d9741c065347d61603fc1c27"
+    },
+    {
+      "model": "openai/gpt-6.1-sol",
+      "prompt_hash": "9d4c4e62a64e65382eadcf92174de019179b4ca857d051f37cf3a6bb5b130618",
+      "receipt": "content/jobs/pilot-50/receipts/fix-batch-10.json",
+      "session": "S-C8-train-fix-round8",
+      "session_identity": null,
+      "sha256": "75a4c07eae0c64f71ec18becfe5d6d491fc018ea83118428165f8ff09dcf12bc"
+    },
+    {
+      "model": "openai/gpt-6.1-sol",
+      "prompt_hash": "9d4c4e62a64e65382eadcf92174de019179b4ca857d051f37cf3a6bb5b130618",
+      "receipt": "content/jobs/pilot-50/receipts/fix-batch-2.json",
+      "session": null,
+      "session_identity": {
+        "blind": false,
+        "model": "openai/gpt-6.1-sol",
+        "original_author_session": "ses_ed4a4bc6cffedTbV6hQ4ekWrDW",
+        "post_fix_review_claimed": false,
+        "previous_role": "language-and-question-review",
+        "role_change": "Explicit coordinator NEW JOB reuses the reviewing session as generator-fix. This session must not independently review or blind-solve its revision-2 output.",
+        "session_id": "ses_ed4616687ffe8mx4HjwG1oa6VK"
+      },
+      "sha256": "7c15891951b59e2e932c22adc6b86d61bdc175393e929a25b3f71c85b51cc626"
+    },
+    {
+      "model": "openai/gpt-6.1-sol",
+      "prompt_hash": "9d4c4e62a64e65382eadcf92174de019179b4ca857d051f37cf3a6bb5b130618",
+      "receipt": "content/jobs/pilot-50/receipts/fix-batch-3.json",
+      "session": null,
+      "session_identity": {
+        "answers_visible": true,
+        "blind": false,
+        "cross_model_validation": false,
+        "findings_and_reviews_read": true,
+        "independent_review_of_own_fixes": false,
+        "model": "openai/gpt-6.1-sol",
+        "permanently_disqualified_from_blind_solving": true,
+        "platform_session_id": null,
+        "platform_session_id_basis": "No current platform session ID is exposed to this worker. S-C is the delegated role label, not an invented platform ID; coordinator must bind the genuine task return.",
+        "role": "S-C secondary generator-fix"
+      },
+      "sha256": "59f26cfdafd623590829be581368f02c0af71ee9cc8e54c50952471b104aea2e"
+    },
+    {
+      "model": "openai/gpt-6.1-sol",
+      "prompt_hash": "9d4c4e62a64e65382eadcf92174de019179b4ca857d051f37cf3a6bb5b130618",
+      "receipt": "content/jobs/pilot-50/receipts/fix-batch-4.json",
+      "session": null,
+      "session_identity": {
+        "answers_visible": true,
+        "blind": false,
+        "cross_model_validation": false,
+        "independent_review_of_own_fixes": false,
+        "model": "openai/gpt-6.1-sol",
+        "permanently_disqualified_from_blind_solving": true,
+        "platform_session_id": null,
+        "platform_session_id_basis": "Not exposed; coordinator must bind authentic task return.",
+        "role": "S-C2 fresh FIX successor; S-C timed out"
+      },
+      "sha256": "42142d359b025cddb50b2f57efe354efdde048afe8a932940483b21c6fd7765c"
+    },
+    {
+      "model": "openai/gpt-6.1-sol",
+      "prompt_hash": "9d4c4e62a64e65382eadcf92174de019179b4ca857d051f37cf3a6bb5b130618",
+      "receipt": "content/jobs/pilot-50/receipts/fix-batch-5.json",
+      "session": null,
+      "session_identity": {
+        "answers_visible": true,
+        "blind": false,
+        "cross_model_validation": false,
+        "independent_review_of_own_fixes": false,
+        "model": "openai/gpt-6.1-sol",
+        "permanently_disqualified_from_blind_solving": true,
+        "platform_session_id": null,
+        "platform_session_id_basis": "Not exposed; genuine coordinator dispatch binding remains pending.",
+        "role": "S-C3 fresh FIX; lineage S-C/S-C2"
+      },
+      "sha256": "cc1ad39a2edf96890b3c8c06d32dcd6006f55d73c08ec0626681180b249d5a27"
+    },
+    {
+      "model": "openai/gpt-6.1-sol",
+      "prompt_hash": "9d4c4e62a64e65382eadcf92174de019179b4ca857d051f37cf3a6bb5b130618",
+      "receipt": "content/jobs/pilot-50/receipts/fix-batch-6.json",
+      "session": null,
+      "session_identity": {
+        "answers_visible": true,
+        "blind": false,
+        "cross_model_validation": false,
+        "independent_review_of_own_fixes": false,
+        "model": "openai/gpt-6.1-sol",
+        "permanently_disqualified_from_blind_solving": true,
+        "platform_session_id": null,
+        "platform_session_id_basis": "No authenticated session ID exposed; coordinator binding still pending.",
+        "role": "S-C4 FIX; successor lineage S-C/S-C2/S-C3"
+      },
+      "sha256": "0277f5a5f145f6c41b0c162fa60b45a99f5ccde92badde59a18b86ac53d5bb98"
+    },
+    {
+      "model": "openai/gpt-6.1-sol",
+      "prompt_hash": "9d4c4e62a64e65382eadcf92174de019179b4ca857d051f37cf3a6bb5b130618",
+      "receipt": "content/jobs/pilot-50/receipts/fix-batch-7.json",
+      "session": null,
+      "session_identity": {
+        "answers_visible": true,
+        "blind": false,
+        "cross_model_validation": false,
+        "independent_review_of_own_fixes": false,
+        "model": "openai/gpt-6.1-sol",
+        "permanently_disqualified_from_blind_solving": true,
+        "platform_session_id": null,
+        "platform_session_id_basis": "Authenticated session identifier not exposed; coordinator session binding pending.",
+        "role": "S-C5 FIX successor, fresh answer-visible execution"
+      },
+      "sha256": "e2dd6eea7eec0a85be35a17c5c060ab5ea1b9c054e32ed36541c57c7250beb77"
+    },
+    {
+      "model": "openai/gpt-6.1-sol",
+      "prompt_hash": "9d4c4e62a64e65382eadcf92174de019179b4ca857d051f37cf3a6bb5b130618",
+      "receipt": "content/jobs/pilot-50/receipts/fix-batch-8.json",
+      "session": "S-C6-train-fix-round6",
+      "session_identity": null,
+      "sha256": "7f5b5b191369350539529264bf55637261117eddddaa340b93e6e406f871f564"
+    },
+    {
+      "model": "openai/gpt-6.1-sol",
+      "prompt_hash": "9d4c4e62a64e65382eadcf92174de019179b4ca857d051f37cf3a6bb5b130618",
+      "receipt": "content/jobs/pilot-50/receipts/fix-batch-9.json",
+      "session": "S-C7-train-fix-round7",
+      "session_identity": null,
+      "sha256": "5e67117147f82187c6b473a1f60621a471b74416f5f4e6d184d7e5d8dc05769b"
+    },
+    {
+      "model": "openai/gpt-6.1-sol",
+      "prompt_hash": "9fbe7926eb630f6633b1aa8d7835b6a7d5fa01bde556e82b85511fdef86c9b9c",
+      "receipt": "content/jobs/pilot-50/receipts/check-batch-1.json",
+      "session": null,
+      "session_identity": {
+        "authenticated_session_comparison": "pending_coordinator_binding",
+        "author_role": "AUTHOR BATCH 1",
+        "basis": "Actual independent delegated CHECK-AUTHOR task, not AUTHOR BATCH 1. Worker instance UUID is local receipt identity, not a fabricated platform session ID. Neither worker has an exposed platform session ID; coordinator must bind the genuine task return.",
+        "distinct_delegated_role": true,
+        "platform_session_id": null,
+        "role": "CHECK-AUTHOR BATCH 1",
+        "worker_instance_id": "7f713ce1-0554-46e0-a2c2-d357226563da"
+      },
+      "sha256": "f2f1dfacaa334a8470d1939178336f95eb13fe15ef126b542566e0d178b04d97"
+    },
+    {
+      "model": "openai/gpt-6.1-sol",
+      "prompt_hash": "9fbe7926eb630f6633b1aa8d7835b6a7d5fa01bde556e82b85511fdef86c9b9c",
+      "receipt": "content/jobs/pilot-50/receipts/check-batch-2.json",
+      "session": null,
+      "session_identity": {
+        "agent": "Sisyphus-Junior",
+        "distinct_author_context": true,
+        "platform_session_distinction_verified": false,
+        "role": "CHECK-AUTHOR BATCH 2",
+        "session_id": null,
+        "session_id_basis": "Delegated runtime does not expose its own platform session ID. Coordinator must bind actual dispatch session; no platform identity is fabricated."
+      },
+      "sha256": "8cc922d7b9f3c1da59eb01e93330f44feeda7a9f2d9c7973f52a9a8a14e145e7"
+    },
+    {
+      "model": "openai/gpt-6.1-sol",
+      "prompt_hash": "9fbe7926eb630f6633b1aa8d7835b6a7d5fa01bde556e82b85511fdef86c9b9c",
+      "receipt": "content/jobs/pilot-50/receipts/check-fix2.json",
+      "session": null,
+      "session_identity": null,
+      "sha256": "b4a199c180036b672dd0cda1db0476ce75376a4970f5aeb6fe6e9c2c06ddbf8d"
+    },
+    {
+      "model": "openai/gpt-6.1-sol",
+      "prompt_hash": "9fbe7926eb630f6633b1aa8d7835b6a7d5fa01bde556e82b85511fdef86c9b9c",
+      "receipt": "content/jobs/pilot-50/receipts/check-fix3.json",
+      "session": null,
+      "session_identity": null,
+      "sha256": "7f54b0afde26ed7110d321e579b7a2f9a3225c1cd57276fbac3329748362a615"
+    },
+    {
+      "model": "openai/gpt-6.1-sol",
+      "prompt_hash": "9fbe7926eb630f6633b1aa8d7835b6a7d5fa01bde556e82b85511fdef86c9b9c",
+      "receipt": "content/jobs/pilot-50/receipts/check-fix4.json",
+      "session": null,
+      "session_identity": null,
+      "sha256": "87baf1a45c1e266e3bf9f27417d803a3d7d415d24bb0182793a8abfe97d607fb"
+    },
+    {
+      "model": "openai/gpt-6.1-sol",
+      "prompt_hash": "9fbe7926eb630f6633b1aa8d7835b6a7d5fa01bde556e82b85511fdef86c9b9c",
+      "receipt": "content/jobs/pilot-50/receipts/check-fix5.json",
+      "session": null,
+      "session_identity": null,
+      "sha256": "581607169ba73b8f9ddd0b5ae5cdabf3a2f91c7cba95d74aca9d0e7e958b9ab2"
+    },
+    {
+      "model": "openai/gpt-6.1-sol",
+      "prompt_hash": "9fbe7926eb630f6633b1aa8d7835b6a7d5fa01bde556e82b85511fdef86c9b9c",
+      "receipt": "content/jobs/pilot-50/receipts/check-fix6.json",
+      "session": null,
+      "session_identity": null,
+      "sha256": "9ded78431fad478ee63de83ac5f92e5aeae0e709fa93b89169dfb3eb15040f78"
+    },
+    {
+      "model": "openai/gpt-6.1-sol",
+      "prompt_hash": "9fbe7926eb630f6633b1aa8d7835b6a7d5fa01bde556e82b85511fdef86c9b9c",
+      "receipt": "content/jobs/pilot-50/receipts/check-fix7.json",
+      "session": null,
+      "session_identity": null,
+      "sha256": "50ea7b52021494de7ef666c285224f7c2e77f8fdda9b98d3ac15f612493043ca"
+    }
+  ],
+  "output_tokens": null,
+  "quarantined_tool_reported": null,
+  "question_denominator": 100,
+  "raw_current_review_verdict_counts": {
+    "entry": {
+      "passed": 32,
+      "quarantined": 18
+    },
+    "provenance": {
+      "passed": 154,
+      "quarantined": 92
+    },
+    "question": {
+      "passed": 98,
+      "quarantined": 2
+    },
+    "sense": {
+      "passed": 50,
+      "quarantined": 33
+    },
+    "target": {
+      "passed": 26,
+      "quarantined": 24
+    },
+    "teaching": {
+      "passed": 33,
+      "quarantined": 17
+    }
+  },
+  "recommendation": "blocked-on-writing-contract",
+  "record_counts": {
+    "entry": 50,
+    "provenance": 333,
+    "question": 100,
+    "sense": 83,
+    "target": 50,
+    "teaching": 50
+  },
+  "release_eligible": false,
+  "reviewer_labels": [
+    "S-D-review-check-1-chunk-1",
+    "S-D-review-check-2-chunk-1",
+    "S-D-review-fixed2-1-chunk-1",
+    "S-D-review-fixed2-1-chunk-2",
+    "S-D-review-fixed2-2-chunk-1",
+    "S-D-review-fixed2-2-chunk-2",
+    "S-D-review-refix-1-chunk-1",
+    "S-D-review-refix-1-chunk-2",
+    "S-D-review-refix-2-chunk-1",
+    "S-D-review-refix-2-chunk-2",
+    "S-D3-review-reverify-round2-20261012",
+    "S-D4-review-reverify-round3",
+    "S-D5-review-reverify-round4",
+    "S-D6-review-reverify-round5",
+    "S-D7-review-reverify-round6",
+    "S-D8-review-reverify-round7",
+    "S-D9-review-reverify-round8",
+    "ses_ed4616687ffe8mx4HjwG1oa6VK",
+    "unbound:LANGUAGE+QUESTION REVIEWER BATCH 1"
+  ],
+  "sample_denominator": 150,
+  "sample_seed": 111,
+  "schema": "lexvane.pilot-trial-metrics.v1",
+  "session_disclosure": "same-model separate sessions; null platform IDs and task-local labels are not provider authentication or cross-model validation",
+  "stage_counts": {
+    "agent_accepted_tool_reported": null,
+    "candidate_words": 50,
+    "human_accepted": 0,
+    "private_pack_allowed": 0,
+    "public_distribution_allowed": 0
+  },
+  "unresolved_blocking_findings": 2,
+  "unresolved_critical_findings": 0,
+  "word_denominator": 50,
+  "writing_isolation": {
+    "contract": "Task6 frozen single-solution (decision A/A1); multi-answer writings cannot pass without contract change",
+    "decided": "2026-10-13 Sisyphus root, per standing decision A direction; contract change (A2) explicitly not taken",
+    "family": "writing pair contaminated (isolated, never forwarded)",
+    "isolation_set": "writing-contract-blocked-permanent",
+    "questions_accepted": "98/100 current questions passed; 2 isolated",
+    "subjects": [
+      {
+        "question_id": "lx:question:3751e6fa-6dcc-460f-9bb0-66d681bf6b2a",
+        "reason": "well-known/well-recognized/well-publicized all satisfy constraints; forcing spelling=cue, ability change=shape violation, silent alias=unauthorized",
+        "revision": 3,
+        "source": "content/records/pilot-50/fixed3-batch-1.jsonl#L1",
+        "split": "train"
+      },
+      {
+        "question_id": "lx:question:e0c837c6-9845-4394-bdc5-2fc6b7647d08",
+        "reason": "broadly recognized unlisted alternative satisfies constraints; finite transformation repeats teaching procedure",
+        "revision": 7,
+        "source": "content/records/pilot-50/check-fix6-1.jsonl#L7",
+        "split": "check"
+      }
+    ],
+    "target_id": "lx:target:bf7b049b-a730-4601-bbb5-66aca9719be1",
+    "task9_status": "honest-partial [ ] (Task3 precedent); dual gates 65 with evidence; Task10 input blocked-on-writing-contract",
+    "words_accepted": "49/50 distinct words fully accepted; 1 word (writing ability) isolated"
+  }
+}
