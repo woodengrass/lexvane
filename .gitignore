@@ -18,6 +18,14 @@ CACHEDIR.TAG
 content/jobs/
 content/reviews/*
 !content/reviews/REVIEW-INSTRUCTIONS.md
+# Current-tree triage packet: reproducible via `contentkit reports
+# current-recheck` (see content/reports/CURRENT-TRIAGE.md); tracked so the
+# pending owner review stays visible. Raw scan filenames stay excluded.
+!content/reviews/pilot-230-current/
+content/reviews/pilot-230-current/*
+!content/reviews/pilot-230-current/triage/
+content/reviews/pilot-230-current/triage/evidence.json
+content/reviews/pilot-230-current/triage/evidence-*.json
 content/records/*/*
 !content/records/*/merged/
 # Original authored word/phrase batches (read by WordPilot/PhrasePilot tests).
