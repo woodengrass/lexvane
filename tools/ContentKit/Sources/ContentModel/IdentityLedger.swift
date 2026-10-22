@@ -12,7 +12,7 @@ public struct IdentityFailure: Error, CustomStringConvertible, Equatable {
 }
 public enum IdentityKind: String, Codable, CaseIterable { case word, phrase, sense, usage, target, question, family }
 public enum IdentityBasis: String, Codable { case coordinator, translation }
-public enum IdentityOperation: String, Codable { case issue, revise, split, merge }
+public enum IdentityOperation: String, Codable { case issue, registerExisting, revise, split, merge }
 public struct IdentityDraft {
     public var kind: IdentityKind
     public var issuanceKey: String
@@ -43,6 +43,26 @@ public struct IdentityRevision {
         self.id = id; self.contentHash = contentHash; self.semanticHash = semanticHash; self.vendorIds = vendorIds
     }
 }
+/// A document observed at adoption time, not an assertion about historical issuance.
+public struct IdentityObservation: Codable, Equatable {
+    public let recordId: String
+    public let revision: Int
+    public let contentSha256: String
+    public init(recordId: String, revision: Int, contentSha256: String) {
+        self.recordId = recordId; self.revision = revision; self.contentSha256 = contentSha256
+    }
+}
+public struct IdentityRegistration {
+    public let id: String
+    public let draft: IdentityDraft
+    public let observations: [IdentityObservation]
+    public let reason: String
+    public let evidenceRefs: [String]
+    public init(id: String, draft: IdentityDraft, observations: [IdentityObservation], reason: String, evidenceRefs: [String]) {
+        self.id = id; self.draft = draft; self.observations = observations
+        self.reason = reason; self.evidenceRefs = evidenceRefs
+    }
+}
 public struct IdentityTransition {
     public let operation: IdentityOperation
     public let predecessors: [String]
@@ -63,6 +83,8 @@ public struct IdentityEvent: Codable {
     public let predecessors: [String]
     public let reason: String
     public let evidenceRefs: [String]
+    // Nil on historical events, so their canonical hash payload remains byte-compatible.
+    public var observations: [IdentityObservation]? = nil
 }
 public struct IdentitySnapshot {
     public var records: [String: IdentityRecord] = [:]
@@ -100,9 +122,15 @@ public enum IdentityLedger {
             guard event.sequence == state.eventCount + 1, event.previousHash == state.terminalHash,
                   try event.eventHash == digest(event) else { throw IdentityFailure("broken_append_chain") }
             guard !event.records.isEmpty else { throw IdentityFailure("empty_event") }
+            guard event.operation == .registerExisting || event.observations == nil else {
+                throw IdentityFailure("unexpected_registration_evidence")
+            }
             switch event.operation {
             case .issue:
                 guard event.records.count == 1, event.predecessors.isEmpty else { throw IdentityFailure("invalid_issue") }
+            case .registerExisting:
+                guard event.records.count == 1, event.predecessors.isEmpty else { throw IdentityFailure("invalid_registration") }
+                try validateRegistrationEvidence(event)
             case .revise:
                 guard event.records.count == 1, event.predecessors.isEmpty else { throw IdentityFailure("invalid_revision") }
             case .split, .merge:
@@ -118,11 +146,7 @@ public enum IdentityLedger {
                 state.retiredIds.formUnion(event.predecessors)
             }
             for record in event.records {
-                let parts = record.id.split(separator: ":")
-                guard parts.count == 3, parts[0] == "lx", parts[1] == record.kind.rawValue,
-                      UUID(uuidString: String(parts[2])) != nil, !record.issuanceKey.isEmpty,
-                      CKIdentityJSON.hashValid(record.contentHash), CKIdentityJSON.hashValid(record.semanticHash),
-                      Set(record.vendorIds).count == record.vendorIds.count else { throw IdentityFailure("invalid_record") }
+                try validateRecord(record)
                 if event.operation == .revise {
                     guard let old = state.records[record.id], !state.retiredIds.contains(record.id),
                           old.kind == record.kind, old.issuanceKey == record.issuanceKey,
@@ -137,6 +161,24 @@ public enum IdentityLedger {
             state.eventCount += 1; state.terminalHash = event.eventHash
         }
         return state
+    }
+    private static func validateRecord(_ record: IdentityRecord) throws {
+        let parts = record.id.split(separator: ":", omittingEmptySubsequences: false)
+        guard parts.count == 3, parts[0] == "lx", parts[1] == record.kind.rawValue,
+              UUID(uuidString: String(parts[2])) != nil,
+              !record.issuanceKey.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+              CKIdentityJSON.hashValid(record.contentHash), CKIdentityJSON.hashValid(record.semanticHash),
+              Set(record.vendorIds).count == record.vendorIds.count else { throw IdentityFailure("invalid_record") }
+    }
+    private static func validateRegistrationEvidence(_ event: IdentityEvent) throws {
+        func nonblank(_ value: String) -> Bool { !value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
+        guard nonblank(event.reason), !event.evidenceRefs.isEmpty, event.evidenceRefs.allSatisfy(nonblank),
+              Set(event.evidenceRefs).count == event.evidenceRefs.count,
+              let observations = event.observations, !observations.isEmpty,
+              Set(observations.map(\.recordId)).count == observations.count,
+              observations.allSatisfy({ nonblank($0.recordId) && $0.revision > 0 && CKIdentityJSON.hashValid($0.contentSha256) }) else {
+            throw IdentityFailure("invalid_registration_evidence")
+        }
     }
     private static func record(_ draft: IdentityDraft) throws -> IdentityRecord {
         switch draft.basis {
@@ -156,15 +198,22 @@ public enum IdentityLedger {
         return try action(events, replay(events), handle)
     }
     private static func append(_ event: IdentityEvent, events: [IdentityEvent], handle: FileHandle) throws {
-        var sealed = event; sealed.eventHash = try digest(event)
-        _ = try replay(events + [sealed])
+        try append([event], events: events, handle: handle)
+    }
+    private static func append(_ pending: [IdentityEvent], events: [IdentityEvent], handle: FileHandle) throws {
+        guard !pending.isEmpty else { return }
+        let sealed = try pending.map { event in
+            var value = event; value.eventHash = try digest(event); return value
+        }
+        _ = try replay(events + sealed)
         let length = try handle.seekToEnd()
         if length > 0 {
             try handle.seek(toOffset: length - 1)
             guard try handle.read(upToCount: 1) == Data([10]) else { throw IdentityFailure("unterminated_ledger") }
             try handle.seekToEnd()
         }
-        try handle.write(contentsOf: Data((try CKIdentityJSON.line(sealed) + "\n").utf8))
+        let lines = try sealed.map { try CKIdentityJSON.line($0) + "\n" }.joined()
+        try handle.write(contentsOf: Data(lines.utf8))
         try handle.synchronize()
     }
     public static func issue(_ draft: IdentityDraft, at url: URL) throws -> IdentityRecord {
@@ -178,6 +227,48 @@ public enum IdentityLedger {
                 operation: .issue, records: [candidate], predecessors: [], reason: "coordinator_issuance", evidenceRefs: [])
             try append(event, events: events, handle: handle)
             return candidate
+        }
+    }
+    /// Adopt an already assigned opaque ID. Ledger revision 1 means adoption now;
+    /// source document revisions are retained separately in observations.
+    public static func registerExisting(_ registration: IdentityRegistration, at url: URL) throws -> IdentityRecord {
+        try registerExisting([registration], at: url)[0]
+    }
+    /// Validate a whole adoption batch under one lock before appending any of it.
+    public static func registerExisting(_ registrations: [IdentityRegistration], at url: URL) throws -> [IdentityRecord] {
+        return try transaction(at: url) { events, state, handle in
+            var current = state
+            var keys = Set(state.records.values.map(\.issuanceKey))
+            var adoptions: [String: IdentityEvent] = [:]
+            for event in events where event.operation == .registerExisting {
+                adoptions[event.records[0].id] = event
+            }
+            var pending: [IdentityEvent] = []; var result: [IdentityRecord] = []
+            for registration in registrations {
+                guard registration.draft.basis == .coordinator else { throw IdentityFailure("translation_cannot_be_identity") }
+                let draft = registration.draft
+                let candidate = IdentityRecord(id: registration.id, kind: draft.kind, issuanceKey: draft.issuanceKey,
+                    revision: 1, contentHash: draft.contentHash, semanticHash: draft.semanticHash, vendorIds: draft.vendorIds)
+                try validateRecord(candidate)
+                var event = IdentityEvent(sequence: current.eventCount + 1, previousHash: current.terminalHash, eventHash: "",
+                    operation: .registerExisting, records: [candidate], predecessors: [], reason: registration.reason,
+                    evidenceRefs: registration.evidenceRefs, observations: registration.observations)
+                try validateRegistrationEvidence(event)
+                guard !current.retiredIds.contains(candidate.id) else { throw IdentityFailure("unknown_or_retired_identity") }
+                if let old = current.records[candidate.id] {
+                    guard old == candidate, let adoption = adoptions[candidate.id],
+                          adoption.reason == event.reason, adoption.evidenceRefs == event.evidenceRefs,
+                          adoption.observations == event.observations else { throw IdentityFailure("registration_conflict") }
+                    result.append(old); continue
+                }
+                guard keys.insert(candidate.issuanceKey).inserted else { throw IdentityFailure("issuance_key_conflict") }
+                event.eventHash = try digest(event)
+                pending.append(event); adoptions[candidate.id] = event; result.append(candidate)
+                current.records[candidate.id] = candidate
+                current.eventCount += 1; current.terminalHash = event.eventHash
+            }
+            try append(pending, events: events, handle: handle)
+            return result
         }
     }
     public static func revise(_ revision: IdentityRevision, at url: URL) throws -> IdentityRecord {
