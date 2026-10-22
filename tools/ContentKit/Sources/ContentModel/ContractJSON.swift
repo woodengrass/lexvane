@@ -42,7 +42,7 @@ public enum ContractJSON {
         decoder.userInfo[sealingKey] = sealing
         do {
             let header = try decoder.decode(Header.self, from: data)
-            try ContractRules.require(header.schema == "lexvane.content.v1", "unknown_schema")
+            try ContractRules.schema(header.schema, kind: header.kind)
             switch header.kind {
             case .entry: return .entry(try decoder.decode(Entry.self, from: data))
             case .sense: return .sense(try decoder.decode(Sense.self, from: data))

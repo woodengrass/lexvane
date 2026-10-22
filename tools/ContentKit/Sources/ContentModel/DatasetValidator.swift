@@ -204,7 +204,17 @@ public enum DatasetValidator {
                 let p = v.payload
                 edge("subject_id", p.subjectId, p.subjectKind)
                 for (index, field) in p.fields.enumerated() {
-                    sourcesAt("fields[\(index)].source_refs", field.sourceRefs)
+                    let sourceKey = v.schema == "lexvane.provenance.v2" ? "external_source_refs" : "source_refs"
+                    sourcesAt("fields[\(index)].\(sourceKey)", field.sourceRefs)
+                    for source in field.sourceRefs where !sourceIDs.contains(source.sourceId) {
+                        fail(.danglingReference, id, "payload.fields[\(index)].\(sourceKey)", source.sourceId)
+                    }
+                    if !(field.unverifiedRefs ?? []).isEmpty {
+                        fail(.evidenceClosure, id, "payload.fields[\(index)].unverified_refs", "origin preserved but not externally verified")
+                    }
+                    for evidence in field.internalEvidenceRefs ?? [] where evidence.availability == .unresolved {
+                        fail(.evidenceClosure, id, "payload.fields[\(index)].internal_evidence_refs", "unresolved local work artifact: \(evidence.ref); not proof")
+                    }
                     let operation: SourceOperation?
                     switch field.method {
                     case .reference: operation = .reference
@@ -446,10 +456,22 @@ public enum DatasetValidator {
             } catch { fail(.evidenceClosure, id, field, "\(ref): \(error)"); return nil }
         }
         var generatorSessions: [String: Set<String>] = [:]
+        var provenanceHistories: [String: ProvenanceHistory] = [:]
         for record in records {
             guard case .provenance(let provenance) = record else { continue }
             let p = provenance.payload
             let id = provenance.recordId
+            var history: ProvenanceHistory?
+            do {
+                if let evidence = p.migrationEvidence {
+                    if provenanceHistories[evidence.historyRef] == nil {
+                        provenanceHistories[evidence.historyRef] = try ProvenanceHistory(at: JobLedger.localURL(evidence.historyRef, base: base))
+                    }
+                    history = provenanceHistories[evidence.historyRef]
+                }
+                try ProvenanceValidator.validateLocalEvidence(provenance, base: base, history: history)
+            }
+            catch { fail(.evidenceClosure, id, "payload.internal_evidence_refs", String(describing: error)) }
             if let result = receipt(p.runReceiptRef, id: id, field: "payload.run_receipt_ref") {
                 generatorSessions[p.subjectId, default: []].insert(result.sessionId)
                 if result.binding.jobId != p.workUnitRef || result.binding.model != p.model || result.binding.promptHash != p.promptHash {
@@ -484,7 +506,7 @@ public enum DatasetValidator {
                             humanModificationRefs: Set(p.humanModificationRefs.filter { ref in
                                 guard let url = try? JobLedger.localURL(ref, base: base) else { return false }
                                 return FileManager.default.fileExists(atPath: url.path)
-                            }), base: base)
+                            }), base: base, history: history)
                     } catch { fail(.evidenceClosure, id, "payload", String(describing: error)) }
                 }
             }

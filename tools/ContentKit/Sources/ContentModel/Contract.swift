@@ -27,6 +27,13 @@ public struct ContractSourceRef: Codable {
 public protocol ContractPayload: Codable {
     static var kind: ContractKind { get }
     func validate(recordId: String) throws
+    func validate(recordId: String, schema: String) throws
+}
+extension ContractPayload {
+    public func validate(recordId: String, schema: String) throws {
+        try ContractRules.require(schema == "lexvane.content.v1", "unknown_schema")
+        try validate(recordId: recordId)
+    }
 }
 public protocol ContractDocumentInfo: Encodable {
     var kind: ContractKind { get }
@@ -47,8 +54,8 @@ public struct ContentDocument<Payload: ContractPayload>: Codable, ContractDocume
     public init(from decoder: any Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
         schema = try c.decode(String.self, forKey: .schema)
-        try ContractRules.require(schema == "lexvane.content.v1", "unknown_schema")
         kind = try c.decode(ContractKind.self, forKey: .kind)
+        try ContractRules.schema(schema, kind: kind)
         try ContractRules.require(kind == Payload.kind, "kind_mismatch")
         recordId = try c.decode(String.self, forKey: .recordId)
         revision = try c.decode(Int.self, forKey: .revision)
@@ -57,7 +64,7 @@ public struct ContentDocument<Payload: ContractPayload>: Codable, ContractDocume
         try ContractRules.require(revision > 0 && ContractRules.present(recordId), "invalid_revision_or_id")
         let raw = try JSONShape(from: decoder)
         try raw.checkKeys(against: JSONDecoder().decode(JSONShape.self, from: ContractJSON.bytes(self)))
-        try payload.validate(recordId: recordId)
+        try payload.validate(recordId: recordId, schema: schema)
         if decoder.userInfo[ContractJSON.sealingKey] as? Bool == true {
             contentSha256 = try revisionHash()
         } else {
@@ -71,6 +78,9 @@ public struct ContentDocument<Payload: ContractPayload>: Codable, ContractDocume
     }
 }
 public enum ContractRules {
+    public static func schema(_ schema: String, kind: ContractKind) throws {
+        try require(schema == "lexvane.content.v1" || (schema == "lexvane.provenance.v2" && kind == .provenance), "unknown_schema")
+    }
     public static func require(_ condition: Bool, _ reason: String) throws {
         if !condition { throw ContractFailure(reason) }
     }
