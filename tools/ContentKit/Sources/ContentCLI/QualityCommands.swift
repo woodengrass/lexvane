@@ -27,6 +27,14 @@ struct QualityProfile: Codable {
     var hardRejectDefects: [String]
     var unresolvedCriticalMaximum: Int
     var recommendation: ExpansionRecommendation
+    var questionEligibility: QuestionEligibilityPolicy? = nil
+
+    func validateEligibilityVersion() throws {
+        if profile == "pilot-quality-v3" && questionEligibility == nil {
+            throw QualityFailure(reason: "v3_requires_question_eligibility_policy")
+        }
+        try questionEligibility?.validate()
+    }
 }
 enum ExpansionRecommendation: String, Codable {
     case blocked = "blocked-on-writing-contract"
@@ -59,6 +67,10 @@ struct QualityAuditReport: Codable {
 
 enum QualityAudit {
     static func audit(profile: QualityProfile, trial: TrialQualityMetrics) throws -> QualityAuditReport {
+        try profile.validateEligibilityVersion()
+        if profile.questionEligibility != nil {
+            throw QualityFailure(reason: "v3_requires_whole_bank_audit_not_self_reported_trial_supply")
+        }
         guard !profile.activeAbilities.isEmpty,
               Set(profile.activeAbilities.map(\.rawValue)).count == profile.activeAbilities.count,
               Set(profile.perAbilityMinimums.keys) == Set(profile.activeAbilities.map(\.rawValue)) else {
@@ -118,7 +130,8 @@ public enum QualityCommands {
             guard let mode = arguments.first, ["audit-profile", "simulate"].contains(mode) else {
                 throw QualityFailure(reason: "unknown_quality_or_supply_command")
             }
-            let required = mode == "audit-profile" ? ["--profile", "--trial", "--evidence"] : ["--dataset", "--profile", "--scenario", "--seed", "--out"]
+            var required = mode == "audit-profile" ? ["--profile", "--trial", "--evidence"] : ["--dataset", "--profile", "--scenario", "--seed", "--out"]
+            if mode == "simulate" && arguments.contains("--reviews") { required.append("--reviews") }
             guard arguments.count == 1 + required.count * 2 else { throw QualityFailure(reason: "missing_explicit_flags") }
             var flags: [String: String] = [:]
             for index in stride(from: 1, to: arguments.count, by: 2) {
@@ -144,6 +157,7 @@ public enum QualityCommands {
                 }
             }
             let profile = try read(QualityProfile.self, path: profilePath)
+            try profile.validateEligibilityVersion()
             switch mode {
             case "audit-profile":
                 guard let trialPath = flags["--trial"] else { throw QualityFailure(reason: "missing_explicit_flags") }
@@ -170,7 +184,14 @@ public enum QualityCommands {
                     return nil
                 }
                 guard Set(targets) == Set(scenarios.targetIds) else { throw QualityFailure(reason: "scenario_target_coverage") }
-                let report = try SupplySimulation.simulate(questions: questions, request: SupplyRequest(profile: profile, scenarios: scenarios, seed: seed))
+                var request = SupplyRequest(profile: profile, scenarios: scenarios, seed: seed)
+                if profile.questionEligibility != nil {
+                    guard let reviewsPath = flags["--reviews"] else { throw QualityFailure(reason: "v3_requires_reviews") }
+                    let reviewRoot = URL(fileURLWithPath: reviewsPath)
+                    request.reviews = try QualityInventory.loadReviews(at: [reviewRoot])
+                    request.familyAudit = try FamiliesAudit.audit(dataset: directory, reviews: reviewRoot, profile: profile)
+                }
+                let report = try SupplySimulation.simulate(questions: questions, request: request)
                 try JobLedger.write(report, to: output)
                 print("valid=true seed=\(seed) allocations=\(report.allocations.count) acceptance_evaluated=false")
             default: throw QualityFailure(reason: "unknown_quality_or_supply_command")

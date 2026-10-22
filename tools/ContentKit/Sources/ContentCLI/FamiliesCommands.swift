@@ -45,10 +45,17 @@ struct FamiliesAuditReport: Codable {
     let excludedTargetIds: [String]
     let acceptanceEvaluated: Bool
     let releaseEligible: Bool
+    var qualityPolicyVersion: String? = nil
+    var questionManifestSha256: String? = nil
+    var qualifiedCheckQuestionIds: [String]? = nil
+    var qualifiedTrainQuestionIds: [String]? = nil
+    var shortages: [String]? = nil
+    var missingFamilyWork: [String]? = nil
 }
 
 enum FamiliesAudit {
     static func audit(dataset: URL, reviews: URL, profile: QualityProfile) throws -> FamiliesAuditReport {
+        try profile.validateEligibilityVersion()
         let records = try overlaidRecords(at: dataset)
         _ = try ContractDataset.validateEntries(records)
         let targets = records.compactMap { record -> Target? in
@@ -80,9 +87,12 @@ enum FamiliesAudit {
         }
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        let verdicts = try files(at: reviews).filter { $0.lastPathComponent.hasPrefix("family-verdicts") }.flatMap { file in
-            try CKJSONL.readLines(at: file).map { line in
+        let verdicts: [FamilyVerdict] = try files(at: reviews).filter {
+            $0.lastPathComponent.hasPrefix(profile.questionEligibility == nil ? "family-verdicts" : "family-")
+        }.flatMap { file in
+            try CKJSONL.readLines(at: file).compactMap { line -> FamilyVerdict? in
                 do { return try decoder.decode(FamilyVerdict.self, from: Data(line.utf8)) }
+                catch DecodingError.keyNotFound where profile.questionEligibility != nil { return nil }
                 catch DecodingError.keyNotFound(let key, _) where
                     ["currentMemberBindings", "currentTeachingBindings"].contains(key.stringValue) {
                     throw FamiliesFailure(reason: "missing_family_bindings:\(file.lastPathComponent):\(key.stringValue)")
@@ -91,6 +101,10 @@ enum FamiliesAudit {
             }
         }
         let checks = questions.filter { $0.payload.split == .check }
+        if let policy = profile.questionEligibility {
+            return try auditV3(targets: targets, questions: questions, teachings: teachings, verdicts: verdicts,
+                reviews: QualityInventory.loadReviews(at: [reviews]), profile: profile, policy: policy)
+        }
         for check in checks.sorted(by: { $0.recordId < $1.recordId }) {
             let targetId = check.payload.primaryTargetId
             let trains = questions.filter { $0.payload.primaryTargetId == targetId && $0.payload.split == .train }
@@ -145,6 +159,68 @@ enum FamiliesAudit {
         return FamiliesAuditReport(valid: true, denominatorSource: "dataset-current-revisions", checkCount: checks.count,
             independentCheckFamiliesByTarget: supply, excludedTargetIds: profile.excludedTargetIds.sorted(),
             acceptanceEvaluated: false, releaseEligible: false)
+    }
+
+    private static func auditV3(targets: [Target], questions: [Question], teachings: [Teaching],
+                                verdicts: [FamilyVerdict], reviews: [Review], profile: QualityProfile,
+                                policy: QuestionEligibilityPolicy) throws -> FamiliesAuditReport {
+        guard profile.perAbilityMinimums.values.allSatisfy({ $0.trainFamilies > 0 }) else {
+            throw FamiliesFailure(reason: "zero_train_supply")
+        }
+        let usable = questions.filter { QuestionEligibility.evaluate($0, policy: policy, reviews: reviews).eligible }
+        let trains = usable.filter { $0.payload.split == .train }
+        var qualified: [Question] = [], missing: [String] = []
+        checkLoop: for check in usable.filter({ $0.payload.split == .check }).sorted(by: { $0.recordId < $1.recordId }) {
+            let target = check.payload.primaryTargetId
+            let comparisons = questions.filter { $0.payload.primaryTargetId == target && $0.payload.split == .train }
+            let teaching = teachings.filter { $0.payload.primaryTargetId == target }
+            guard trains.contains(where: { $0.payload.primaryTargetId == target }) else {
+                missing.append("\(check.recordId):eligible_train_comparison_missing"); continue
+            }
+            for train in comparisons {
+                let rows = verdicts.filter { $0.targetId == target && $0.trainFamily == train.payload.familyId
+                    && $0.checkFamily == check.payload.familyId && $0.bindingsMatch(check: check, train: train, teaching: teaching) }
+                if rows.isEmpty || rows.contains(where: { $0.verdict != "independent"
+                    || !ContractRules.present($0.evidence) || !ContractRules.present($0.evaluatorSession)
+                    || !($0.findingIds ?? []).isEmpty })
+                    || train.payload.familyId == check.payload.familyId || copied(train.payload.stem, check.payload.stem) {
+                    missing.append("\(check.recordId):current_independent_family_evidence_missing_or_rejected:\(train.recordId)")
+                    continue checkLoop
+                }
+            }
+            let answers = check.payload.options.filter { check.payload.acceptedAnswers.contains($0.optionId) }.map(\.english)
+            let completed = answers.map { check.payload.stem.replacingOccurrences(of: "___", with: $0) } + [check.payload.stem]
+            if teaching.contains(where: { usage in usage.payload.examples.contains { example in
+                completed.contains { copied(example.english, $0) }
+            } }) {
+                missing.append("\(check.recordId):teaching_example_contamination"); continue
+            }
+            qualified.append(check)
+        }
+        var counts: [String: Int] = [:], shortages: [String] = []
+        for target in targets.sorted(by: { $0.recordId < $1.recordId }) where target.payload.activation == .active {
+            if profile.excludedTargetIds.contains(target.recordId) { continue }
+            guard profile.activeAbilities.contains(target.payload.testedAbility),
+                  let minimum = profile.perAbilityMinimums[target.payload.testedAbility.rawValue] else {
+                throw FamiliesFailure(reason: "active_target_missing_minimum:\(target.recordId)")
+            }
+            let checkCount = Set(qualified.filter { $0.payload.primaryTargetId == target.recordId }.map { $0.payload.familyId }).count
+            let trainCount = Set(trains.filter { $0.payload.primaryTargetId == target.recordId }.map { $0.payload.familyId }).count
+            counts[target.recordId] = checkCount
+            if checkCount < minimum.independentCheckFamilies || trainCount < minimum.trainFamilies {
+                shortages.append("\(target.recordId):train=\(trainCount)/\(minimum.trainFamilies):check=\(checkCount)/\(minimum.independentCheckFamilies)")
+            }
+        }
+        var report = FamiliesAuditReport(valid: shortages.isEmpty, denominatorSource: "dataset-current-revisions-quality-qualified-v3",
+            checkCount: questions.filter { $0.payload.split == .check }.count, independentCheckFamiliesByTarget: counts,
+            excludedTargetIds: profile.excludedTargetIds.sorted(), acceptanceEvaluated: false, releaseEligible: false)
+        report.qualityPolicyVersion = policy.version
+        report.questionManifestSha256 = QualityInventory.questionManifest(questions)
+        report.qualifiedCheckQuestionIds = qualified.map(\.recordId).sorted()
+        report.qualifiedTrainQuestionIds = trains.map(\.recordId).sorted()
+        report.shortages = shortages
+        report.missingFamilyWork = missing.sorted()
+        return report
     }
 
     private static func contaminated(_ target: String, _ check: String, _ findings: [String]) -> FamiliesFailure {
@@ -236,7 +312,7 @@ public enum FamiliesCommands {
             let profile = try decoder.decode(QualityProfile.self, from: Data(contentsOf: URL(fileURLWithPath: profilePath)))
             let report = try FamiliesAudit.audit(dataset: URL(fileURLWithPath: datasetPath), reviews: URL(fileURLWithPath: reviewsPath), profile: profile)
             try JobLedger.write(report, to: output)
-            print("valid=true checks=\(report.checkCount) active_targets=\(report.independentCheckFamiliesByTarget.count) acceptance_evaluated=false")
+            print("valid=\(report.valid) checks=\(report.checkCount) active_targets=\(report.independentCheckFamiliesByTarget.count) shortages=\(report.shortages?.count ?? 0) acceptance_evaluated=false")
             return 0
         } catch {
             fputs("\(error)\n", stderr)

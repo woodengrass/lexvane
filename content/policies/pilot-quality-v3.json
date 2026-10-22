@@ -1,0 +1,314 @@
+{
+  "schema": "lexvane.content-policy.v1",
+  "profile": "pilot-quality-v3",
+  "supersedes": "pilot-quality-v2",
+  "active_abilities": [
+    "contextual_choice",
+    "meaning_recognition"
+  ],
+  "excluded_target_ids": [
+    "lx:target:bf7b049b-a730-4601-bbb5-66aca9719be1",
+    "lx:target:d9b72d9f-9c59-4f79-8a6f-de0c7359d3ec"
+  ],
+  "per_ability_minimums": {
+    "contextual_choice": {
+      "train_families": 1,
+      "independent_check_families": 1
+    },
+    "meaning_recognition": {
+      "train_families": 1,
+      "independent_check_families": 1
+    }
+  },
+  "human_sample_policy": {
+    "seed": 111,
+    "denominator": 716,
+    "high_risk_count": 61,
+    "strata": {
+      "question:contextual_choice": 1,
+      "question:meaning_recognition": 1
+    },
+    "maximum": 716,
+    "high_risk_ids": [
+      "lx:question:02306907-3fa5-4c5e-a275-30c27806fdbf",
+      "lx:question:026092c6-5cbc-4a42-b2ac-f307329f24aa",
+      "lx:question:03870501-ae60-4632-a95b-969ea9c6f4c8",
+      "lx:question:0753e8a6-2d2a-4661-ba02-229c89c991bf",
+      "lx:question:0a37fb39-53f2-41f5-9164-f61b1a3961f9",
+      "lx:question:0cfb3804-2f96-499c-bbda-ac1b401cdda5",
+      "lx:question:0eff59f3-43ca-4700-9ffd-6890a9f4ed27",
+      "lx:question:1ab8cac2-6103-4a01-91dc-201d9c73ea59",
+      "lx:question:206bdd7a-6130-43e3-8096-b56fe5dfcda8",
+      "lx:question:264b4319-5cfe-4544-a563-f0d2fbf49a87",
+      "lx:question:2b475a68-c820-4169-a433-526185ad7f74",
+      "lx:question:2e8b77a6-94b4-4d5e-8ab1-b4be44fafb78",
+      "lx:question:35596d18-145c-4ce0-9401-6b52df0d5656",
+      "lx:question:41d66a2d-2670-48cc-947f-f95cc0d8ba32",
+      "lx:question:4259a793-284a-4f51-86c4-77f284ea7afd",
+      "lx:question:4587d5b5-81a0-4d7e-8a89-7eca5a245574",
+      "lx:question:49138093-9419-4657-bde1-461d8413c9fe",
+      "lx:question:4b742933-9448-4fc4-88e1-bcf9d288aaec",
+      "lx:question:4e2fd0e1-0d50-4900-b3af-9f7aeab8b678",
+      "lx:question:551b61ce-6af9-44d8-a9c2-62b8eeaeecd0",
+      "lx:question:56b72404-4e5e-4a78-8b81-6cb1c0010079",
+      "lx:question:5b93e627-63dc-4f06-940a-8cf90cdd4dd7",
+      "lx:question:5c458b57-4f6d-4148-8c8b-cce9b6dedf36",
+      "lx:question:604ced18-8d91-4fa2-8600-2e8e945e0ece",
+      "lx:question:62fa6dc1-6829-4cbe-b9d8-5de878b8b8c9",
+      "lx:question:68708610-e340-4b90-9031-f14bb612b85e",
+      "lx:question:68888225-a42d-4c29-95cb-5bc5d1f89196",
+      "lx:question:6e0726ce-484e-408d-97c3-ba91a999cec5",
+      "lx:question:72f3f9c4-3c81-430b-9715-1d4a8cf16341",
+      "lx:question:78d9083c-6b4e-4b84-ab7c-18bcddff9615",
+      "lx:question:7b7751e6-5bd0-4f82-9d9f-cee502bd31c5",
+      "lx:question:7c41cc28-38d1-4a01-869b-f663a1c18827",
+      "lx:question:7d0711c1-7f83-47fc-ad1a-7c6f2a3ce95e",
+      "lx:question:7e0f3940-1437-4810-8bfb-eaf54c93dee3",
+      "lx:question:7e9bed0a-65d9-47e9-acb5-d71e6368f6c5",
+      "lx:question:7fca3b34-8f35-4600-9a36-4cc625ab41bc",
+      "lx:question:800ff7bf-cc76-409d-acad-b6cfff6aba9c",
+      "lx:question:83e932d3-1055-461d-8948-e475bad23e2a",
+      "lx:question:86da2b59-d2f9-4380-9ac0-4cbf48433889",
+      "lx:question:8e46840d-ebb9-494c-86e7-7e316593a3d9",
+      "lx:question:90853134-6d81-4f12-8c11-1921cb52f1eb",
+      "lx:question:90a256a8-973f-4236-952a-f077c6f787dc",
+      "lx:question:93dde987-7696-41f7-8b99-7a9a2813d799",
+      "lx:question:945bd978-5eb0-4694-a23e-6a0e53b9fdaa",
+      "lx:question:9c920882-7a28-430c-b1be-bb7704656390",
+      "lx:question:9d9e2c2f-1eb1-4018-b0f0-1cf5efadcf96",
+      "lx:question:a40cad41-2642-41c1-babd-917a2b4cd7de",
+      "lx:question:a55cc9f8-1d70-48d9-b7ac-f52c66515444",
+      "lx:question:b1562ab7-7599-4e40-b30c-1b0853987d1a",
+      "lx:question:b68d03bb-8cc0-4829-8cd7-e616e98a3b1c",
+      "lx:question:bc2315b9-6926-4e9f-a14d-311efb5ae08c",
+      "lx:question:bd736276-fbd8-450d-b44b-290755f479d2",
+      "lx:question:c02f7d8f-bbf6-4163-8839-ef4e307e145d",
+      "lx:question:c3637896-8bf0-47a6-a0ea-95f391b833cb",
+      "lx:question:c822882b-a1f0-4fa6-8ba5-5494c9351f01",
+      "lx:question:cb0df250-3068-4be1-97df-eb72e37434ec",
+      "lx:question:e2edaae0-9cea-42fc-9856-ea7b18901d09",
+      "lx:question:e51b9c1a-942f-4d10-8409-4807e82a5e76",
+      "lx:question:e5aaf2aa-9d7b-422b-96a5-f9ed52485ebc",
+      "lx:question:e7cd2494-c7e2-41a0-be3d-124565e2bc90",
+      "lx:question:f667505b-75ba-4b2e-8063-4ef0efc8f856"
+    ],
+    "human_status": "pending",
+    "human_accepted_count": 0
+  },
+  "batch_sizes": {
+    "author": 25,
+    "review": 25,
+    "independent_check": 25
+  },
+  "hard_reject_defects": [
+    "answer",
+    "sense",
+    "authorization",
+    "missing_review",
+    "answer_leak",
+    "family_contamination",
+    "stale_revision",
+    "unresolved_writing_contract",
+    "implausible_distractor",
+    "multiple_correct_options"
+  ],
+  "unresolved_critical_maximum": 0,
+  "recommendation": "blocked-on-writing-contract",
+  "question_eligibility": {
+    "version": "question-eligibility-v3",
+    "assessments": [
+      {
+        "question_id": "lx:question:a951d963-098c-46fe-a63c-04e5b56e8b3a",
+        "revision": 2,
+        "content_sha256": "3fa305f4dbd6a6e982d84bef30f3773af0506cf5078b3bee4cc968f0ca069fb9",
+        "author_session": "ses_e9bb16cadffeuVCQNDBplNY1xX",
+        "evaluator_session": "ses_e9bc60208ffegwAOliKMGqzTpX",
+        "distractors": [
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "clinic is a credible health-facility confusion; the ordinary outpatient sense does not fit the combined emergency-department plus full-inpatient-wards description, without claiming no clinic can ever admit a patient.",
+              "evidence": [
+                "proposal content/history/question-quality-first-batch/snapshots/proposals/question-quality-replacements.json proposals[0] digest e54cfa3883057e80ebfe91a60dc51158cdb2b553fdb79e376172f70892c08e2f (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+                "reviewer report content/history/question-quality-first-batch/reviewer-report/question-proposal-review.md section 1 (hospital) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+                "sealed current row lx:question:a951d963-098c-46fe-a63c-04e5b56e8b3a revision 2 content_sha256 3fa305f4dbd6a6e982d84bef30f3773af0506cf5078b3bee4cc968f0ca069fb9"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": true,
+              "reason": "pharmacy is a credible medical-place confusion; dispensing medicines is not the described postoperative inpatient and emergency service.",
+              "evidence": [
+                "proposal content/history/question-quality-first-batch/snapshots/proposals/question-quality-replacements.json proposals[0] digest e54cfa3883057e80ebfe91a60dc51158cdb2b553fdb79e376172f70892c08e2f (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+                "reviewer report content/history/question-quality-first-batch/reviewer-report/question-proposal-review.md section 1 (hospital) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+                "sealed current row lx:question:a951d963-098c-46fe-a63c-04e5b56e8b3a revision 2 content_sha256 3fa305f4dbd6a6e982d84bef30f3773af0506cf5078b3bee4cc968f0ca069fb9"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "laboratory is a credible testing-facility confusion; laboratory work is not the ward-based accommodation described.",
+              "evidence": [
+                "proposal content/history/question-quality-first-batch/snapshots/proposals/question-quality-replacements.json proposals[0] digest e54cfa3883057e80ebfe91a60dc51158cdb2b553fdb79e376172f70892c08e2f (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+                "reviewer report content/history/question-quality-first-batch/reviewer-report/question-proposal-review.md section 1 (hospital) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+                "sealed current row lx:question:a951d963-098c-46fe-a63c-04e5b56e8b3a revision 2 content_sha256 3fa305f4dbd6a6e982d84bef30f3773af0506cf5078b3bee4cc968f0ca069fb9"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "option-a hospital is the single best completion: three nights after a major operation with an emergency department and full inpatient wards; broad institutional names or specialist uses of clinic are not equivalent ordinary completions of this full description.",
+          "evidence": [
+            "proposal content/history/question-quality-first-batch/snapshots/proposals/question-quality-replacements.json proposals[0] digest e54cfa3883057e80ebfe91a60dc51158cdb2b553fdb79e376172f70892c08e2f (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+            "reviewer report content/history/question-quality-first-batch/reviewer-report/question-proposal-review.md section 1 (hospital) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+            "sealed current row lx:question:a951d963-098c-46fe-a63c-04e5b56e8b3a revision 2 content_sha256 3fa305f4dbd6a6e982d84bef30f3773af0506cf5078b3bee4cc968f0ca069fb9"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "Stem neither spells hospital nor embeds it in a compound; medical-service clues test meaning rather than reveal letters. 'Full inpatient wards' is slightly less idiomatic than 'inpatient wards' but understandable and non-blocking per reviewer.",
+          "evidence": [
+            "proposal content/history/question-quality-first-batch/snapshots/proposals/question-quality-replacements.json proposals[0] digest e54cfa3883057e80ebfe91a60dc51158cdb2b553fdb79e376172f70892c08e2f (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+            "reviewer report content/history/question-quality-first-batch/reviewer-report/question-proposal-review.md section 1 (hospital) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+            "sealed current row lx:question:a951d963-098c-46fe-a63c-04e5b56e8b3a revision 2 content_sha256 3fa305f4dbd6a6e982d84bef30f3773af0506cf5078b3bee4cc968f0ca069fb9"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:2ade7b81-9020-42bd-80f9-5d4a2e4b3296",
+        "revision": 2,
+        "content_sha256": "07595a7b782e23f3bc4350a1adfc824c195a4363f19044e49959ce11bb58e9ae",
+        "author_session": "ses_e9bb16cadffeuVCQNDBplNY1xX",
+        "evaluator_session": "ses_e9bc60208ffegwAOliKMGqzTpX",
+        "distractors": [
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "candle is a related light/heat source campers might gather around, but its wax-and-wick combustion is not the depicted stone-ring pile of burning dry wood.",
+              "evidence": [
+                "proposal content/history/question-quality-first-batch/snapshots/proposals/question-quality-replacements.json proposals[1] digest b6f3f4a9e72b822164f3743ffc317729e1e3c8e0412c2ff07b76b6b2d1876d6d (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+                "reviewer report content/history/question-quality-first-batch/reviewer-report/question-proposal-review.md section 2 (fire) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+                "sealed current row lx:question:2ade7b81-9020-42bd-80f9-5d4a2e4b3296 revision 2 content_sha256 07595a7b782e23f3bc4350a1adfc824c195a4363f19044e49959ce11bb58e9ae"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": true,
+              "reason": "lamp is plausible campsite illumination, but a lamp is a lighting device, not the described open wood combustion; no claim that all lamps are flameless.",
+              "evidence": [
+                "proposal content/history/question-quality-first-batch/snapshots/proposals/question-quality-replacements.json proposals[1] digest b6f3f4a9e72b822164f3743ffc317729e1e3c8e0412c2ff07b76b6b2d1876d6d (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+                "reviewer report content/history/question-quality-first-batch/reviewer-report/question-proposal-review.md section 2 (fire) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+                "sealed current row lx:question:2ade7b81-9020-42bd-80f9-5d4a2e4b3296 revision 2 content_sha256 07595a7b782e23f3bc4350a1adfc824c195a4363f19044e49959ce11bb58e9ae"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "heater is a plausible warmth source on a cold night, but the text depicts open burning wood rather than a heating appliance; rationale no longer wrongly limits heaters to electricity or gas.",
+              "evidence": [
+                "proposal content/history/question-quality-first-batch/snapshots/proposals/question-quality-replacements.json proposals[1] digest b6f3f4a9e72b822164f3743ffc317729e1e3c8e0412c2ff07b76b6b2d1876d6d (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+                "reviewer report content/history/question-quality-first-batch/reviewer-report/question-proposal-review.md section 2 (fire) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+                "sealed current row lx:question:2ade7b81-9020-42bd-80f9-5d4a2e4b3296 revision 2 content_sha256 07595a7b782e23f3bc4350a1adfc824c195a4363f19044e49959ce11bb58e9ae"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "option-a fire identifies the exposed wood combustion: piled dry wood inside a circle of stones outdoors with flames rising from the burning wood; 'gathered around the ___' naturally permits all four nouns so no verb-selection giveaway.",
+          "evidence": [
+            "proposal content/history/question-quality-first-batch/snapshots/proposals/question-quality-replacements.json proposals[1] digest b6f3f4a9e72b822164f3743ffc317729e1e3c8e0412c2ff07b76b6b2d1876d6d (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+            "reviewer report content/history/question-quality-first-batch/reviewer-report/question-proposal-review.md section 2 (fire) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+            "sealed current row lx:question:2ade7b81-9020-42bd-80f9-5d4a2e4b3296 revision 2 content_sha256 07595a7b782e23f3bc4350a1adfc824c195a4363f19044e49959ce11bb58e9ae"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "fireplace has been removed; neither fire nor a compound containing it appears in the stem. Flames, wood and heat are legitimate semantic evidence; feedback distinguishes the depicted event without universal claims about other sources.",
+          "evidence": [
+            "proposal content/history/question-quality-first-batch/snapshots/proposals/question-quality-replacements.json proposals[1] digest b6f3f4a9e72b822164f3743ffc317729e1e3c8e0412c2ff07b76b6b2d1876d6d (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+            "reviewer report content/history/question-quality-first-batch/reviewer-report/question-proposal-review.md section 2 (fire) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+            "sealed current row lx:question:2ade7b81-9020-42bd-80f9-5d4a2e4b3296 revision 2 content_sha256 07595a7b782e23f3bc4350a1adfc824c195a4363f19044e49959ce11bb58e9ae"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:46a35e8b-d76b-46e8-b899-45b30fd9534d",
+        "revision": 5,
+        "content_sha256": "389f99a8fc0551844ea8183398c22d80240e435bc63f5f52fa38a5f156635cbd",
+        "author_session": "ses_e9bb16cadffeuVCQNDBplNY1xX",
+        "evaluator_session": "ses_e9bc60208ffegwAOliKMGqzTpX",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "daytime is a plausible work-period label in isolation, excluded by the specified overnight hours and darkness.",
+              "evidence": [
+                "proposal content/history/question-quality-first-batch/snapshots/proposals/question-quality-replacements.json proposals[2] digest 1d477b9c7f8c94f8b228e2d09b8ed92c656c255172c82f50a6479c3ba3d7cf92 (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+                "reviewer report content/history/question-quality-first-batch/reviewer-report/question-proposal-review.md section 3 (night) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+                "sealed current row lx:question:46a35e8b-d76b-46e8-b899-45b30fd9534d revision 5 content_sha256 389f99a8fc0551844ea8183398c22d80240e435bc63f5f52fa38a5f156635cbd"
+              ]
+            }
+          },
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "evening is a close dark-hours confusion, excluded by the midnight-to-five interval, not by darkness alone since evenings can also be dark.",
+              "evidence": [
+                "proposal content/history/question-quality-first-batch/snapshots/proposals/question-quality-replacements.json proposals[2] digest 1d477b9c7f8c94f8b228e2d09b8ed92c656c255172c82f50a6479c3ba3d7cf92 (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+                "reviewer report content/history/question-quality-first-batch/reviewer-report/question-proposal-review.md section 3 (night) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+                "sealed current row lx:question:46a35e8b-d76b-46e8-b899-45b30fd9534d revision 5 content_sha256 389f99a8fc0551844ea8183398c22d80240e435bc63f5f52fa38a5f156635cbd"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "afternoon is a plausible bakery work period in isolation, excluded by the explicit a.m. interval.",
+              "evidence": [
+                "proposal content/history/question-quality-first-batch/snapshots/proposals/question-quality-replacements.json proposals[2] digest 1d477b9c7f8c94f8b228e2d09b8ed92c656c255172c82f50a6479c3ba3d7cf92 (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+                "reviewer report content/history/question-quality-first-batch/reviewer-report/question-proposal-review.md section 3 (night) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+                "sealed current row lx:question:46a35e8b-d76b-46e8-b899-45b30fd9534d revision 5 content_sha256 389f99a8fc0551844ea8183398c22d80240e435bc63f5f52fa38a5f156635cbd"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "option-c night is the single best completion of 'work through the ___' for the explicit 12 a.m.-5 a.m. interval while still dark; it names the time-of-day sense, not a full twenty-four-hour day.",
+          "evidence": [
+            "proposal content/history/question-quality-first-batch/snapshots/proposals/question-quality-replacements.json proposals[2] digest 1d477b9c7f8c94f8b228e2d09b8ed92c656c255172c82f50a6479c3ba3d7cf92 (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+            "reviewer report content/history/question-quality-first-batch/reviewer-report/question-proposal-review.md section 3 (night) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+            "sealed current row lx:question:46a35e8b-d76b-46e8-b899-45b30fd9534d revision 5 content_sha256 389f99a8fc0551844ea8183398c22d80240e435bc63f5f52fa38a5f156635cbd"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "Stem contains neither night nor midnight; 'still dark' is a meaning clue, not an embedded answer. Clock notation adds modest reading demand but no alternative correct option. The editorial note overstates darkness as excluding evening and is not reused as evidence here.",
+          "evidence": [
+            "proposal content/history/question-quality-first-batch/snapshots/proposals/question-quality-replacements.json proposals[2] digest 1d477b9c7f8c94f8b228e2d09b8ed92c656c255172c82f50a6479c3ba3d7cf92 (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+            "reviewer report content/history/question-quality-first-batch/reviewer-report/question-proposal-review.md section 3 (night) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+            "sealed current row lx:question:46a35e8b-d76b-46e8-b899-45b30fd9534d revision 5 content_sha256 389f99a8fc0551844ea8183398c22d80240e435bc63f5f52fa38a5f156635cbd"
+          ]
+        }
+      }
+    ]
+  },
+  "quality_note": "Three independent v3 semantic assessments have been supplied for 3 revised questions; all other empty assessments means PENDING, never passed. Current content is not rewritten, quarantined or promoted. Census intent is not completed human review. Four options is only a structural gate. Binary train practice requires an explicit current independent contrast assessment; binary check and all three-option serving are denied. First-batch linguistic assessments for 3 revised questions recorded in content/policies/question-assessments-first-batch.json (author session ses_e9bb16cadffeuVCQNDBplNY1xX, evaluator session ses_e9bc60208ffegwAOliKMGqzTpX; proposal/reviewer evidence bound to current revision/hash). These are not full current reviews, independent family evidence, or human approval; full v3 gates still apply and the items may stay ineligible. Full evidence closure remains pending.",
+  "release_eligible": false,
+  "human_review_pending": true
+}
