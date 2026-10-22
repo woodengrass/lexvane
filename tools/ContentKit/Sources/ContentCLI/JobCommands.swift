@@ -113,6 +113,9 @@ public enum JobCommands {
             try CKPaths.ensureDirectory(at: output.deletingLastPathComponent())
             try JobLedger.write(report, to: output)
             print("valid=\(report.valid) stage=private-pack records=\(report.recordCount) defects=\(report.defects.count) human_review_pending=\(report.humanReviewPending) release_eligible=false")
+            for (code, count) in report.defectCounts.sorted(by: { ($1.value, $0.key) < ($0.value, $1.key) }) {
+                print("  \(code)=\(count)")
+            }
             return report.valid ? 0 : 65
         } catch {
             fputs("\(error)\n", stderr)

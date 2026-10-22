@@ -29,8 +29,15 @@ public struct DatasetDefect: Codable, Equatable {
     public let recordId: String
     public let field: String
     public let detail: String
-    public init(code: DatasetDefectCode, recordId: String, field: String, detail: String) {
+    /// For a defect with one cause and many affected records (a source permission):
+    /// every active record it blocks, and every `record_id#field` citing the source.
+    /// Absent for ordinary per-record defects.
+    public let affectedRecordIds: [String]?
+    public let citations: [String]?
+    public init(code: DatasetDefectCode, recordId: String, field: String, detail: String,
+                affectedRecordIds: [String]? = nil, citations: [String]? = nil) {
         self.code = code; self.recordId = recordId; self.field = field; self.detail = detail
+        self.affectedRecordIds = affectedRecordIds; self.citations = citations
     }
 }
 
@@ -43,12 +50,14 @@ public struct DatasetGraphReport: Encodable {
     /// Always multi-valued: a collision can never overwrite another identity.
     public let aliasIndex: [String: [String]]
     public var defects: [DatasetDefect]
+    /// Defect count per code, for a readable summary next to the full list.
+    public var defectCounts: [String: Int] { Dictionary(grouping: defects, by: \.code.rawValue).mapValues(\.count) }
     public var humanReviewPending = true
     public let releaseEligible = false
 
     enum CodingKeys: String, CodingKey {
         case valid, stage, recordCount, activeRecordIds, quarantinedRecordIds, aliasIndex, defects
-        case humanReviewPending, releaseEligible
+        case defectCounts, humanReviewPending, releaseEligible
     }
     public func encode(to encoder: any Encoder) throws {
         var c = encoder.container(keyedBy: CodingKeys.self)
@@ -57,6 +66,7 @@ public struct DatasetGraphReport: Encodable {
         try c.encode(activeRecordIds, forKey: .activeRecordIds)
         try c.encode(quarantinedRecordIds, forKey: .quarantinedRecordIds)
         try c.encode(aliasIndex, forKey: .aliasIndex); try c.encode(defects, forKey: .defects)
+        try c.encode(defectCounts, forKey: .defectCounts)
         try c.encode(humanReviewPending, forKey: .humanReviewPending)
         try c.encode(releaseEligible, forKey: .releaseEligible)
     }
@@ -71,9 +81,12 @@ private struct DatasetEdge {
 public enum DatasetValidator {
     /// Pure graph layer. Disk-backed evidence, blind solves, and human closure
     /// are added by validate(at:...). No registry permission is inferred.
+    /// `recheckEncoding` re-decodes each record's canonical bytes to catch invalid
+    /// in-memory edits; callers that just decoded the records from disk may skip it.
     public static func audit(records: [ContractRecord], sources: [SourceRecord], reviews: [Review],
                              identities: IdentitySnapshot? = nil,
-                             aliasCollisions: [String: [String]] = [:]) -> DatasetGraphReport {
+                             aliasCollisions: [String: [String]] = [:],
+                             recheckEncoding: Bool = true) -> DatasetGraphReport {
         var defects: [DatasetDefect] = []
         func fail(_ code: DatasetDefectCode, _ id: String, _ field: String, _ detail: String) {
             defects.append(.init(code: code, recordId: id, field: field, detail: detail))
@@ -85,12 +98,16 @@ public enum DatasetValidator {
             if !allIDs.insert(record.recordId).inserted {
                 fail(.duplicateID, record.recordId, "record_id", "duplicate dataset identity; revisions must be merged before validation")
             } else { lookup[record.recordId] = record }
-            do { _ = try ContractJSON.decode(ContractJSON.line(record).dropLast()) }
-            catch { fail(.invalidRecord, record.recordId, "payload", String(describing: error)) }
+            if recheckEncoding {
+                do { _ = try ContractJSON.decode(ContractJSON.line(record).dropLast()) }
+                catch { fail(.invalidRecord, record.recordId, "payload", String(describing: error)) }
+            }
         }
         for review in reviews {
-            do { _ = try ContractJSON.decode(ContractJSON.line(.review(review)).dropLast()) }
-            catch { fail(.invalidRecord, review.recordId, "payload", String(describing: error)) }
+            if recheckEncoding {
+                do { _ = try ContractJSON.decode(ContractJSON.line(.review(review)).dropLast()) }
+                catch { fail(.invalidRecord, review.recordId, "payload", String(describing: error)) }
+            }
             if !allIDs.insert(review.recordId).inserted {
                 fail(.duplicateID, review.recordId, "record_id", "duplicate review/dataset identity")
             } else { reviewLookup[review.recordId] = review }
@@ -291,6 +308,31 @@ public enum DatasetValidator {
                 for member in members { fail(.identityBinding, member.recordId, "payload.family_id", "unissued/retired family \(family)") }
             }
         }
+        // Index once: rescanning every review/source per record is quadratic at full-lexicon scale.
+        let reviewsBySubject = Dictionary(grouping: reviews, by: \.payload.subjectId)
+        let sourceLookup = sources.reduce(into: [String: SourceRecord]()) { if $0[$1.sourceID] == nil { $0[$1.sourceID] = $1 } }
+        var gateFailures: [String: String?] = [:]
+        func gateFailure(_ ref: ContractSourceRef) -> String? {
+            let key = ref.sourceId + "|" + ref.operations.map(\.rawValue).joined(separator: ",")
+            if let cached = gateFailures[key] { return cached }
+            var failure: String?
+            do {
+                if SourcePermissionGate.isReferenceOnly(ref.operations) {
+                    _ = try SourcePermissionGate.authorizeReference(sourceID: ref.sourceId, purpose: .privatePreview, registry: sources)
+                } else {
+                    _ = try SourcePermissionGate.authorize(sourceID: ref.sourceId, purpose: .privatePreview, registry: sources)
+                    if let source = sourceLookup[ref.sourceId] {
+                        for operation in ref.operations where source.permission(for: operation).status != .allowed {
+                            throw SourceGateFailure(sourceID: ref.sourceId, purpose: .privatePreview,
+                                reason: .permission(operation, source.permission(for: operation).status))
+                        }
+                    }
+                }
+            } catch { failure = String(describing: error) }
+            gateFailures[key] = failure
+            return failure
+        }
+        var permissionHits: [String: (sourceId: String, citations: Set<String>, affected: Set<String>)] = [:]
         for record in active {
             let id = record.recordId
             if let identities {
@@ -307,7 +349,7 @@ public enum DatasetValidator {
                     fail(.identityBinding, id, "record_id", "identity not issued/current in ledger")
                 }
             }
-            let current = reviews.filter {
+            let current = (reviewsBySubject[id] ?? []).filter {
                 $0.payload.subjectId == id && $0.payload.subjectKind == record.document.kind
                     && $0.payload.subjectRevision == record.document.revision
                     && $0.payload.subjectContentSha256 == record.document.contentSha256
@@ -327,32 +369,26 @@ public enum DatasetValidator {
                 }
             }
             // Traverse all content/provenance edges, not just direct citations.
-            // Legitimate reciprocal ownership edges are visited once.
+            // Legitimate reciprocal ownership edges are visited once. Failures are
+            // grouped by cause (source + missing permission), collecting every citing
+            // field and blocked active record, so one cause is one defect.
             var visited = Set<String>()
-            func authorize(_ ancestor: String, path: [String]) {
+            func authorize(_ ancestor: String) {
                 guard visited.insert(ancestor).inserted else { return }
                 for (field, ref) in sourceEdges[ancestor] ?? [] {
-                    do {
-                        if SourcePermissionGate.isReferenceOnly(ref.operations) {
-                            _ = try SourcePermissionGate.authorizeReference(sourceID: ref.sourceId, purpose: .privatePreview, registry: sources)
-                            continue
-                        }
-                        _ = try SourcePermissionGate.authorize(sourceID: ref.sourceId, purpose: .privatePreview, registry: sources)
-                        guard let source = sources.first(where: { $0.sourceID == ref.sourceId }) else { continue }
-                        for operation in ref.operations where source.permission(for: operation).status != .allowed {
-                            throw SourceGateFailure(sourceID: ref.sourceId, purpose: .privatePreview,
-                                reason: .permission(operation, source.permission(for: operation).status))
-                        }
-                    } catch {
-                        fail(.sourcePermission, id, ancestor == id ? field : "ancestors.\(ancestor).\(field)",
-                             "\(path.joined(separator: " -> ")): \(error)")
+                    if let failure = gateFailure(ref) {
+                        permissionHits[failure, default: (ref.sourceId, [], [])].citations.insert(ancestor + "#" + field)
+                        permissionHits[failure]?.affected.insert(id)
                     }
                 }
-                for ref in edges[ancestor] ?? [] where lookup[ref.id] != nil {
-                    authorize(ref.id, path: path + [ref.id])
-                }
+                for ref in edges[ancestor] ?? [] where lookup[ref.id] != nil { authorize(ref.id) }
             }
-            authorize(id, path: [id])
+            authorize(id)
+        }
+        for (failure, hit) in permissionHits {
+            defects.append(.init(code: .sourcePermission, recordId: hit.sourceId, field: "citations",
+                detail: "\(failure); cited by \(hit.citations.count) field(s); blocks \(hit.affected.count) active record(s)",
+                affectedRecordIds: hit.affected.sorted(), citations: hit.citations.sorted()))
         }
         for review in reviews {
             guard let subject = lookup[review.payload.subjectId] else {
@@ -437,26 +473,34 @@ public enum DatasetValidator {
                 throw ContractFailure("invalid_graph_profile")
             }
         } catch { fail(.profile, profile.path, "profile", String(describing: error)) }
+        // Every record/review above came from ContractJSON.decode, so re-decoding is redundant.
         var report = audit(records: records, sources: sources, reviews: reviews, identities: identities,
-                           aliasCollisions: policy?.aliasCollisions ?? [:])
+                           aliasCollisions: policy?.aliasCollisions ?? [:], recheckEncoding: false)
         let lookup = records.reduce(into: [String: ContractRecord]()) { if $0[$1.recordId] == nil { $0[$1.recordId] = $1 } }
         let reviewLookup = reviews.reduce(into: [String: Review]()) { if $0[$1.recordId] == nil { $0[$1.recordId] = $1 } }
         let base = ledger.deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
         var receipts: [String: JobReceipt] = [:]
+        var receiptFailures: [String: String] = [:]
         var jobSnapshots: [String: JobSnapshot] = [:]
         var failedJobLedgers = Set<String>()
         func receipt(_ ref: String, id: String, field: String) -> JobReceipt? {
             if let cached = receipts[ref] { return cached }
+            // A failed read is still reported for every citing record, without rereading the file.
+            if let failure = receiptFailures[ref] { fail(.evidenceClosure, id, field, "\(ref): \(failure)"); return nil }
             do {
                 let url = try JobLedger.localURL(ref, base: base)
                 let value = try JobLedger.read(JobReceipt.self, at: url)
                 try JobLedger.validateReceipt(value, binding: value.binding, base: base)
                 receipts[ref] = value
                 return value
-            } catch { fail(.evidenceClosure, id, field, "\(ref): \(error)"); return nil }
+            } catch {
+                receiptFailures[ref] = String(describing: error)
+                fail(.evidenceClosure, id, field, "\(ref): \(error)"); return nil
+            }
         }
         var generatorSessions: [String: Set<String>] = [:]
         var provenanceHistories: [String: ProvenanceHistory] = [:]
+        let evidenceFiles = LocalFileCache()
         for record in records {
             guard case .provenance(let provenance) = record else { continue }
             let p = provenance.payload
@@ -469,7 +513,7 @@ public enum DatasetValidator {
                     }
                     history = provenanceHistories[evidence.historyRef]
                 }
-                try ProvenanceValidator.validateLocalEvidence(provenance, base: base, history: history)
+                try ProvenanceValidator.validateLocalEvidence(provenance, base: base, history: history, files: evidenceFiles)
             }
             catch { fail(.evidenceClosure, id, "payload.internal_evidence_refs", String(describing: error)) }
             if let result = receipt(p.runReceiptRef, id: id, field: "payload.run_receipt_ref") {
@@ -506,7 +550,7 @@ public enum DatasetValidator {
                             humanModificationRefs: Set(p.humanModificationRefs.filter { ref in
                                 guard let url = try? JobLedger.localURL(ref, base: base) else { return false }
                                 return FileManager.default.fileExists(atPath: url.path)
-                            }), base: base, history: history)
+                            }), base: base, history: history, files: evidenceFiles)
                     } catch { fail(.evidenceClosure, id, "payload", String(describing: error)) }
                 }
             }
@@ -554,6 +598,9 @@ public enum DatasetValidator {
         auditBlind(records: records, directory: directory, artifacts: artifacts, forbiddenSessions: forbiddenSessions, fail: fail)
         auditHuman(records: lookup, artifacts: artifacts, policy: policy, forbiddenSessions: forbiddenSessions, fail: fail)
         if let policy {
+            let questionsByTarget = records.reduce(into: [String: [Question]]()) {
+                if case .question(let q) = $1, q.payload.status != .quarantined { $0[q.payload.primaryTargetId, default: []].append(q) }
+            }
             for record in records {
                 guard case .target(let target) = record, target.payload.activation == .active,
                       target.payload.status != .quarantined else { continue }
@@ -564,10 +611,7 @@ public enum DatasetValidator {
                 guard let minimum = policy.perAbilityMinimums[target.payload.testedAbility.rawValue] else {
                     fail(.profile, id, "payload.tested_ability", "no active ability minimum"); continue
                 }
-                let owned = records.compactMap { record -> Question? in
-                    if case .question(let q) = record, q.payload.primaryTargetId == id, q.payload.status != .quarantined { return q }
-                    return nil
-                }
+                let owned = questionsByTarget[id] ?? []
                 if Set(owned.filter { $0.payload.split == .train }.map(\.payload.familyId)).count < minimum.trainFamilies
                     || Set(owned.filter { $0.payload.split == .check }.map(\.payload.familyId)).count < minimum.independentCheckFamilies {
                     fail(.familyMismatch, id, "payload.activation", "active target lacks required train/check families")
@@ -612,6 +656,10 @@ public enum DatasetValidator {
                 fail(.danglingReference, id, "blind.question_id", "unknown question in blind solve")
             }
         }
+        let solvesByQuestion = Dictionary(grouping: solves) { $0["question_id"] as? String ?? "" }
+        let senseMeanings = records.reduce(into: [String: [String]]()) {
+            if case .sense(let sense) = $1 { $0[sense.recordId, default: []].append(sense.payload.coreMeaningZhHant) }
+        }
         for record in records {
             guard case .question(let q) = record, q.payload.status != .quarantined else { continue }
             let id = q.recordId, p = q.payload
@@ -624,15 +672,13 @@ public enum DatasetValidator {
                     fail(.evidenceClosure, id, "blind.input", "leaked fields or changed stem/options")
                 }
                 let rules = (input["rules"] as? String ?? "").lowercased()
-                var secrets = p.acceptedAnswers + p.options.map(\.english) + [p.postAnswerFeedback.answer, p.postAnswerFeedback.explanation]
-                for record in records {
-                    if case .sense(let sense) = record, sense.recordId == p.correctSenseId { secrets.append(sense.payload.coreMeaningZhHant) }
-                }
+                let secrets = p.acceptedAnswers + p.options.map(\.english) + [p.postAnswerFeedback.answer, p.postAnswerFeedback.explanation]
+                    + (senseMeanings[p.correctSenseId] ?? [])
                 if secrets.contains(where: { ContractRules.present($0) && rules.contains($0.lowercased()) }) {
                     fail(.evidenceClosure, id, "blind.input.rules", "answer hint in blind rules")
                 }
             }
-            let currentSolves = solves.filter { $0["question_id"] as? String == id && $0["question_revision"] as? Int == q.revision }
+            let currentSolves = (solvesByQuestion[id] ?? []).filter { $0["question_revision"] as? Int == q.revision }
             if currentSolves.isEmpty { fail(.evidenceClosure, id, "blind.solve", "missing current blind solve") }
             for solve in currentSolves {
                 let session = solve["blind_session"] as? String ?? ""

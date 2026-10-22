@@ -118,8 +118,29 @@ final class DatasetGraphTests: XCTestCase {
         let graph = try validGraph()
         let report = DatasetValidator.audit(records: graph.records, sources: [source("S01", pending: true)], reviews: graph.reviews)
         for question in graph.records where question.document.kind == .question {
-            XCTAssertTrue(report.defects.contains { $0.recordId == question.recordId && $0.code == .sourcePermission && $0.field.hasPrefix("ancestors.") })
+            XCTAssertTrue(report.defects.contains { $0.code == .sourcePermission && $0.affectedRecordIds?.contains(question.recordId) == true })
         }
+    }
+
+    func testPendingRightsReportedOncePerCauseNotPerCitationOrRecord() throws {
+        let graph = try validGraph()
+        let report = DatasetValidator.audit(records: graph.records, sources: [source("S01", pending: true)], reviews: graph.reviews)
+        var cited = 0
+        var operationSets = Set<[String]>()
+        func walk(_ value: Any) {
+            if let object = value as? [String: Any] {
+                if object["source_id"] != nil { cited += 1; operationSets.insert(object["operations"] as? [String] ?? []) }
+                object.values.forEach(walk)
+            } else if let array = value as? [Any] { array.forEach(walk) }
+        }
+        for record in graph.records { walk(try JSONSerialization.jsonObject(with: ContractJSON.bytes(record))) }
+        let permission = report.defects.filter { $0.code == .sourcePermission }
+        XCTAssertGreaterThan(cited, permission.count)
+        XCTAssertTrue((1...operationSets.count).contains(permission.count))
+        XCTAssertEqual(report.defectCounts["source_permission"], permission.count)
+        XCTAssertTrue(permission.allSatisfy { $0.recordId == "S01" })
+        XCTAssertEqual(permission.map { $0.citations?.count ?? 0 }.reduce(0, +), cited)
+        XCTAssertEqual(Set(permission.flatMap { $0.affectedRecordIds ?? [] }), Set(report.activeRecordIds))
     }
 
     func testReviewCannotAuthorizeWrongSense() throws {
@@ -202,7 +223,8 @@ final class DatasetGraphTests: XCTestCase {
         input[index] = try edited(input[index]) { $0["source_refs"] = [["source_id": "leaf", "operations": ["reference"]]] }
         let sources = [source("leaf", ancestors: [.init(sourceID: "ancestor", operations: [.adapt])]), source("ancestor", pending: true)]
         let report = DatasetValidator.audit(records: input, sources: sources, reviews: [])
-        XCTAssertTrue(report.defects.contains { $0.code == .sourcePermission && $0.recordId == input[index].recordId && $0.detail.contains("ancestor") && $0.detail.contains("pending") })
+        XCTAssertTrue(report.defects.contains { $0.code == .sourcePermission && $0.citations?.contains { $0.hasPrefix(input[index].recordId + "#") } == true
+            && $0.affectedRecordIds?.contains(input[index].recordId) == true && $0.detail.contains("ancestor") && $0.detail.contains("pending") })
     }
 
     func testDuplicateIDsRejected() throws {

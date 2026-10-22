@@ -28,19 +28,41 @@ public struct ProvenanceHistory {
         self.records = records
     }
 }
+/// Per-run memo of local evidence files, so one file cited by thousands of
+/// provenance rows is hashed and split once. Files must not change during the run.
+public final class LocalFileCache {
+    private var digests: [String: String] = [:]
+    private var lines: [String: [Substring]] = [:]
+    public init() {}
+    func sha256(ofFileAt url: URL) throws -> String {
+        if let cached = digests[url.path] { return cached }
+        let digest = try CKHash.sha256Hex(ofFileAt: url)
+        digests[url.path] = digest
+        return digest
+    }
+    func lines(ofFileAt url: URL) throws -> [Substring] {
+        if let cached = lines[url.path] { return cached }
+        let split = try String(contentsOf: url, encoding: .utf8).split(separator: "\n", omittingEmptySubsequences: false)
+        lines[url.path] = split
+        return split
+    }
+}
+
 public enum ProvenanceValidator {
     /// Local work artifacts are evidence of work only, not external verification.
     /// Unavailable references remain explicit and cannot satisfy evidence closure.
-    public static func validateLocalEvidence(_ provenance: Provenance, base: URL, history: ProvenanceHistory? = nil) throws {
+    public static func validateLocalEvidence(_ provenance: Provenance, base: URL, history: ProvenanceHistory? = nil,
+                                             files: LocalFileCache? = nil) throws {
+        let files = files ?? LocalFileCache()
         for field in provenance.payload.fields {
             for evidence in field.internalEvidenceRefs ?? [] {
                 let url = try JobLedger.localURL(evidence.ref, base: base)
                 guard evidence.availability == .available else { throw JobFailure("unresolved_internal_evidence:\(evidence.ref)") }
                 let values = try url.resourceValues(forKeys: [.isRegularFileKey])
                 guard values.isRegularFile == true,
-                      try CKHash.sha256Hex(ofFileAt: url) == evidence.sha256 else { throw JobFailure("internal_evidence_mismatch:\(evidence.ref)") }
+                      try files.sha256(ofFileAt: url) == evidence.sha256 else { throw JobFailure("internal_evidence_mismatch:\(evidence.ref)") }
                 if let line = evidence.line {
-                    let lines = try String(contentsOf: url, encoding: .utf8).split(separator: "\n", omittingEmptySubsequences: false)
+                    let lines = try files.lines(ofFileAt: url)
                     guard line <= lines.count, !lines[line - 1].isEmpty else { throw JobFailure("internal_evidence_line_missing") }
                 }
             }
@@ -56,7 +78,9 @@ public enum ProvenanceValidator {
     public static func validate(_ provenance: Provenance, subject: any ContractDocumentInfo,
                                 requiredFields: Set<String>, sourceIds: Set<String>, jobs: JobSnapshot,
                                 reviews: [String: Review], transforms: [String: ProvenanceTransform],
-                                humanModificationRefs: Set<String>, base: URL, history: ProvenanceHistory? = nil) throws {
+                                humanModificationRefs: Set<String>, base: URL, history: ProvenanceHistory? = nil,
+                                files: LocalFileCache? = nil) throws {
+        let files = files ?? LocalFileCache()
         let p = provenance.payload
         try p.validate(recordId: provenance.recordId, schema: provenance.schema)
         guard try provenance.revisionHash() == provenance.contentSha256,
@@ -77,7 +101,7 @@ public enum ProvenanceValidator {
                 if let operation, !source.operations.contains(operation) { throw JobFailure("source_method_mismatch") }
             }
         }
-        try validateLocalEvidence(provenance, base: base, history: history)
+        try validateLocalEvidence(provenance, base: base, history: history, files: files)
         guard !p.fields.contains(where: { !($0.unverifiedRefs ?? []).isEmpty }) else { throw JobFailure("unverified_origin") }
         guard let event = jobs.events[p.workUnitRef], [.received, .validated, .quarantined].contains(event.state),
               event.receiptRef == p.runReceiptRef, let receipt = jobs.receipts[p.workUnitRef] else { throw JobFailure("missing_provenance_receipt") }
@@ -96,7 +120,7 @@ public enum ProvenanceValidator {
             guard transform.output.recordId == transform.input.recordId, transform.output.kind == transform.input.kind,
                   transform.output.revision > transform.input.revision, CKIdentityJSON.hashValid(transform.output.contentHash) else { throw JobFailure("invalid_transform_revision") }
             let evidence = try JobLedger.localURL(transform.evidenceRef, base: base)
-            guard try CKHash.sha256Hex(ofFileAt: evidence) == transform.evidenceHash else { throw JobFailure("transform_evidence_mismatch") }
+            guard try files.sha256(ofFileAt: evidence) == transform.evidenceHash else { throw JobFailure("transform_evidence_mismatch") }
             current = transform.output
         }
         guard current.map({ $0 == final }) ?? receipt.resultRecords.contains(final) else { throw JobFailure("provenance_result_mismatch") }
