@@ -68,6 +68,42 @@ final class DatasetGraphTests: XCTestCase {
         return (input, reviews)
     }
 
+    private func source(_ id: String, allowed: Set<SourceOperation>) -> SourceRecord {
+        var row = source(id, pending: true)
+        for operation in allowed {
+            row.permissions[operation.rawValue] = SourcePermission(status: .allowed, evidence: "license.txt", quote: "grant")
+        }
+        return row
+    }
+
+    func testReferenceOnlyCitationNeedsNoPackGrant() throws {
+        let graph = try validGraph()
+        let report = DatasetValidator.audit(records: graph.records, sources: [source("S01", allowed: [.reference])], reviews: graph.reviews)
+        XCTAssertTrue(report.valid, "\(report.defects)")
+    }
+
+    func testReferenceOnlyCitationStillNeedsReferenceGrant() throws {
+        let graph = try validGraph()
+        let report = DatasetValidator.audit(records: graph.records, sources: [source("S01", pending: true)], reviews: graph.reviews)
+        XCTAssertTrue(report.defects.contains { $0.code == .sourcePermission && $0.detail.contains("reference") && $0.detail.contains("pending") })
+    }
+
+    func testNonReferenceCitationStillNeedsPackGrant() throws {
+        var graph = try validGraph()
+        for index in graph.records.indices where graph.records[index].document.kind == .provenance {
+            graph.records[index] = try edited(graph.records[index]) {
+                let fields = $0["fields"] as? [[String: Any]] ?? []
+                $0["fields"] = fields.map { field -> [String: Any] in
+                    var field = field
+                    field["source_refs"] = [["source_id": "S01", "operations": ["adapt"]]]
+                    return field
+                }
+            }
+        }
+        let report = DatasetValidator.audit(records: graph.records, sources: [source("S01", allowed: [.reference, .adapt])], reviews: graph.reviews)
+        XCTAssertTrue(report.defects.contains { $0.code == .sourcePermission && $0.detail.contains("privatePack") })
+    }
+
     func testCompleteInMemoryGraphPassesWithExplicitFixtureGrant() throws {
         let graph = try validGraph()
         let report = DatasetValidator.audit(records: graph.records, sources: [source("S01")], reviews: graph.reviews)

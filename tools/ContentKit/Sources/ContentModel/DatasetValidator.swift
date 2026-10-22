@@ -323,6 +323,10 @@ public enum DatasetValidator {
                 guard visited.insert(ancestor).inserted else { return }
                 for (field, ref) in sourceEdges[ancestor] ?? [] {
                     do {
+                        if SourcePermissionGate.isReferenceOnly(ref.operations) {
+                            _ = try SourcePermissionGate.authorizeReference(sourceID: ref.sourceId, purpose: .privatePreview, registry: sources)
+                            continue
+                        }
                         _ = try SourcePermissionGate.authorize(sourceID: ref.sourceId, purpose: .privatePreview, registry: sources)
                         guard let source = sources.first(where: { $0.sourceID == ref.sourceId }) else { continue }
                         for operation in ref.operations where source.permission(for: operation).status != .allowed {

@@ -32,6 +32,24 @@ public enum SourcePermissionGate {
     /// A private flag never changes an explicitly requested production/distribution purpose.
     public static func authorize(sourceID: String, purpose: SourcePurpose, registry: [SourceRecord],
                                  privatePreview: Bool = false) throws -> SourceGateApproval {
+        try authorize(sourceID: sourceID, purpose: purpose, registry: registry, rootOperations: [], requirePack: true)
+    }
+
+    /// Owner decision 2026-10-22 (option B): a citation whose only operation is
+    /// `reference` consults the source without copying its bytes into the pack, so it
+    /// needs `reference` (and the ancestor chain's own operations) but no pack grant.
+    public static func authorizeReference(sourceID: String, purpose: SourcePurpose,
+                                          registry: [SourceRecord]) throws -> SourceGateApproval {
+        try authorize(sourceID: sourceID, purpose: purpose, registry: registry, rootOperations: [.reference], requirePack: false)
+    }
+
+    /// True when a citation only consults the source (see `authorizeReference`).
+    public static func isReferenceOnly(_ operations: [SourceOperation]) -> Bool {
+        !operations.isEmpty && operations.allSatisfy { $0 == .reference }
+    }
+
+    private static func authorize(sourceID: String, purpose: SourcePurpose, registry: [SourceRecord],
+                                  rootOperations: [SourceOperation], requirePack: Bool) throws -> SourceGateApproval {
         let packOperation: SourceOperation
         switch purpose {
         case .privatePreview: packOperation = .privatePack
@@ -54,7 +72,7 @@ public enum SourcePermissionGate {
             guard !row.attribution.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
                 throw fail(.missingAttribution)
             }
-            for operation in operations + [packOperation] {
+            for operation in operations + (requirePack ? [packOperation] : []) {
                 let permission = row.permission(for: operation)
                 guard permission.status == .allowed else { throw fail(.permission(operation, permission.status)) }
                 guard !permission.evidence.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
@@ -69,8 +87,9 @@ public enum SourcePermissionGate {
                 try visit(edge.sourceID, operations: edge.operations, path: path.union([id]))
             }
         }
-        try visit(sourceID, operations: [], path: [])
-        return .init(sourceID: sourceID, purpose: purpose, reason: "all_required_operations_allowed",
+        try visit(sourceID, operations: rootOperations, path: [])
+        return .init(sourceID: sourceID, purpose: purpose,
+                     reason: requirePack ? "all_required_operations_allowed" : "reference_only_operations_allowed",
                      attributions: attributions)
     }
 }

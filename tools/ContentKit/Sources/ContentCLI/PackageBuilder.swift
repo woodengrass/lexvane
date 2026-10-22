@@ -83,22 +83,38 @@ enum PackageBuilder {
         }
         // Registry metadata is not a license grant. Only sources actually used
         // by accepted records (and their ancestor chains) enter the pack.
+        // Reference-only citations (owner decision 2026-10-22) keep attribution but
+        // need no pack grant; any other operation on a source makes it packed.
         var used = Set<String>()
+        var packed = Set<String>()
         func collect(_ value: Any) {
             if let object = value as? [String: Any] {
-                if let id = object["source_id"] as? String { used.insert(id) }
+                if let id = object["source_id"] as? String {
+                    used.insert(id)
+                    let operations = (object["operations"] as? [String] ?? []).compactMap(SourceOperation.init(rawValue:))
+                    if !SourcePermissionGate.isReferenceOnly(operations) { packed.insert(id) }
+                }
                 for value in object.values { collect(value) }
             } else if let array = value as? [Any] { for value in array { collect(value) } }
         }
         for record in loaded.records { collect(try JSONSerialization.jsonObject(with: ContractJSON.bytes(record))) }
         let registry = try SourceRegistry.read(at: sources)
-        func ancestors(_ id: String) throws {
+        let cited = used
+        func ancestors(_ id: String, packing: Bool) throws {
             guard let row = registry.first(where: { $0.sourceID == id }) else { throw PackageFailure(reason: "unknown_source") }
-            for edge in row.ancestors where used.insert(edge.sourceID).inserted { try ancestors(edge.sourceID) }
+            for edge in row.ancestors {
+                let newlyUsed = used.insert(edge.sourceID).inserted
+                let newlyPacked = packing && packed.insert(edge.sourceID).inserted
+                if newlyUsed || newlyPacked { try ancestors(edge.sourceID, packing: packing) }
+            }
         }
-        for id in used.sorted() { try ancestors(id) }
+        for id in cited.sorted() { try ancestors(id, packing: packed.contains(id)) }
         let attribution = try registry.filter { used.contains($0.sourceID) }.map { row in
-            _ = try SourcePermissionGate.authorize(sourceID: row.sourceID, purpose: .privatePreview, registry: registry)
+            if packed.contains(row.sourceID) {
+                _ = try SourcePermissionGate.authorize(sourceID: row.sourceID, purpose: .privatePreview, registry: registry)
+            } else if cited.contains(row.sourceID) {
+                _ = try SourcePermissionGate.authorizeReference(sourceID: row.sourceID, purpose: .privatePreview, registry: registry)
+            } // Else: ancestor of a reference-only citation, already checked along that citation's chain.
             let license = try boundedRead(sources.deletingLastPathComponent().appendingPathComponent(row.licenseTextRef))
             lineage["license/" + row.sourceID] = CKHash.sha256Hex(of: license)
             return PackageSource(sourceId: row.sourceID, sourceVersion: try row.sourceVersionHash(), attribution: row.attribution, license: license)
