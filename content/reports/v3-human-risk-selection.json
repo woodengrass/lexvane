@@ -1,0 +1,2730 @@
+{
+  "counts": {
+    "candidate_mcq_questions": 716,
+    "dataset_subjects": 4370,
+    "disambiguated_reviews": 7041,
+    "high_risk_questions": 61
+  },
+  "dataset": "content/records/pilot-230/merged",
+  "dataset_inputs": [
+    {
+      "bytes": 109133,
+      "path": "content/records/pilot-230/merged/pilot-230-entry.jsonl",
+      "sha256": "818e6d4c0a5260498d86bc396363cd32171811f4e0b536a3e90b154f314bf48f"
+    },
+    {
+      "bytes": 8047041,
+      "path": "content/records/pilot-230/merged/pilot-230-provenance.jsonl",
+      "sha256": "f8ebcf36e2851212a75add6662c4a488b82cdfd1115dfed479abdcc03440bb2c"
+    },
+    {
+      "bytes": 971198,
+      "path": "content/records/pilot-230/merged/pilot-230-question.jsonl",
+      "sha256": "ac4d514fd9f022c0598ef18baa5a039d00c571c2ed6d08327575f6c7856a8af3"
+    },
+    {
+      "bytes": 304983,
+      "path": "content/records/pilot-230/merged/pilot-230-sense.jsonl",
+      "sha256": "fa2c6635adbf16651bc11f4a5b8375229b6c28bf7a4e7a43cfa0276ceb0ee4db"
+    },
+    {
+      "bytes": 326911,
+      "path": "content/records/pilot-230/merged/pilot-230-target.jsonl",
+      "sha256": "5ccf0310bf88c8a2eca59b26dd800fcaff98f53652cbd8c2e802ebfe1040f1fe"
+    },
+    {
+      "bytes": 354197,
+      "path": "content/records/pilot-230/merged/pilot-230-teaching.jsonl",
+      "sha256": "89f4b6556d2c9292fedb4a45e1f6e38f148982d80e752288098af978294ec5e2"
+    }
+  ],
+  "generator": "v3-human-risk-selection",
+  "high_risk_ids": [
+    "lx:question:02306907-3fa5-4c5e-a275-30c27806fdbf",
+    "lx:question:026092c6-5cbc-4a42-b2ac-f307329f24aa",
+    "lx:question:03870501-ae60-4632-a95b-969ea9c6f4c8",
+    "lx:question:0753e8a6-2d2a-4661-ba02-229c89c991bf",
+    "lx:question:0a37fb39-53f2-41f5-9164-f61b1a3961f9",
+    "lx:question:0cfb3804-2f96-499c-bbda-ac1b401cdda5",
+    "lx:question:0eff59f3-43ca-4700-9ffd-6890a9f4ed27",
+    "lx:question:1ab8cac2-6103-4a01-91dc-201d9c73ea59",
+    "lx:question:206bdd7a-6130-43e3-8096-b56fe5dfcda8",
+    "lx:question:264b4319-5cfe-4544-a563-f0d2fbf49a87",
+    "lx:question:2b475a68-c820-4169-a433-526185ad7f74",
+    "lx:question:2e8b77a6-94b4-4d5e-8ab1-b4be44fafb78",
+    "lx:question:35596d18-145c-4ce0-9401-6b52df0d5656",
+    "lx:question:41d66a2d-2670-48cc-947f-f95cc0d8ba32",
+    "lx:question:4259a793-284a-4f51-86c4-77f284ea7afd",
+    "lx:question:4587d5b5-81a0-4d7e-8a89-7eca5a245574",
+    "lx:question:49138093-9419-4657-bde1-461d8413c9fe",
+    "lx:question:4b742933-9448-4fc4-88e1-bcf9d288aaec",
+    "lx:question:4e2fd0e1-0d50-4900-b3af-9f7aeab8b678",
+    "lx:question:551b61ce-6af9-44d8-a9c2-62b8eeaeecd0",
+    "lx:question:56b72404-4e5e-4a78-8b81-6cb1c0010079",
+    "lx:question:5b93e627-63dc-4f06-940a-8cf90cdd4dd7",
+    "lx:question:5c458b57-4f6d-4148-8c8b-cce9b6dedf36",
+    "lx:question:604ced18-8d91-4fa2-8600-2e8e945e0ece",
+    "lx:question:62fa6dc1-6829-4cbe-b9d8-5de878b8b8c9",
+    "lx:question:68708610-e340-4b90-9031-f14bb612b85e",
+    "lx:question:68888225-a42d-4c29-95cb-5bc5d1f89196",
+    "lx:question:6e0726ce-484e-408d-97c3-ba91a999cec5",
+    "lx:question:72f3f9c4-3c81-430b-9715-1d4a8cf16341",
+    "lx:question:78d9083c-6b4e-4b84-ab7c-18bcddff9615",
+    "lx:question:7b7751e6-5bd0-4f82-9d9f-cee502bd31c5",
+    "lx:question:7c41cc28-38d1-4a01-869b-f663a1c18827",
+    "lx:question:7d0711c1-7f83-47fc-ad1a-7c6f2a3ce95e",
+    "lx:question:7e0f3940-1437-4810-8bfb-eaf54c93dee3",
+    "lx:question:7e9bed0a-65d9-47e9-acb5-d71e6368f6c5",
+    "lx:question:7fca3b34-8f35-4600-9a36-4cc625ab41bc",
+    "lx:question:800ff7bf-cc76-409d-acad-b6cfff6aba9c",
+    "lx:question:83e932d3-1055-461d-8948-e475bad23e2a",
+    "lx:question:86da2b59-d2f9-4380-9ac0-4cbf48433889",
+    "lx:question:8e46840d-ebb9-494c-86e7-7e316593a3d9",
+    "lx:question:90853134-6d81-4f12-8c11-1921cb52f1eb",
+    "lx:question:90a256a8-973f-4236-952a-f077c6f787dc",
+    "lx:question:93dde987-7696-41f7-8b99-7a9a2813d799",
+    "lx:question:945bd978-5eb0-4694-a23e-6a0e53b9fdaa",
+    "lx:question:9c920882-7a28-430c-b1be-bb7704656390",
+    "lx:question:9d9e2c2f-1eb1-4018-b0f0-1cf5efadcf96",
+    "lx:question:a40cad41-2642-41c1-babd-917a2b4cd7de",
+    "lx:question:a55cc9f8-1d70-48d9-b7ac-f52c66515444",
+    "lx:question:b1562ab7-7599-4e40-b30c-1b0853987d1a",
+    "lx:question:b68d03bb-8cc0-4829-8cd7-e616e98a3b1c",
+    "lx:question:bc2315b9-6926-4e9f-a14d-311efb5ae08c",
+    "lx:question:bd736276-fbd8-450d-b44b-290755f479d2",
+    "lx:question:c02f7d8f-bbf6-4163-8839-ef4e307e145d",
+    "lx:question:c3637896-8bf0-47a6-a0ea-95f391b833cb",
+    "lx:question:c822882b-a1f0-4fa6-8ba5-5494c9351f01",
+    "lx:question:cb0df250-3068-4be1-97df-eb72e37434ec",
+    "lx:question:e2edaae0-9cea-42fc-9856-ea7b18901d09",
+    "lx:question:e51b9c1a-942f-4d10-8409-4807e82a5e76",
+    "lx:question:e5aaf2aa-9d7b-422b-96a5-f9ed52485ebc",
+    "lx:question:e7cd2494-c7e2-41a0-be3d-124565e2bc90",
+    "lx:question:f667505b-75ba-4b2e-8063-4ef0efc8f856"
+  ],
+  "human_review_pending": true,
+  "human_sample_policy": {
+    "actual_human_response_ref": null,
+    "denominator": 716,
+    "high_risk_count": 61,
+    "human_accepted_count": 0,
+    "human_status": "pending",
+    "maximum": 716
+  },
+  "items": [
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "8080a149f9cc9340e25b84a3703e3062ecc03e11c9e6d46dd5741c26a025a170",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: The replacement now declares fresh-independent-check-author:checkfix-r1-a and this dispatch is an answer-visible REVIEW, same-model separate-session by assignment. Neither the receipt nor an",
+          "review_id": "review/pilot-230/review-rereview1-b/0003~h0e74244fa6dd",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: All field source_refs cite p230-check-fix-r1-sanitized-a, which is absent from content/sources/registry.jsonl. The order contains question/target IDs, prior revision/source and failed items,",
+          "review_id": "review/pilot-230/review-rereview1-b/0003~h0e74244fa6dd",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: The replacement now declares fresh-independent-check-author:checkfix-r1-a and this dispatch is an answer-visible REVIEW, same-model separate-session by assignment. Neither the receipt nor an",
+          "review_id": "review/pilot-230/review-rereview1-b/0003~h0e74244fa6dd",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0003~h0e74244fa6dd"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0003~h0e74244fa6dd"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0003~hef95cb414abc"
+        }
+      ],
+      "question_id": "lx:question:02306907-3fa5-4c5e-a275-30c27806fdbf",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0003~h0e74244fa6dd",
+        "review/pilot-230/review-rereview1-b/0003~hef95cb414abc"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "30fef47b900fa73f027423ce61a734b59a26bae6928bcc405f46f1f299d569f2",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: Per-field source_refs name S01, whose reference permission is pending and retrieval_scope is metadata_only; it contains no inspected lexical field evidence. The transform admits self-authore",
+          "review_id": "review/pilot-230/rereview2-a/0001",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/rereview2-a/0001"
+        }
+      ],
+      "question_id": "lx:question:026092c6-5cbc-4a42-b2ac-f307329f24aa",
+      "revision": 3,
+      "source_review_ids": [
+        "review/pilot-230/rereview2-a/0001"
+      ],
+      "tested_ability": "contextual_choice"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "6463f4b04d8032bd32425d23d0b97fe8ddad7a801c15ab230b1a65800c37a8b7",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: The replacement now declares fresh-independent-check-author:checkfix-r1-a and this dispatch is an answer-visible REVIEW, same-model separate-session by assignment. Neither the receipt nor an",
+          "review_id": "review/pilot-230/review-rereview1-b/0009~h95c35721af2b",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: All field source_refs cite p230-check-fix-r1-sanitized-a, which is absent from content/sources/registry.jsonl. The order contains question/target IDs, prior revision/source and failed items,",
+          "review_id": "review/pilot-230/review-rereview1-b/0009~h95c35721af2b",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: The replacement now declares fresh-independent-check-author:checkfix-r1-a and this dispatch is an answer-visible REVIEW, same-model separate-session by assignment. Neither the receipt nor an",
+          "review_id": "review/pilot-230/review-rereview1-b/0009~h95c35721af2b",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0009~h95c35721af2b"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0009~h7e366d0b26db"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0009~h95c35721af2b"
+        }
+      ],
+      "question_id": "lx:question:03870501-ae60-4632-a95b-969ea9c6f4c8",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0009~h7e366d0b26db",
+        "review/pilot-230/review-rereview1-b/0009~h95c35721af2b"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "91b8959846c5a01c40b94ba5848890e42b9a1bd3f567d738c6a650eb269e130e",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: The replacement now declares fresh-independent-check-author:checkfix-r1-a and this dispatch is an answer-visible REVIEW, same-model separate-session by assignment. Neither the receipt nor an",
+          "review_id": "review/pilot-230/review-rereview1-b/0013~h70562911bc75",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: All field source_refs cite p230-check-fix-r1-sanitized-a, which is absent from content/sources/registry.jsonl. The order contains question/target IDs, prior revision/source and failed items,",
+          "review_id": "review/pilot-230/review-rereview1-b/0013~h70562911bc75",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: The replacement now declares fresh-independent-check-author:checkfix-r1-a and this dispatch is an answer-visible REVIEW, same-model separate-session by assignment. Neither the receipt nor an",
+          "review_id": "review/pilot-230/review-rereview1-b/0013~h70562911bc75",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0013~h70562911bc75"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0013~h28c805d56472"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0013~h70562911bc75"
+        }
+      ],
+      "question_id": "lx:question:0753e8a6-2d2a-4661-ba02-229c89c991bf",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0013~h28c805d56472",
+        "review/pilot-230/review-rereview1-b/0013~h70562911bc75"
+      ],
+      "tested_ability": "contextual_choice"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "bd7e926f8db1d151194ef1b5185ba620db66831c4668d186fcc11cf001c08907",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: The replacement now declares fresh-independent-check-author:checkfix-r1-a and this dispatch is an answer-visible REVIEW, same-model separate-session by assignment. Neither the receipt nor an",
+          "review_id": "review/pilot-230/review-rereview1-b/0017~h9a5c928140e0",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: All field source_refs cite p230-check-fix-r1-sanitized-a, which is absent from content/sources/registry.jsonl. The order contains question/target IDs, prior revision/source and failed items,",
+          "review_id": "review/pilot-230/review-rereview1-b/0017~h9a5c928140e0",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: The replacement now declares fresh-independent-check-author:checkfix-r1-a and this dispatch is an answer-visible REVIEW, same-model separate-session by assignment. Neither the receipt nor an",
+          "review_id": "review/pilot-230/review-rereview1-b/0017~h9a5c928140e0",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0017~h9a5c928140e0"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0017~h04986302e908"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0017~h9a5c928140e0"
+        }
+      ],
+      "question_id": "lx:question:0a37fb39-53f2-41f5-9164-f61b1a3961f9",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0017~h04986302e908",
+        "review/pilot-230/review-rereview1-b/0017~h9a5c928140e0"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "2ccda35d550c9019e4ee1a76f0b394b7b3b1e37afccd4de3b19ca18a6e4629a5",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: The replacement now declares fresh-independent-check-author:checkfix-r1-a and this dispatch is an answer-visible REVIEW, same-model separate-session by assignment. Neither the receipt nor an",
+          "review_id": "review/pilot-230/review-rereview1-b/0023~h0b7925572d85",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: All field source_refs cite p230-check-fix-r1-sanitized-a, which is absent from content/sources/registry.jsonl. The order contains question/target IDs, prior revision/source and failed items,",
+          "review_id": "review/pilot-230/review-rereview1-b/0023~h0b7925572d85",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: The replacement now declares fresh-independent-check-author:checkfix-r1-a and this dispatch is an answer-visible REVIEW, same-model separate-session by assignment. Neither the receipt nor an",
+          "review_id": "review/pilot-230/review-rereview1-b/0023~h0b7925572d85",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0023~h0b7925572d85"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0023~h0b7925572d85"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0023~hac40c9df9e72"
+        }
+      ],
+      "question_id": "lx:question:0cfb3804-2f96-499c-bbda-ac1b401cdda5",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0023~h0b7925572d85",
+        "review/pilot-230/review-rereview1-b/0023~hac40c9df9e72"
+      ],
+      "tested_ability": "contextual_choice"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "af91ea3a439f2da3fbb4568f2667ea6980c7f4fe606c4cc9bd2782c2ef266722",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0027~h6edee0b02343",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0027~h6edee0b02343",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0027~h6edee0b02343",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0027~h6edee0b02343"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0027~h67002a8dd79c"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0027~h6edee0b02343"
+        }
+      ],
+      "question_id": "lx:question:0eff59f3-43ca-4700-9ffd-6890a9f4ed27",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0027~h67002a8dd79c",
+        "review/pilot-230/review-rereview1-b/0027~h6edee0b02343"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "07aa210c9a2ac021b8317aa5ca6339892bbce41835aee2290cb28ac1bcb1d3e2",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0031~h14f5bf0f74c1",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0031~h14f5bf0f74c1",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0031~h14f5bf0f74c1",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0031~h14f5bf0f74c1"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0031~h14f5bf0f74c1"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0031~he4a2805a7c38"
+        }
+      ],
+      "question_id": "lx:question:1ab8cac2-6103-4a01-91dc-201d9c73ea59",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0031~h14f5bf0f74c1",
+        "review/pilot-230/review-rereview1-b/0031~he4a2805a7c38"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "38af37aec92c040c9077416f02aea4680a96790a2459ac136e771498a2c1c7bd",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "Same-model separate-session answer-visible REVIEW by coordinator assignment; permanently not a blind solver. No authenticated runtime session ID invented. Train still reaches agreement on a meeting/ma",
+          "review_id": "review/pilot-230/rereview2-a/0003",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: Per-field source_refs name S01, whose reference permission is pending and retrieval_scope is metadata_only; it contains no inspected lexical field evidence. The transform admits self-authore",
+          "review_id": "review/pilot-230/rereview2-a/0003",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/rereview2-a/0003"
+        }
+      ],
+      "question_id": "lx:question:206bdd7a-6130-43e3-8096-b56fe5dfcda8",
+      "revision": 3,
+      "source_review_ids": [
+        "review/pilot-230/rereview2-a/0003"
+      ],
+      "tested_ability": "contextual_choice"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "2d1479c7d69331677993414cd3d4a86625c54b4fac3662db899b1899d05ff3e1",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0047~haa8e83da060f",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0047~haa8e83da060f",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0047~haa8e83da060f",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0047~haa8e83da060f"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0047~h965534aa46b6"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0047~haa8e83da060f"
+        }
+      ],
+      "question_id": "lx:question:264b4319-5cfe-4544-a563-f0d2fbf49a87",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0047~h965534aa46b6",
+        "review/pilot-230/review-rereview1-b/0047~haa8e83da060f"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "6fb0df58ce07be92fee562a49d9ba17984e7c5a1f6f15a400d1646d4ac0c9940",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0053~ha81a5d06befe",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0053~ha81a5d06befe",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0053~ha81a5d06befe",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0053~ha81a5d06befe"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0053~ha81a5d06befe"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0053~hb769808e6b84"
+        }
+      ],
+      "question_id": "lx:question:2b475a68-c820-4169-a433-526185ad7f74",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0053~ha81a5d06befe",
+        "review/pilot-230/review-rereview1-b/0053~hb769808e6b84"
+      ],
+      "tested_ability": "contextual_choice"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "ec074e2f90b1b8c58d66f8b59fabfae8501613a34f897d3d39eed48d338255a4",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0057~he7f0e4edf6d8",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0057~he7f0e4edf6d8",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0057~he7f0e4edf6d8",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0057~he7f0e4edf6d8"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0057~h6a510f261e98"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0057~he7f0e4edf6d8"
+        }
+      ],
+      "question_id": "lx:question:2e8b77a6-94b4-4d5e-8ab1-b4be44fafb78",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0057~h6a510f261e98",
+        "review/pilot-230/review-rereview1-b/0057~he7f0e4edf6d8"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "b68b13887f92f896d6a4477d36e957f8c2d25594dec466444d394e31d68ea74b",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0069~he123f293aa4e",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0069~he123f293aa4e",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0069~he123f293aa4e",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0069~he123f293aa4e"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0069~h7b305f402724"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0069~he123f293aa4e"
+        }
+      ],
+      "question_id": "lx:question:35596d18-145c-4ce0-9401-6b52df0d5656",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0069~h7b305f402724",
+        "review/pilot-230/review-rereview1-b/0069~he123f293aa4e"
+      ],
+      "tested_ability": "contextual_choice"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "cf5d1635744581579103088e1dce46b064ed8fd8a414b279e339a8190bc32fed",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0085~h0fed7d5725da",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0085~h0fed7d5725da",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0085~h0fed7d5725da",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0085~h0fed7d5725da"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0085~h0fed7d5725da"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0085~h3fe48b2468a8"
+        }
+      ],
+      "question_id": "lx:question:41d66a2d-2670-48cc-947f-f95cc0d8ba32",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0085~h0fed7d5725da",
+        "review/pilot-230/review-rereview1-b/0085~h3fe48b2468a8"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "e1b6785104618fd2bf4317459b528d099dcd5fa248495e0e9d9f3ce70d8a9933",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0087~h5848a6d03409",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0087~h5848a6d03409",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0087~h5848a6d03409",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0087~h5848a6d03409"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0087~h5848a6d03409"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0087~hf2d7e7cd77cf"
+        }
+      ],
+      "question_id": "lx:question:4259a793-284a-4f51-86c4-77f284ea7afd",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0087~h5848a6d03409",
+        "review/pilot-230/review-rereview1-b/0087~hf2d7e7cd77cf"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "7c8464725c49df8e31ba06aa38da7da387ae47c28f93fbb832ff0aa5ae2630ab",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0093~hde1422366de8",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0093~hde1422366de8",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0093~hde1422366de8",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0093~hde1422366de8"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0093~h6a96bfe83f94"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0093~hde1422366de8"
+        }
+      ],
+      "question_id": "lx:question:4587d5b5-81a0-4d7e-8a89-7eca5a245574",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0093~h6a96bfe83f94",
+        "review/pilot-230/review-rereview1-b/0093~hde1422366de8"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "c95c8031bf488eb404d1844e0a005f8b36a14e50efcb686e58c578747819d8b8",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: Per-field source_refs name S01, whose reference permission is pending and retrieval_scope is metadata_only; it contains no inspected lexical field evidence. The transform admits self-authore",
+          "review_id": "review/pilot-230/rereview2-a/0005",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/rereview2-a/0005"
+        }
+      ],
+      "question_id": "lx:question:49138093-9419-4657-bde1-461d8413c9fe",
+      "revision": 3,
+      "source_review_ids": [
+        "review/pilot-230/rereview2-a/0005"
+      ],
+      "tested_ability": "contextual_choice"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "281804228eef5b483ff8695d5b7a6f56d6848d4c3415218d84d5306325bd2096",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0103~h8bebaf498b2b",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0103~h8bebaf498b2b",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0103~h8bebaf498b2b"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0103~h8bebaf498b2b"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0103~h967fb54e3111"
+        }
+      ],
+      "question_id": "lx:question:4b742933-9448-4fc4-88e1-bcf9d288aaec",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0103~h8bebaf498b2b",
+        "review/pilot-230/review-rereview1-b/0103~h967fb54e3111"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "607f0129cdf77d8b3f3d63939cf5ee4401b7e5a0494e067141e911b47948adc0",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0109~h1d1cd2711897",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0109~h1d1cd2711897",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0109~h1d1cd2711897",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0109~h1d1cd2711897"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0109~h1d1cd2711897"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0109~h91df3de5b8ba"
+        }
+      ],
+      "question_id": "lx:question:4e2fd0e1-0d50-4900-b3af-9f7aeab8b678",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0109~h1d1cd2711897",
+        "review/pilot-230/review-rereview1-b/0109~h91df3de5b8ba"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "771a422428c4ca9641f4ed14121b6047eed268e1a75beb8ba1f30f211c5d36c7",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0119~h618420ae95b6",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0119~h618420ae95b6",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0119~h618420ae95b6"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0119~h618420ae95b6"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0119~hbb3a217e5910"
+        }
+      ],
+      "question_id": "lx:question:551b61ce-6af9-44d8-a9c2-62b8eeaeecd0",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0119~h618420ae95b6",
+        "review/pilot-230/review-rereview1-b/0119~hbb3a217e5910"
+      ],
+      "tested_ability": "contextual_choice"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "b0c885aa3ea19761bf88a5e2aadbba3ae86f24f6d2fd5c1ac68cbb5ef85eaf94",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0123~h90e474a00eda",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0123~h90e474a00eda",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0123~h90e474a00eda"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0123~h59ecbaf9e44a"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0123~h90e474a00eda"
+        }
+      ],
+      "question_id": "lx:question:56b72404-4e5e-4a78-8b81-6cb1c0010079",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0123~h59ecbaf9e44a",
+        "review/pilot-230/review-rereview1-b/0123~h90e474a00eda"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "0024931e5a144b424b5d58185b7074c24c6d15713e94b39efdfa885434537458",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "Same-model separate-session answer-visible REVIEW by coordinator assignment; permanently not a blind solver. No authenticated runtime session ID invented. Animal flight after thunder differs from rela",
+          "review_id": "review/pilot-230/rereview2-a/0007",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: Per-field source_refs name S01, whose reference permission is pending and retrieval_scope is metadata_only; it contains no inspected lexical field evidence. The transform admits self-authore",
+          "review_id": "review/pilot-230/rereview2-a/0007",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL, not carried as pass: Closing bus versus approaching finish line retains the paired run-rather-than-walk template; the train also closely restates the teaching bus-stop example.",
+          "review_id": "review/pilot-230/rereview2-a/0007",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/rereview2-a/0007"
+        }
+      ],
+      "question_id": "lx:question:5b93e627-63dc-4f06-940a-8cf90cdd4dd7",
+      "revision": 3,
+      "source_review_ids": [
+        "review/pilot-230/rereview2-a/0007"
+      ],
+      "tested_ability": "contextual_choice"
+    },
+    {
+      "categories": [
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "fb88bc8c5602f142dc7d97dcffb0e9c6118a7502ab1b0f1a3bd4e4474edb3c96",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: Per-field source_refs name S01, whose reference permission is pending and retrieval_scope is metadata_only; it contains no inspected lexical field evidence. The transform admits self-authore",
+          "review_id": "review/pilot-230/rereview2-a/0009",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/rereview2-a/0009"
+        }
+      ],
+      "question_id": "lx:question:5c458b57-4f6d-4148-8c8b-cce9b6dedf36",
+      "revision": 3,
+      "source_review_ids": [
+        "review/pilot-230/rereview2-a/0009"
+      ],
+      "tested_ability": "contextual_choice"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "eca48a9b3c597b5f31e40d8a141d37c3155faecefff39917d481493551e305ad",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0137~h39c58fc7abf3",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0137~h39c58fc7abf3",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0137~h39c58fc7abf3",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0137~h39c58fc7abf3"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0137~h0a68e85028dd"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0137~h39c58fc7abf3"
+        }
+      ],
+      "question_id": "lx:question:604ced18-8d91-4fa2-8600-2e8e945e0ece",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0137~h0a68e85028dd",
+        "review/pilot-230/review-rereview1-b/0137~h39c58fc7abf3"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "2ca4f5bee1f3b0886b858a26f13df97337afd63141ba4caeb37ed04ca4169645",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0143~hfb5d783ec028",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0143~hfb5d783ec028",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0143~hfb5d783ec028",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0143~hfb5d783ec028"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0143~h3b15babf0c59"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0143~hfb5d783ec028"
+        }
+      ],
+      "question_id": "lx:question:62fa6dc1-6829-4cbe-b9d8-5de878b8b8c9",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0143~h3b15babf0c59",
+        "review/pilot-230/review-rereview1-b/0143~hfb5d783ec028"
+      ],
+      "tested_ability": "contextual_choice"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "a1c4e8fc4f52cc68ae22194aca3d459043d99f046836c0ce63f8c3077c9f9787",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0145~h3520e2aae7c1",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0145~h3520e2aae7c1",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0145~h3520e2aae7c1",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0145~h3520e2aae7c1"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0145~h3520e2aae7c1"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0145~hebe5458c0020"
+        }
+      ],
+      "question_id": "lx:question:68708610-e340-4b90-9031-f14bb612b85e",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0145~h3520e2aae7c1",
+        "review/pilot-230/review-rereview1-b/0145~hebe5458c0020"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "8dc317aa34b4401394b548c8f6efecffac9a0e6b9c7b0de9212574e2b5ea9ab2",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: Per-field source_refs name S01, whose reference permission is pending and retrieval_scope is metadata_only; it contains no inspected lexical field evidence. The transform admits self-authore",
+          "review_id": "review/pilot-230/rereview2-a/0011",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/rereview2-a/0011"
+        }
+      ],
+      "question_id": "lx:question:68888225-a42d-4c29-95cb-5bc5d1f89196",
+      "revision": 3,
+      "source_review_ids": [
+        "review/pilot-230/rereview2-a/0011"
+      ],
+      "tested_ability": "contextual_choice"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "6e7d57dc1420526c0ffa9efdb72eab4549cc87374ec173e1bebe8673e7c3fa17",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0153~h9d5f1968d69e",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0153~h9d5f1968d69e",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0153~h9d5f1968d69e",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0153~h9d5f1968d69e"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0153~h9d5f1968d69e"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0153~hd3c813762351"
+        }
+      ],
+      "question_id": "lx:question:6e0726ce-484e-408d-97c3-ba91a999cec5",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0153~h9d5f1968d69e",
+        "review/pilot-230/review-rereview1-b/0153~hd3c813762351"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "e1462f357ea32e6da7eb7be7a3a86a0526a3820d8348a8f37eed2f8016e2db0b",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0161~hb1e4fd5606a4",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0161~hb1e4fd5606a4",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0161~hb1e4fd5606a4"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0161~h1c3306bfc47c"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0161~hb1e4fd5606a4"
+        }
+      ],
+      "question_id": "lx:question:72f3f9c4-3c81-430b-9715-1d4a8cf16341",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0161~h1c3306bfc47c",
+        "review/pilot-230/review-rereview1-b/0161~hb1e4fd5606a4"
+      ],
+      "tested_ability": "contextual_choice"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "83ffc7606bef2ec003179519549a130811a451b263bb817b471739a862686696",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0167~h67bef6d7dd0c",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0167~h67bef6d7dd0c",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0167~h67bef6d7dd0c",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0167~h67bef6d7dd0c"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0167~h67bef6d7dd0c"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0167~hee7953a68a07"
+        }
+      ],
+      "question_id": "lx:question:78d9083c-6b4e-4b84-ab7c-18bcddff9615",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0167~h67bef6d7dd0c",
+        "review/pilot-230/review-rereview1-b/0167~hee7953a68a07"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "3c1dc406962e483bd5b0e027e62d3c5652c32728a0345b6359bc85afd25791b2",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0171~h545509fe09fb",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0171~h545509fe09fb",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0171~h545509fe09fb",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0171~h545509fe09fb"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0171~h519320915d3d"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0171~h545509fe09fb"
+        }
+      ],
+      "question_id": "lx:question:7b7751e6-5bd0-4f82-9d9f-cee502bd31c5",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0171~h519320915d3d",
+        "review/pilot-230/review-rereview1-b/0171~h545509fe09fb"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "cc0d88c71d831b64da1f30cb9ae1bb8080a58855254ff2d425292457b75ca648",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0177~hcb345110289b",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0177~hcb345110289b",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0177~hcb345110289b",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0177~hcb345110289b"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0177~h955c4ac6df8c"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0177~hcb345110289b"
+        }
+      ],
+      "question_id": "lx:question:7c41cc28-38d1-4a01-869b-f663a1c18827",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0177~h955c4ac6df8c",
+        "review/pilot-230/review-rereview1-b/0177~hcb345110289b"
+      ],
+      "tested_ability": "contextual_choice"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "c874da8e57e881fc7cc3674f4fe569bca39169036036c4010e38466b5648002d",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0179~h131ff7b0c860",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0179~h131ff7b0c860",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0179~h131ff7b0c860",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0179~h131ff7b0c860"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0179~h131ff7b0c860"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0179~h80e7dee5e0a0"
+        }
+      ],
+      "question_id": "lx:question:7d0711c1-7f83-47fc-ad1a-7c6f2a3ce95e",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0179~h131ff7b0c860",
+        "review/pilot-230/review-rereview1-b/0179~h80e7dee5e0a0"
+      ],
+      "tested_ability": "contextual_choice"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "e5b92bea00b36d2a2cd01debe1fcfa2cc93612a41cc5703fbe0a0915eee0e13d",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0183~h15bb391d1094",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0183~h15bb391d1094",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0183~h15bb391d1094",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0183~h15bb391d1094"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0183~h0fd1546e167b"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0183~h15bb391d1094"
+        }
+      ],
+      "question_id": "lx:question:7e0f3940-1437-4810-8bfb-eaf54c93dee3",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0183~h0fd1546e167b",
+        "review/pilot-230/review-rereview1-b/0183~h15bb391d1094"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "ff6508b5e1cdb369aeecc9c192d36892f613c9a9a5f3036e54de30b94b2d27b1",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0185~h1328e12068bd",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0185~h1328e12068bd",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0185~h1328e12068bd",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0185~h1328e12068bd"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0185~h1328e12068bd"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0185~h89d68e13b5bc"
+        }
+      ],
+      "question_id": "lx:question:7e9bed0a-65d9-47e9-acb5-d71e6368f6c5",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0185~h1328e12068bd",
+        "review/pilot-230/review-rereview1-b/0185~h89d68e13b5bc"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "343557c217e1bd5f40e3b857ede4ac76e3194d6396cec670544f62231d112797",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0187~h3a13325a189c",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0187~h3a13325a189c",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0187~h3a13325a189c",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0187~h3a13325a189c"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0187~h3a13325a189c"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0187~h464503ea4407"
+        }
+      ],
+      "question_id": "lx:question:7fca3b34-8f35-4600-9a36-4cc625ab41bc",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0187~h3a13325a189c",
+        "review/pilot-230/review-rereview1-b/0187~h464503ea4407"
+      ],
+      "tested_ability": "contextual_choice"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "4498b082279539695114aeb697b97aae4a8894d7ac09b252572b800c66f79713",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0189~h3d3ac1ec73ab",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0189~h3d3ac1ec73ab",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0189~h3d3ac1ec73ab",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0189~h3d3ac1ec73ab"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0189~h08698d79794c"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0189~h3d3ac1ec73ab"
+        }
+      ],
+      "question_id": "lx:question:800ff7bf-cc76-409d-acad-b6cfff6aba9c",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0189~h08698d79794c",
+        "review/pilot-230/review-rereview1-b/0189~h3d3ac1ec73ab"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "5f0db6ffcae9fba258da628d0676cc88e05ca1f06227271c57b497c8ae09e739",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0195~hd6a93b396f93",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0195~hd6a93b396f93",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0195~hd6a93b396f93",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0195~hd6a93b396f93"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0195~h4296797cca3a"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0195~hd6a93b396f93"
+        }
+      ],
+      "question_id": "lx:question:83e932d3-1055-461d-8948-e475bad23e2a",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0195~h4296797cca3a",
+        "review/pilot-230/review-rereview1-b/0195~hd6a93b396f93"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "7257888ea2506aa22fb4fdeac2c4d77960d7adf1740eb475623350d25a36d15d",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0199~hd619f3edc81e",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0199~hd619f3edc81e",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0199~hd619f3edc81e",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0199~hd619f3edc81e"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0199~h52f96487d6ad"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0199~hd619f3edc81e"
+        }
+      ],
+      "question_id": "lx:question:86da2b59-d2f9-4380-9ac0-4cbf48433889",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0199~h52f96487d6ad",
+        "review/pilot-230/review-rereview1-b/0199~hd619f3edc81e"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "bf8a096bfc0bad5ce1fd86700ada486abf5f2fe51e5b50eb367714acccddeda8",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0209~h21ee8a3dd2bd",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0209~h21ee8a3dd2bd",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0209~h21ee8a3dd2bd",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0209~h21ee8a3dd2bd"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0209~h21ee8a3dd2bd"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0209~h96990409e773"
+        }
+      ],
+      "question_id": "lx:question:8e46840d-ebb9-494c-86e7-7e316593a3d9",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0209~h21ee8a3dd2bd",
+        "review/pilot-230/review-rereview1-b/0209~h96990409e773"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "3453acd170df7b615ba52324dfad4dc2e3246672230f41c6320959098499b398",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0215~he6f24c4e63a6",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0215~he6f24c4e63a6",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0215~he6f24c4e63a6"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0215~h9f6b2667da63"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0215~he6f24c4e63a6"
+        }
+      ],
+      "question_id": "lx:question:90853134-6d81-4f12-8c11-1921cb52f1eb",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0215~h9f6b2667da63",
+        "review/pilot-230/review-rereview1-b/0215~he6f24c4e63a6"
+      ],
+      "tested_ability": "contextual_choice"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "4d281f1ebfc7f2e062cf0e3871827b609d3937b76bd3a0677fabd1bfab2db874",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0217~h9b5ce7b1363b",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0217~h9b5ce7b1363b",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0217~h9b5ce7b1363b",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0217~h9b5ce7b1363b"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0217~h80c0ad0258be"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0217~h9b5ce7b1363b"
+        }
+      ],
+      "question_id": "lx:question:90a256a8-973f-4236-952a-f077c6f787dc",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0217~h80c0ad0258be",
+        "review/pilot-230/review-rereview1-b/0217~h9b5ce7b1363b"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "95fd7e3eb43094239203a238cfa7d8303d7bc23975643f97db47a158f0404c08",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0221~h178b89280179",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0221~h178b89280179",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0221~h178b89280179",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0221~h178b89280179"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0221~h178b89280179"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0221~h9424b422d58a"
+        }
+      ],
+      "question_id": "lx:question:93dde987-7696-41f7-8b99-7a9a2813d799",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0221~h178b89280179",
+        "review/pilot-230/review-rereview1-b/0221~h9424b422d58a"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "fb6b8f42762f99f80db7fdad4a958adc9b714f5342bacf1b35d33c104bc28bba",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0223~h744f89857b5d",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0223~h744f89857b5d",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0223~h744f89857b5d",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0223~h744f89857b5d"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0223~h3e32e944f1ad"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0223~h744f89857b5d"
+        }
+      ],
+      "question_id": "lx:question:945bd978-5eb0-4694-a23e-6a0e53b9fdaa",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0223~h3e32e944f1ad",
+        "review/pilot-230/review-rereview1-b/0223~h744f89857b5d"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "71a0488923efd1a7cb5e28c05920bfae62b512b1995aece62509e291e4961345",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0231~h3fef4dc0de9f",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0231~h3fef4dc0de9f",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0231~h3fef4dc0de9f",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0231~h3fef4dc0de9f"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0231~h3fef4dc0de9f"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0231~h79a3926a8526"
+        }
+      ],
+      "question_id": "lx:question:9c920882-7a28-430c-b1be-bb7704656390",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0231~h3fef4dc0de9f",
+        "review/pilot-230/review-rereview1-b/0231~h79a3926a8526"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "90706265693d9a5d951fba8ba8d3c5103e3e2091e8f36f2e7c0bb7f3d5a4fe22",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0233~h648bd544d7a5",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0233~h648bd544d7a5",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0233~h648bd544d7a5",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0233~h648bd544d7a5"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0233~h648bd544d7a5"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0233~hc664a7dc50c3"
+        }
+      ],
+      "question_id": "lx:question:9d9e2c2f-1eb1-4018-b0f0-1cf5efadcf96",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0233~h648bd544d7a5",
+        "review/pilot-230/review-rereview1-b/0233~hc664a7dc50c3"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "3fe3504b9d11574d5fa68c5841802d6f00cbe5c36656081625f8789ccc48ca2e",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0241~hfe210926ade3",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0241~hfe210926ade3",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0241~hfe210926ade3"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0241~h464b62edad14"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0241~hfe210926ade3"
+        }
+      ],
+      "question_id": "lx:question:a40cad41-2642-41c1-babd-917a2b4cd7de",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0241~h464b62edad14",
+        "review/pilot-230/review-rereview1-b/0241~hfe210926ade3"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "6e46de3655466ec2e0375f934ad8af3bfb69b7ddd0c70f51da7284d472ef6c7d",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0243~h48a397b37ee9",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0243~h48a397b37ee9",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0243~h48a397b37ee9",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0243~h48a397b37ee9"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0243~h06d98cfa5223"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0243~h48a397b37ee9"
+        }
+      ],
+      "question_id": "lx:question:a55cc9f8-1d70-48d9-b7ac-f52c66515444",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0243~h06d98cfa5223",
+        "review/pilot-230/review-rereview1-b/0243~h48a397b37ee9"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "d677927597be6b2e8161e6ae3a9df159b72cb67235c5aeb5e70cde1ae7d6b140",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0253~h0e4d9a95f74a",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0253~h0e4d9a95f74a",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0253~h0e4d9a95f74a"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0253~h0e4d9a95f74a"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0253~h5ca4cb9a9a10"
+        }
+      ],
+      "question_id": "lx:question:b1562ab7-7599-4e40-b30c-1b0853987d1a",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0253~h0e4d9a95f74a",
+        "review/pilot-230/review-rereview1-b/0253~h5ca4cb9a9a10"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "d2cca84f48a7c4d4b907f1c0f7c4788ed095ec542795b9d04b3ec306221d5210",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: Per-field source_refs name S01, whose reference permission is pending and retrieval_scope is metadata_only; it contains no inspected lexical field evidence. The transform admits self-authore",
+          "review_id": "review/pilot-230/rereview2-a/0019",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/rereview2-a/0019"
+        }
+      ],
+      "question_id": "lx:question:b68d03bb-8cc0-4829-8cd7-e616e98a3b1c",
+      "revision": 3,
+      "source_review_ids": [
+        "review/pilot-230/rereview2-a/0019"
+      ],
+      "tested_ability": "contextual_choice"
+    },
+    {
+      "categories": [
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "a196d840ddcd9d04e67e2b80c9ecf51bddadf590b2dcc40508835d445960b7c9",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: Per-field source_refs name S01, whose reference permission is pending and retrieval_scope is metadata_only; it contains no inspected lexical field evidence. The transform admits self-authore",
+          "review_id": "review/pilot-230/rereview2-a/0021",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/rereview2-a/0021"
+        }
+      ],
+      "question_id": "lx:question:bc2315b9-6926-4e9f-a14d-311efb5ae08c",
+      "revision": 3,
+      "source_review_ids": [
+        "review/pilot-230/rereview2-a/0021"
+      ],
+      "tested_ability": "contextual_choice"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "b8d438ca2ac6c020f1ada85f2606573b7fe3819fd4291715dd81db722cbd6624",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0265~h33159f16802c",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0265~h33159f16802c",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0265~h33159f16802c",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0265~h33159f16802c"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0265~h33159f16802c"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0265~h4bae5430c422"
+        }
+      ],
+      "question_id": "lx:question:bd736276-fbd8-450d-b44b-290755f479d2",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0265~h33159f16802c",
+        "review/pilot-230/review-rereview1-b/0265~h4bae5430c422"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "86775758000544e42edb89f12bbb9e5e3e2261e92346cc5235cd62bb898a648f",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0271~he368447e81c0",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0271~he368447e81c0",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0271~he368447e81c0"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0271~hc60c2ed1bd32"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0271~he368447e81c0"
+        }
+      ],
+      "question_id": "lx:question:c02f7d8f-bbf6-4163-8839-ef4e307e145d",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0271~hc60c2ed1bd32",
+        "review/pilot-230/review-rereview1-b/0271~he368447e81c0"
+      ],
+      "tested_ability": "contextual_choice"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "8ce06f39fc6e7da883f47e08796f6fe210ba99489dd5f86b8d10ac8474a9fd22",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0277~h29996a35f1db",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0277~h29996a35f1db",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0277~h29996a35f1db",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0277~h29996a35f1db"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0277~h29996a35f1db"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0277~h2a0d1de3ea97"
+        }
+      ],
+      "question_id": "lx:question:c3637896-8bf0-47a6-a0ea-95f391b833cb",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0277~h29996a35f1db",
+        "review/pilot-230/review-rereview1-b/0277~h2a0d1de3ea97"
+      ],
+      "tested_ability": "contextual_choice"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "c8de0107fcc7ac96502b58a9726518de04785fd976e530da8ef066cccc14f9bb",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0279~h85b0bad5bb4b",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0279~h85b0bad5bb4b",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0279~h85b0bad5bb4b",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0279~h85b0bad5bb4b"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0279~h85b0bad5bb4b"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0279~hc26cad0bcf7b"
+        }
+      ],
+      "question_id": "lx:question:c822882b-a1f0-4fa6-8ba5-5494c9351f01",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0279~h85b0bad5bb4b",
+        "review/pilot-230/review-rereview1-b/0279~hc26cad0bcf7b"
+      ],
+      "tested_ability": "meaning_recognition"
+    },
+    {
+      "categories": [
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "fbc161757fe245975d75865bca57bfc371afe9a5a61193ff66f08fc7ec77d683",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: Per-field source_refs name S01, whose reference permission is pending and retrieval_scope is metadata_only; it contains no inspected lexical field evidence. The transform admits self-authore",
+          "review_id": "review/pilot-230/rereview2-a/0023",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/rereview2-a/0023"
+        }
+      ],
+      "question_id": "lx:question:cb0df250-3068-4be1-97df-eb72e37434ec",
+      "revision": 3,
+      "source_review_ids": [
+        "review/pilot-230/rereview2-a/0023"
+      ],
+      "tested_ability": "contextual_choice"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "52ac817f71500e6c30b005da0284aeb341527028a1b1110c55c68301d80dc4ac",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0305~he378543972c7",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0305~he378543972c7",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0305~he378543972c7",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0305~he378543972c7"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0305~h33ef682d85e6"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0305~he378543972c7"
+        }
+      ],
+      "question_id": "lx:question:e2edaae0-9cea-42fc-9856-ea7b18901d09",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0305~h33ef682d85e6",
+        "review/pilot-230/review-rereview1-b/0305~he378543972c7"
+      ],
+      "tested_ability": "contextual_choice"
+    },
+    {
+      "categories": [
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "2045ad0ed35e2a649e3d3890f003ebb443b64216c21e97b52376bad1ea5fc688",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "Same-model separate-session answer-visible REVIEW by coordinator assignment; permanently not a blind solver. No authenticated runtime session ID invented. Batteries equal on weight but different endur",
+          "review_id": "review/pilot-230/rereview2-a/0029",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: Per-field source_refs name S01, whose reference permission is pending and retrieval_scope is metadata_only; it contains no inspected lexical field evidence. The transform admits self-authore",
+          "review_id": "review/pilot-230/rereview2-a/0029",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/rereview2-a/0029"
+        }
+      ],
+      "question_id": "lx:question:e51b9c1a-942f-4d10-8409-4807e82a5e76",
+      "revision": 3,
+      "source_review_ids": [
+        "review/pilot-230/rereview2-a/0029"
+      ],
+      "tested_ability": "contextual_choice"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "8267aad8a8496eb567fcafc7f1fc21ddf64929dd209c2ad4ce3ad461ab5e6f66",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0307~h8ca5af7aa794",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0307~h8ca5af7aa794",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0307~h8ca5af7aa794",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0307~h8ca5af7aa794"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0307~h8ca5af7aa794"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0307~hd6366eba4e5b"
+        }
+      ],
+      "question_id": "lx:question:e5aaf2aa-9d7b-422b-96a5-f9ed52485ebc",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0307~h8ca5af7aa794",
+        "review/pilot-230/review-rereview1-b/0307~hd6366eba4e5b"
+      ],
+      "tested_ability": "contextual_choice"
+    },
+    {
+      "categories": [
+        "current-disagreement:passed,quarantined",
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "0cf58c12732cee35eb2aee221dfe71c587d940e8983930b9ee63e8f7f60b7cce",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: inherited finding is not carried as a pass. The referenced author receipt has no resolvable generator session/role label; independent execution occurred, but metadata-based generator-session",
+          "review_id": "review/pilot-230/review-rereview1-b/0311~h5d78c3556e84",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: checkfix field source references cite an unregistered sanitized order-set ID; complete field enumeration does not authorize derivation. The orders contain identities/failure tasks, not all i",
+          "review_id": "review/pilot-230/review-rereview1-b/0311~h5d78c3556e84",
+          "severity": "major"
+        },
+        {
+          "category": "unresolved-major",
+          "finding_reason": "RESIDUAL: same-model separate answer-visible REVIEW dispatch by assignment, permanently not blind. Generator role declarations are present but runtime generator/reviewer session inequality is not inde",
+          "review_id": "review/pilot-230/review-rereview1-b/0311~h5d78c3556e84",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/pilot-230/review-rereview1-b/0311~h5d78c3556e84"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0311~h5d78c3556e84"
+        },
+        {
+          "category": "current-disagreement",
+          "review_id": "review/pilot-230/review-rereview1-b/0311~he1f6ca47d160"
+        }
+      ],
+      "question_id": "lx:question:e7cd2494-c7e2-41a0-be3d-124565e2bc90",
+      "revision": 2,
+      "source_review_ids": [
+        "review/pilot-230/review-rereview1-b/0311~h5d78c3556e84",
+        "review/pilot-230/review-rereview1-b/0311~he1f6ca47d160"
+      ],
+      "tested_ability": "contextual_choice"
+    },
+    {
+      "categories": [
+        "nonpassed-quarantined",
+        "unresolved-major"
+      ],
+      "content_sha256": "6e19f323934700d027582568e8ba8f2dc877161f83b17caa4042ebb76c4723c3",
+      "details": [
+        {
+          "category": "unresolved-major",
+          "finding_reason": "Remaining near duplication: both TRAIN and CHECK use verb plus noun X, blank connector, noun Y, followed by a clause establishing both; the identical ordered rather than/as well as option pair and ide",
+          "review_id": "review/diverge/055/question",
+          "severity": "major"
+        },
+        {
+          "category": "nonpassed-quarantined",
+          "review_id": "review/diverge/055/question"
+        }
+      ],
+      "question_id": "lx:question:f667505b-75ba-4b2e-8063-4ef0efc8f856",
+      "revision": 2,
+      "source_review_ids": [
+        "review/diverge/055/question"
+      ],
+      "tested_ability": "contextual_choice"
+    }
+  ],
+  "mapping_ref": "content/reviews/pilot-230-current/mapping.json",
+  "note": "Deterministic explicit high-risk MCQ selection from exact-current canonical reviews. Missing assessments are NOT counted as high risk.",
+  "profile": "content/policies/pilot-quality-v3.json",
+  "release_eligible": false,
+  "reviews": "content/reviews/pilot-230-current",
+  "reviews_inputs": [
+    {
+      "bytes": 46056098,
+      "path": "content/reviews/pilot-230-current/reviews-disambiguated.jsonl",
+      "sha256": "f14fd88978d74605a78225648c1e5c48b72e78d153a081e2b207279475c06157"
+    }
+  ],
+  "rule": "exact-current binding (subject_revision AND subject_content_sha256 equal dataset revision/hash); include MCQ with (a) unresolved major/critical finding, or (b) non-passed current verdict, or (c) current verdict disagreement across exact-current reviews; missing assessments excluded"
+}

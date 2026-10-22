@@ -39,6 +39,7 @@ public enum CKCLI {
           reviews audit --dataset PATH --reviews PATH --evidence PATH [--profile PATH]
           families audit --dataset PATH --reviews PATH --profile PATH --evidence PATH
           reports human-recheck|audit-human-recheck --dataset PATH --reviews PATH --profile PATH --seed INTEGER --out PATH --evidence PATH
+          reports current-recheck|audit-current-recheck --dataset PATH --reviews PATH --out PATH --evidence PATH [--policy PATH [--quality-profile PATH]]
           index build --dataset PATH --out PATH --evidence PATH
           search --index PATH --query WORD
           pack build --dataset PATH --sources PATH --reviews PATH --ledger PATH --profile PATH --mode private-preview --out PATH
@@ -48,6 +49,12 @@ public enum CKCLI {
         """
 
     public static func run(_ arguments: [String]) -> Int32 {
+        if arguments.first == "reports",
+           ["current-recheck", "audit-current-recheck"].contains(arguments.dropFirst().first),
+           arguments.contains("--help") || arguments.contains("-h") {
+            print(CurrentRecheckReport.usage)
+            return 0
+        }
         if arguments.contains("--help") || arguments.contains("-h") {
             print(usage)
             return 0
@@ -95,7 +102,15 @@ public enum CKCLI {
             return ReviewCommands.run(Array(arguments.dropFirst()))
         }
         if first == "reports" {
-            return HumanReportCommands.run(Array(arguments.dropFirst()))
+            let rest = Array(arguments.dropFirst())
+            if rest.first == "current-recheck" || rest.first == "audit-current-recheck" {
+                if rest.contains("--help") || rest.contains("-h") {
+                    print(CurrentRecheckReport.usage)
+                    return 0
+                }
+                return CurrentRecheckReport.run(rest)
+            }
+            return HumanReportCommands.run(rest)
         }
         if first == "families" {
             return FamiliesCommands.run(Array(arguments.dropFirst()))
