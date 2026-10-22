@@ -1,0 +1,207 @@
+{
+  "version": "question-eligibility-v3",
+  "batch": "question-quality-first-batch",
+  "note": "Linguistic suitability assessments only, bound to the exact sealed revisions/hashes above. They are NOT current full quality reviews, NOT checklist/family evidence, NOT human approval, and do NOT transfer to any other revision/hash. Full current review, independent family/teaching evidence and release/human-review gates still apply; these items may stay ineligible under the v3 gate. Full evidence closure remains pending.",
+  "proposal_file": ".omo/drafts/question-quality-replacements.json",
+  "proposal_file_sha256": "d1c11da4ba9780688dbd405b26e814d3f1dbafac844db6ec92f46343e6f58c8c",
+  "proposal_digests": {
+    "lx:question:a951d963-098c-46fe-a63c-04e5b56e8b3a": "e54cfa3883057e80ebfe91a60dc51158cdb2b553fdb79e376172f70892c08e2f",
+    "lx:question:2ade7b81-9020-42bd-80f9-5d4a2e4b3296": "b6f3f4a9e72b822164f3743ffc317729e1e3c8e0412c2ff07b76b6b2d1876d6d",
+    "lx:question:46a35e8b-d76b-46e8-b899-45b30fd9534d": "1d477b9c7f8c94f8b228e2d09b8ed92c656c255172c82f50a6479c3ba3d7cf92"
+  },
+  "reviewer_report": ".omo/drafts/question-proposal-review.md",
+  "reviewer_report_sha256": "27d404e521fd10a924433e723bfa85071d2a4d1378402132c4822d4b0d6b4a18",
+  "author_session": "ses_e9bb16cadffeuVCQNDBplNY1xX",
+  "evaluator_session": "ses_e9bc60208ffegwAOliKMGqzTpX",
+  "assessments": [
+    {
+      "question_id": "lx:question:a951d963-098c-46fe-a63c-04e5b56e8b3a",
+      "revision": 2,
+      "content_sha256": "3fa305f4dbd6a6e982d84bef30f3773af0506cf5078b3bee4cc968f0ca069fb9",
+      "author_session": "ses_e9bb16cadffeuVCQNDBplNY1xX",
+      "evaluator_session": "ses_e9bc60208ffegwAOliKMGqzTpX",
+      "distractors": [
+        {
+          "option_id": "option-b",
+          "plausibility": {
+            "passed": true,
+            "reason": "clinic is a credible health-facility confusion; the ordinary outpatient sense does not fit the combined emergency-department plus full-inpatient-wards description, without claiming no clinic can ever admit a patient.",
+            "evidence": [
+              "proposal .omo/drafts/question-quality-replacements.json proposals[0] digest e54cfa3883057e80ebfe91a60dc51158cdb2b553fdb79e376172f70892c08e2f (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+              "reviewer report .omo/drafts/question-proposal-review.md section 1 (hospital) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+              "sealed current row lx:question:a951d963-098c-46fe-a63c-04e5b56e8b3a revision 2 content_sha256 3fa305f4dbd6a6e982d84bef30f3773af0506cf5078b3bee4cc968f0ca069fb9"
+            ]
+          }
+        },
+        {
+          "option_id": "option-c",
+          "plausibility": {
+            "passed": true,
+            "reason": "pharmacy is a credible medical-place confusion; dispensing medicines is not the described postoperative inpatient and emergency service.",
+            "evidence": [
+              "proposal .omo/drafts/question-quality-replacements.json proposals[0] digest e54cfa3883057e80ebfe91a60dc51158cdb2b553fdb79e376172f70892c08e2f (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+              "reviewer report .omo/drafts/question-proposal-review.md section 1 (hospital) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+              "sealed current row lx:question:a951d963-098c-46fe-a63c-04e5b56e8b3a revision 2 content_sha256 3fa305f4dbd6a6e982d84bef30f3773af0506cf5078b3bee4cc968f0ca069fb9"
+            ]
+          }
+        },
+        {
+          "option_id": "option-d",
+          "plausibility": {
+            "passed": true,
+            "reason": "laboratory is a credible testing-facility confusion; laboratory work is not the ward-based accommodation described.",
+            "evidence": [
+              "proposal .omo/drafts/question-quality-replacements.json proposals[0] digest e54cfa3883057e80ebfe91a60dc51158cdb2b553fdb79e376172f70892c08e2f (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+              "reviewer report .omo/drafts/question-proposal-review.md section 1 (hospital) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+              "sealed current row lx:question:a951d963-098c-46fe-a63c-04e5b56e8b3a revision 2 content_sha256 3fa305f4dbd6a6e982d84bef30f3773af0506cf5078b3bee4cc968f0ca069fb9"
+            ]
+          }
+        }
+      ],
+      "unique_answer": {
+        "passed": true,
+        "reason": "option-a hospital is the single best completion: three nights after a major operation with an emergency department and full inpatient wards; broad institutional names or specialist uses of clinic are not equivalent ordinary completions of this full description.",
+        "evidence": [
+          "proposal .omo/drafts/question-quality-replacements.json proposals[0] digest e54cfa3883057e80ebfe91a60dc51158cdb2b553fdb79e376172f70892c08e2f (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+          "reviewer report .omo/drafts/question-proposal-review.md section 1 (hospital) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+          "sealed current row lx:question:a951d963-098c-46fe-a63c-04e5b56e8b3a revision 2 content_sha256 3fa305f4dbd6a6e982d84bef30f3773af0506cf5078b3bee4cc968f0ca069fb9"
+        ]
+      },
+      "no_leakage": {
+        "passed": true,
+        "reason": "Stem neither spells hospital nor embeds it in a compound; medical-service clues test meaning rather than reveal letters. 'Full inpatient wards' is slightly less idiomatic than 'inpatient wards' but understandable and non-blocking per reviewer.",
+        "evidence": [
+          "proposal .omo/drafts/question-quality-replacements.json proposals[0] digest e54cfa3883057e80ebfe91a60dc51158cdb2b553fdb79e376172f70892c08e2f (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+          "reviewer report .omo/drafts/question-proposal-review.md section 1 (hospital) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+          "sealed current row lx:question:a951d963-098c-46fe-a63c-04e5b56e8b3a revision 2 content_sha256 3fa305f4dbd6a6e982d84bef30f3773af0506cf5078b3bee4cc968f0ca069fb9"
+        ]
+      }
+    },
+    {
+      "question_id": "lx:question:2ade7b81-9020-42bd-80f9-5d4a2e4b3296",
+      "revision": 2,
+      "content_sha256": "07595a7b782e23f3bc4350a1adfc824c195a4363f19044e49959ce11bb58e9ae",
+      "author_session": "ses_e9bb16cadffeuVCQNDBplNY1xX",
+      "evaluator_session": "ses_e9bc60208ffegwAOliKMGqzTpX",
+      "distractors": [
+        {
+          "option_id": "option-b",
+          "plausibility": {
+            "passed": true,
+            "reason": "candle is a related light/heat source campers might gather around, but its wax-and-wick combustion is not the depicted stone-ring pile of burning dry wood.",
+            "evidence": [
+              "proposal .omo/drafts/question-quality-replacements.json proposals[1] digest b6f3f4a9e72b822164f3743ffc317729e1e3c8e0412c2ff07b76b6b2d1876d6d (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+              "reviewer report .omo/drafts/question-proposal-review.md section 2 (fire) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+              "sealed current row lx:question:2ade7b81-9020-42bd-80f9-5d4a2e4b3296 revision 2 content_sha256 07595a7b782e23f3bc4350a1adfc824c195a4363f19044e49959ce11bb58e9ae"
+            ]
+          }
+        },
+        {
+          "option_id": "option-c",
+          "plausibility": {
+            "passed": true,
+            "reason": "lamp is plausible campsite illumination, but a lamp is a lighting device, not the described open wood combustion; no claim that all lamps are flameless.",
+            "evidence": [
+              "proposal .omo/drafts/question-quality-replacements.json proposals[1] digest b6f3f4a9e72b822164f3743ffc317729e1e3c8e0412c2ff07b76b6b2d1876d6d (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+              "reviewer report .omo/drafts/question-proposal-review.md section 2 (fire) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+              "sealed current row lx:question:2ade7b81-9020-42bd-80f9-5d4a2e4b3296 revision 2 content_sha256 07595a7b782e23f3bc4350a1adfc824c195a4363f19044e49959ce11bb58e9ae"
+            ]
+          }
+        },
+        {
+          "option_id": "option-d",
+          "plausibility": {
+            "passed": true,
+            "reason": "heater is a plausible warmth source on a cold night, but the text depicts open burning wood rather than a heating appliance; rationale no longer wrongly limits heaters to electricity or gas.",
+            "evidence": [
+              "proposal .omo/drafts/question-quality-replacements.json proposals[1] digest b6f3f4a9e72b822164f3743ffc317729e1e3c8e0412c2ff07b76b6b2d1876d6d (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+              "reviewer report .omo/drafts/question-proposal-review.md section 2 (fire) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+              "sealed current row lx:question:2ade7b81-9020-42bd-80f9-5d4a2e4b3296 revision 2 content_sha256 07595a7b782e23f3bc4350a1adfc824c195a4363f19044e49959ce11bb58e9ae"
+            ]
+          }
+        }
+      ],
+      "unique_answer": {
+        "passed": true,
+        "reason": "option-a fire identifies the exposed wood combustion: piled dry wood inside a circle of stones outdoors with flames rising from the burning wood; 'gathered around the ___' naturally permits all four nouns so no verb-selection giveaway.",
+        "evidence": [
+          "proposal .omo/drafts/question-quality-replacements.json proposals[1] digest b6f3f4a9e72b822164f3743ffc317729e1e3c8e0412c2ff07b76b6b2d1876d6d (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+          "reviewer report .omo/drafts/question-proposal-review.md section 2 (fire) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+          "sealed current row lx:question:2ade7b81-9020-42bd-80f9-5d4a2e4b3296 revision 2 content_sha256 07595a7b782e23f3bc4350a1adfc824c195a4363f19044e49959ce11bb58e9ae"
+        ]
+      },
+      "no_leakage": {
+        "passed": true,
+        "reason": "fireplace has been removed; neither fire nor a compound containing it appears in the stem. Flames, wood and heat are legitimate semantic evidence; feedback distinguishes the depicted event without universal claims about other sources.",
+        "evidence": [
+          "proposal .omo/drafts/question-quality-replacements.json proposals[1] digest b6f3f4a9e72b822164f3743ffc317729e1e3c8e0412c2ff07b76b6b2d1876d6d (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+          "reviewer report .omo/drafts/question-proposal-review.md section 2 (fire) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+          "sealed current row lx:question:2ade7b81-9020-42bd-80f9-5d4a2e4b3296 revision 2 content_sha256 07595a7b782e23f3bc4350a1adfc824c195a4363f19044e49959ce11bb58e9ae"
+        ]
+      }
+    },
+    {
+      "question_id": "lx:question:46a35e8b-d76b-46e8-b899-45b30fd9534d",
+      "revision": 5,
+      "content_sha256": "389f99a8fc0551844ea8183398c22d80240e435bc63f5f52fa38a5f156635cbd",
+      "author_session": "ses_e9bb16cadffeuVCQNDBplNY1xX",
+      "evaluator_session": "ses_e9bc60208ffegwAOliKMGqzTpX",
+      "distractors": [
+        {
+          "option_id": "option-a",
+          "plausibility": {
+            "passed": true,
+            "reason": "daytime is a plausible work-period label in isolation, excluded by the specified overnight hours and darkness.",
+            "evidence": [
+              "proposal .omo/drafts/question-quality-replacements.json proposals[2] digest 1d477b9c7f8c94f8b228e2d09b8ed92c656c255172c82f50a6479c3ba3d7cf92 (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+              "reviewer report .omo/drafts/question-proposal-review.md section 3 (night) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+              "sealed current row lx:question:46a35e8b-d76b-46e8-b899-45b30fd9534d revision 5 content_sha256 389f99a8fc0551844ea8183398c22d80240e435bc63f5f52fa38a5f156635cbd"
+            ]
+          }
+        },
+        {
+          "option_id": "option-b",
+          "plausibility": {
+            "passed": true,
+            "reason": "evening is a close dark-hours confusion, excluded by the midnight-to-five interval, not by darkness alone since evenings can also be dark.",
+            "evidence": [
+              "proposal .omo/drafts/question-quality-replacements.json proposals[2] digest 1d477b9c7f8c94f8b228e2d09b8ed92c656c255172c82f50a6479c3ba3d7cf92 (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+              "reviewer report .omo/drafts/question-proposal-review.md section 3 (night) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+              "sealed current row lx:question:46a35e8b-d76b-46e8-b899-45b30fd9534d revision 5 content_sha256 389f99a8fc0551844ea8183398c22d80240e435bc63f5f52fa38a5f156635cbd"
+            ]
+          }
+        },
+        {
+          "option_id": "option-d",
+          "plausibility": {
+            "passed": true,
+            "reason": "afternoon is a plausible bakery work period in isolation, excluded by the explicit a.m. interval.",
+            "evidence": [
+              "proposal .omo/drafts/question-quality-replacements.json proposals[2] digest 1d477b9c7f8c94f8b228e2d09b8ed92c656c255172c82f50a6479c3ba3d7cf92 (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+              "reviewer report .omo/drafts/question-proposal-review.md section 3 (night) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+              "sealed current row lx:question:46a35e8b-d76b-46e8-b899-45b30fd9534d revision 5 content_sha256 389f99a8fc0551844ea8183398c22d80240e435bc63f5f52fa38a5f156635cbd"
+            ]
+          }
+        }
+      ],
+      "unique_answer": {
+        "passed": true,
+        "reason": "option-c night is the single best completion of 'work through the ___' for the explicit 12 a.m.-5 a.m. interval while still dark; it names the time-of-day sense, not a full twenty-four-hour day.",
+        "evidence": [
+          "proposal .omo/drafts/question-quality-replacements.json proposals[2] digest 1d477b9c7f8c94f8b228e2d09b8ed92c656c255172c82f50a6479c3ba3d7cf92 (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+          "reviewer report .omo/drafts/question-proposal-review.md section 3 (night) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+          "sealed current row lx:question:46a35e8b-d76b-46e8-b899-45b30fd9534d revision 5 content_sha256 389f99a8fc0551844ea8183398c22d80240e435bc63f5f52fa38a5f156635cbd"
+        ]
+      },
+      "no_leakage": {
+        "passed": true,
+        "reason": "Stem contains neither night nor midnight; 'still dark' is a meaning clue, not an embedded answer. Clock notation adds modest reading demand but no alternative correct option. The editorial note overstates darkness as excluding evening and is not reused as evidence here.",
+        "evidence": [
+          "proposal .omo/drafts/question-quality-replacements.json proposals[2] digest 1d477b9c7f8c94f8b228e2d09b8ed92c656c255172c82f50a6479c3ba3d7cf92 (stem, all four options, accepted_answers, distractor_rationales, post_answer_feedback inspected)",
+          "reviewer report .omo/drafts/question-proposal-review.md section 3 (night) APPROVE — separate reviewer session ses_e9bc60208ffegwAOliKMGqzTpX, distinct from author session ses_e9bb16cadffeuVCQNDBplNY1xX",
+          "sealed current row lx:question:46a35e8b-d76b-46e8-b899-45b30fd9534d revision 5 content_sha256 389f99a8fc0551844ea8183398c22d80240e435bc63f5f52fa38a5f156635cbd"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "batch": "question-quality-first-batch",
+  "inputs": {
+    "proposal_file": ".omo/drafts/question-quality-replacements.json",
+    "proposal_file_sha256": "d1c11da4ba9780688dbd405b26e814d3f1dbafac844db6ec92f46343e6f58c8c",
+    "reviewer_report": ".omo/drafts/question-proposal-review.md",
+    "reviewer_report_sha256": "27d404e521fd10a924433e723bfa85071d2a4d1378402132c4822d4b0d6b4a18",
+    "proposal_digests": {
+      "lx:question:a951d963-098c-46fe-a63c-04e5b56e8b3a": "e54cfa3883057e80ebfe91a60dc51158cdb2b553fdb79e376172f70892c08e2f",
+      "lx:question:2ade7b81-9020-42bd-80f9-5d4a2e4b3296": "b6f3f4a9e72b822164f3743ffc317729e1e3c8e0412c2ff07b76b6b2d1876d6d",
+      "lx:question:46a35e8b-d76b-46e8-b899-45b30fd9534d": "1d477b9c7f8c94f8b228e2d09b8ed92c656c255172c82f50a6479c3ba3d7cf92"
+    },
+    "author_session": "ses_e9bb16cadffeuVCQNDBplNY1xX",
+    "evaluator_session": "ses_e9bc60208ffegwAOliKMGqzTpX",
+    "pilot50_note": "The 3 record IDs were searched in content/records/pilot-50/merged/pilot-50-question.jsonl and are absent there; pilot-230 rows only."
+  },
+  "questions": [
+    {
+      "record_id": "lx:question:a951d963-098c-46fe-a63c-04e5b56e8b3a",
+      "old_revision": 1,
+      "old_sha": "1a014af2083a6e0b03f288a0b751720d0cc7debf0451357e22b8ee0e424d3fc3",
+      "new_revision": 2,
+      "new_sha": "3fa305f4dbd6a6e982d84bef30f3773af0506cf5078b3bee4cc968f0ca069fb9"
+    },
+    {
+      "record_id": "lx:question:2ade7b81-9020-42bd-80f9-5d4a2e4b3296",
+      "old_revision": 1,
+      "old_sha": "59ca94ce5ec44d36768a331f31ca8b6102c9e9a316f83bcb55fefd3163ada176",
+      "new_revision": 2,
+      "new_sha": "07595a7b782e23f3bc4350a1adfc824c195a4363f19044e49959ce11bb58e9ae"
+    },
+    {
+      "record_id": "lx:question:46a35e8b-d76b-46e8-b899-45b30fd9534d",
+      "old_revision": 4,
+      "old_sha": "3d32a26742aaafb2be2ec3a9e8e818a1d8aac6663212b5211c5aca8981e53217",
+      "new_revision": 5,
+      "new_sha": "389f99a8fc0551844ea8183398c22d80240e435bc63f5f52fa38a5f156635cbd"
+    }
+  ],
+  "provenance": [
+    {
+      "record_id": "provenance/words-11a/e97e8cae-bdee-4a1a-ad59-09e396d8f20f",
+      "new_revision": 2,
+      "new_sha": "e6475eb729044fc5a04ddfb8dc5e921bf880b9c9e368bcd8cf1744c55cf4ff95",
+      "subject": "lx:question:a951d963-098c-46fe-a63c-04e5b56e8b3a",
+      "subject_revision": 2,
+      "schema": "lexvane.provenance.v2"
+    },
+    {
+      "record_id": "provenance/words-11a/cf9cbc4d-ab47-463e-8e34-bae187bb69e9",
+      "new_revision": 2,
+      "new_sha": "0ca374379e6cdb599e57c57bfdcc318a8cb89b5f6507cc097a12e2c3da5a001f",
+      "subject": "lx:question:2ade7b81-9020-42bd-80f9-5d4a2e4b3296",
+      "subject_revision": 2,
+      "schema": "lexvane.provenance.v2"
+    },
+    {
+      "record_id": "provenance/check-bank-b/016a1211-ae8d-447f-b44f-198a175f65d4",
+      "new_revision": 6,
+      "new_sha": "f3c54bdbd54fc5fdc5dff1b481e836de9030ce544a0cba30e168ba8f46562c37",
+      "subject": "lx:question:46a35e8b-d76b-46e8-b899-45b30fd9534d",
+      "subject_revision": 5,
+      "schema": "lexvane.provenance.v2"
+    }
+  ],
+  "archives": {
+    "original_questions": {
+      "ref": "content/history/question-quality-first-batch/original-questions.jsonl",
+      "sha256": "69e8a67f0423148d608aec17fbe722bb1317d8c1c7f132e15a12346a86883034"
+    },
+    "original_provenance": {
+      "ref": "content/history/question-quality-first-batch/original-provenance.jsonl",
+      "sha256": "f43e25d4317581374fe86f562732a6126e8b54012d5f4137eb8642e2ade1f6c0"
+    },
+    "proposal_snapshot": {
+      "ref": "content/history/question-quality-first-batch/snapshots/proposals/question-quality-replacements.json",
+      "sha256": "d1c11da4ba9780688dbd405b26e814d3f1dbafac844db6ec92f46343e6f58c8c"
+    },
+    "reviewer_report_snapshot": {
+      "ref": "content/history/question-quality-first-batch/reviewer-report/question-proposal-review.md",
+      "sha256": "27d404e521fd10a924433e723bfa85071d2a4d1378402132c4822d4b0d6b4a18"
+    }
+  },
+  "policy_outputs": [
+    "content/policies/question-assessments-first-batch.json",
+    "content/policies/pilot-quality-v3.json (assessments appended; gates unchanged)",
+    "content/policies/pilot-supply-scenarios-v3.json"
+  ],
+  "honesty_notes": [
+    "Linguistic approvals only; no serving/release/family qualification implied.",
+    "No current full reviews, checklist passes, family evidence, or human approval were created or copied.",
+    "Original S01 source refs preserved as external reference-only; unverified character preserved; no new author receipts or transform claims.",
+    "Source migration is complete. Full evidence closure remains pending."
+  ]
+}
