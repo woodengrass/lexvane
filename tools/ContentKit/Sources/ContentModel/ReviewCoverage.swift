@@ -96,38 +96,66 @@ public enum ReviewCoverage {
         }
         let allGeneratorSessions = Set(batches.map(\.generatorSession))
 
+        // Identical canonical copies dedup (same record_id, same sealed bytes).
+        // Conflicting same record_ids fail closed: one identity, one content.
+        var canonicalByRecordId: [String: Data] = [:]
+        var uniqueReviews: [Review] = []
+        uniqueReviews.reserveCapacity(reviewDocs.count)
+        for review in reviewDocs {
+            let canonical = try ContractJSON.bytes(ContractRecord.review(review))
+            if let prior = canonicalByRecordId[review.recordId] {
+                guard prior == canonical else {
+                    throw ReviewCoverageFailure("duplicate_review:\(review.recordId)")
+                }
+                continue
+            }
+            canonicalByRecordId[review.recordId] = canonical
+            uniqueReviews.append(review)
+        }
+
         var coveredByKind: [String: Int] = [:]
         var subjectsByKind: [String: Int] = [:]
         var unresolvedCritical = 0
         var reviewerSessions: Set<String> = []
         for subject in subjects.values {
             subjectsByKind[subject.kind.rawValue, default: 0] += 1
-            let candidates = reviewDocs.filter { $0.payload.subjectId == subject.id }
+            let candidates = uniqueReviews.filter { $0.payload.subjectId == subject.id }
             guard !candidates.isEmpty else {
                 throw ReviewCoverageFailure("missing_review:\(subject.id)@\(subject.revision)")
             }
-            guard let match = candidates.first(where: {
+            // Bind by kind/id/revision/hash. Historical rows stay visible for
+            // stale_revision but can never approve the current revision.
+            let current = candidates.filter {
                 $0.payload.subjectRevision == subject.revision
                     && $0.payload.subjectContentSha256 == subject.hash
                     && $0.payload.subjectKind == subject.kind
-            }) else {
+            }
+            guard !current.isEmpty else {
                 throw ReviewCoverageFailure("stale_revision:\(subject.id)")
             }
-            guard match.payload.verdict == .passed else {
-                throw ReviewCoverageFailure("review_not_passed:\(subject.id)")
+            // All-current aggregate: any non-passed exact current review
+            // rejects, regardless of file order or a sibling pass.
+            for review in current {
+                guard review.payload.verdict == .passed else {
+                    throw ReviewCoverageFailure("review_not_passed:\(subject.id)")
+                }
             }
-            try requireChecklist(match, subject: subject, questions: questions)
-            if let generator = generatorBySubject[subject.id],
-               match.payload.reviewerSession == generator {
-                throw ReviewCoverageFailure("self_review:\(subject.id)")
+            for review in current {
+                try requireChecklist(review, subject: subject, questions: questions)
+                if let generator = generatorBySubject[subject.id],
+                   review.payload.reviewerSession == generator {
+                    throw ReviewCoverageFailure("self_review:\(subject.id)")
+                }
             }
-            reviewerSessions.insert(match.payload.reviewerSession)
-            unresolvedCritical += match.payload.findings.filter {
-                $0.severity == .critical && $0.state == .unresolved
-            }.count
+            for review in current {
+                reviewerSessions.insert(review.payload.reviewerSession)
+                unresolvedCritical += review.payload.findings.filter {
+                    $0.severity == .critical && $0.state == .unresolved
+                }.count
+            }
             coveredByKind[subject.kind.rawValue, default: 0] += 1
         }
-        for review in reviewDocs {
+        for review in uniqueReviews {
             // Provenance is checked separately by complete_provenance; question
             // checklists carry lineage. Extras never widen Task8's denominator.
             if review.payload.subjectKind == .provenance { continue }
