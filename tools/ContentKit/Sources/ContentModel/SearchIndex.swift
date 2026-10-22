@@ -33,6 +33,10 @@ public enum SearchIndex {
             .lowercased(with: Locale(identifier: "en"))
     }
 
+    public static func sanitizedQueryKey(_ text: String) -> String {
+        normalizeKey(text).split(whereSeparator: { $0.isWhitespace }).joined(separator: " ")
+    }
+
     /// Builds a deterministic index from decoded records. Non-entry records
     /// (questions, teaching, provenance, reviews, manifests, ...) are
     /// ignored by construction. Quarantined entries are excluded and listed.
@@ -99,7 +103,7 @@ public enum SearchIndex {
     /// Resolves a raw query: exact key match first, then binary prefix range.
     /// Never invents spellings; unknown queries resolve to `.none` with no IDs.
     public static func resolve(query: String, index: SearchIndexDocument) -> SearchResolution {
-        let key = normalizeKey(query)
+        let key = sanitizedQueryKey(query)
         guard !key.isEmpty else {
             return SearchResolution(queryKey: key, entryIds: [], ambiguous: false, matchKind: .none)
         }
