@@ -1,51 +1,69 @@
 # Content quality repair verification
 
-This records completed engineering checks, not blanket linguistic or release
-approval. The whole bank was audited; only three question texts were revised.
+This records engineering checks, not whole-bank linguistic or release approval.
+Only three question texts have been revised; the bank remains unqualified.
 
-## Manual QA on the real artifact
+## Review regression fixes (2026-10-26)
+
+A clean checkout of `21508ef` reproduced 296 tests with one missing-private-file
+failure. Applying the current fixes and the three-row review fixture yields
+**314 tests, zero failures**, without the private canonical review archive.
+Missing fixtures are not skipped. The isolated code/fixture snapshot was checked
+byte-for-byte against the proposed working-tree changes.
+
+- Both validation and package-build callers now reject a non-throwing
+  `FamiliesAudit.valid=false`, retaining the shortages and creating no package.
+- Nine caller-boundary tests exercise real disk-backed family audits and pack
+  assembly with call-local graph-report fixtures. They isolate this boundary,
+  not full evidence closure. Default/public entrypoints separately reject the
+  intentionally invalid graph after injected success. No global override exists.
+- Review-reference tests use three sealed source fixtures instead of the ignored
+  full review archive. Formal private inputs remain owner/backup prerequisites;
+  missing input exits 65 with actionable guidance and creates no output.
+- Both non-passed review verdicts remain actionable with empty findings. Failed
+  checklists retain their reasons; bare rejections remain incomplete evidence.
+  Deduplication retains all contributing review locations and historical context.
+- Live regeneration restores one omitted checklist issue: 8,717 becomes 8,718.
+  Byte-for-byte audit passes with fresh dataset/review/profile bindings.
+- Independent follow-up review: APPROVE for these three fixes. This is not
+  whole-bank content approval or permission to release.
+
+## Real-surface checks
 
 | Surface | Observed result | Evidence |
 | --- | --- | --- |
-| Existing-index search | Padded/fullwidth `apple`, repeated/tab/newline/NBSP/fullwidth-space `according to` return the same exact IDs; whitespace-only returns none | `SearchIndexTests`, actual `contentkit search` probes |
-| Identity adoption | 2,756/2,756 resolve; 2,466 retries append zero bytes; original 290-event prefix unchanged | `content/ids/registration-20261022.json`, native `ids audit`, migration `--verify` |
-| Review materialization | 7,041 unique output IDs from 13,773 occurrences; all 548 conflicts and 112 verdict disagreements retained | canonical `mapping.json`, `ambiguous-references.json`, `provenance.json`; 11 regression tests |
-| Source repair | Every actual external source ID registered; all 82 unresolved identifiers remain unverified; no new permissions | `PROVENANCE-REPAIR.md`, original snapshots, three repair tests |
-| Writing isolation | No active writing targets, no writing supply; both introduced quarantine dependencies eliminated | `WritingExclusionTests`, native graph |
-| Three revised questions | Four options, single key, no embedded answer; same IDs, new revisions and hashes, matching provenance, no inherited review refs | `QuestionRevisionTests`, tracked first-batch proposals/reviewer/history |
-| Whole-bank eligibility | 716 MCQs audited: 292 pending, 424 rejected, zero qualified; 418 author work / 716 review work | `question-quality-current.json` |
-| Real v3 supply | 716 target/scenario allocation rows (358 targets times two scenarios); no consumed check or train families | native `supply simulate` with v3 inputs; allocations are not questions served |
-| Human triage | Fresh dataset/review/profile binding; audit reproduces 8,717 issue rows, original severity/history preserved | `CURRENT-TRIAGE.md`, current triage JSON/JSONL |
-| Candidate decoding | Both pilots pass: 666 and 4,370 records | native `validate --stage candidate` |
-| Private-pack graph | Still blocked: 19,214 observations; zero targeted identity/duplicate/source/quarantine/dangling/profile defects | native `validate --stage private-pack` |
+| Search | Whitespace normalization preserves exact IDs, phrases and hyphens | SearchIndexTests and prior native CLI probes |
+| Identity registration | 2,756 required IDs resolve; original 290-event prefix preserved | `content/ids/registration-20261022.json` |
+| Review materialization | 7,041 unique records preserve 13,773 occurrences and all conflicts | canonical mapping and reconciliation report |
+| Source repair | All external source IDs resolve; 82 unresolved IDs remain explicitly unverified | `PROVENANCE-REPAIR.md` and original snapshots |
+| Writing isolation | No writing supply; introduced quarantine dependencies eliminated | WritingExclusionTests and native graph |
+| Revised questions | Three four-option revisions, preserved IDs/history, no inherited review pass | QuestionRevisionTests and tracked first-batch evidence |
+| Whole-bank quality | 716 MCQs: 292 pending, 424 rejected, zero qualified | `question-quality-current.json` |
+| Human triage | 8,718 issues; fresh inputs; pending decisions unchanged | `CURRENT-TRIAGE.md` and current packet |
+| Private-pack validation | Exit 65; 19,572 observations, including 358 explicit family shortages | `three-fixes-real-graph.json` |
 
-## Automated checks
+The prior ProvenanceRepair run passed three tests. This follow-up did not modify
+that package. All Swift files changed in this follow-up have clean diagnostics;
+SwiftPM builds and executes the complete ContentKit suite. `git diff --check`
+is clean. The IDE build service has another project open, so SwiftPM supplied
+the actual build validation.
 
-- `swift test --package-path tools/ContentKit`: 295 tests, zero failures.
-- `swift test --package-path tools/ProvenanceRepair`: three tests, zero failures.
-- `swift run --package-path tools/QuestionRevision qr-seal check --in ...` uses
-  the official `ContractJSON.decode`, not a duplicate hashing implementation.
-- `git diff --check`: clean.
-- Independent integrated safety review: APPROVE for the implemented repairs and
-  fail-closed gates. The reviewer reconciled the reports with current artifacts;
-  this approval is not linguistic approval of the whole bank or release approval.
-- Main edited sources have clean LSP diagnostics. SourceKit reports an unresolved
-  module on the newly added `QuestionRevisionTests.swift` in its persistent
-  session, while SwiftPM compiles and runs that test successfully; this tooling
-  discrepancy is disclosed rather than reported as a clean LSP result.
+## Reproduction evidence
 
-Local raw verification logs/receipts are in
+Local logs and receipts are in
 `/var/folders/dt/lt4qz2hd6qgdzj_0lkh72hxw0000gn/T/opencode/`:
-`quality-final-tests.log`, `quality-repair-tests.log`,
-`quality-final-graph.json`, `quality-final-supply.json`, and
-`quality-final-triage-evidence.json`. These are local artifacts; rerun the
-documented commands rather than assuming those temporary paths exist elsewhere.
+`three-fixes-before.log`, `three-fixes-clean-full.log`,
+`three-fixes-source-retention-red.log`, `three-fixes-real-graph.json`, and
+`three-fixes-triage-audit.json`. These are local temporary artifacts, not inputs
+required by tests. Run `swift test --package-path tools/ContentKit` after
+including the proposed fixes and new fixture to reproduce the test result.
+See `tools/ReviewDisambiguate/README.md` for formal collection preparation.
 
 ## Remaining content acceptance
 
 Review disagreements, unavailable execution/source evidence, missing current
-reviews, 298 historical provenance-binding defects and other graph gates remain
-explicit blockers. Importing review identities or recording three linguistic
-assessments does not resolve them. No owner signature, source permission, passed
-full review or family qualification was fabricated. The current bank must not
-be presented as fully rewritten, qualified or publishable.
+reviews, 298 historical provenance-binding defects and other content gates remain
+explicit blockers. The additional 358 reported shortages were previously ignored
+by callers; they do not represent new authored-content defects. No owner signature,
+source permission, passed full review or family qualification was fabricated.
+These regression fixes do not make the bank publishable or fully rewritten.

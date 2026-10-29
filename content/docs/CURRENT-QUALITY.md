@@ -52,19 +52,22 @@ all 716 questions have been rewritten. No filler options were bulk-added.
 The explicit high-risk MCQ census is 61 of 716, selected from current adverse
 review evidence, not from absence of an assessment. All remain pending.
 See `content/reports/v3-human-risk-selection.json` for per-ID reasons and hashes.
-The broader triage contains 2,502 machine/author issues, 1,128 current judgment
+The broader triage contains 2,502 machine/author issues, 1,129 current judgment
 issues and 5,087 historical-context issues. These are issue counts, not distinct
 people's review assignments; history retains its original severity separately.
 
 ## Verification and remaining gates
 
-- ContentKit: 295 tests pass; ProvenanceRepair: three tests pass.
+- ContentKit: 314 tests pass in an isolated checkout with the current fixes and
+  without the private review archive; ProvenanceRepair's prior run passed three tests.
 - Native candidate decoding passes both pilots (666 / 4,370 records).
 - Native graph reports zero identity-binding, duplicate-ID, unregistered-source,
   quarantine-dependency, dangling-reference and profile-decoding defects.
-- Full private-pack validation remains blocked by 19,214 defect observations:
+- Full private-pack validation remains blocked by 19,572 defect observations:
   missing/stale review and execution evidence, unresolved provenance, field
   coverage and target/sense issues. These are not distinct faulty-record counts.
+- This total includes 358 family-supply shortages now propagated by the validation
+  entrypoint. A returned `valid=false` family audit also stops package creation.
 - Actual v3 simulation offers 358 targets but supplies no qualified question
   families; positive minimums and shortages remain visible.
 - Current triage audit reproduces output bytes with fresh dataset/review/profile
