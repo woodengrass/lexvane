@@ -12,12 +12,13 @@ private func flag(_ name: String) -> String? {
     return args[index + 1]
 }
 
-guard let sourcePath = flag("--source"), let outputPath = flag("--output") else {
-    fail("usage: review-disambiguate --source <reviews-dir> --output <canonical-dir>")
-}
 if CommandLine.arguments.contains("--help") {
     print("usage: review-disambiguate --source <reviews-dir> --output <canonical-dir>")
     exit(0)
+}
+
+guard let sourcePath = flag("--source"), let outputPath = flag("--output") else {
+    fail("usage: review-disambiguate --source <reviews-dir> --output <canonical-dir>")
 }
 do {
     let report = try ReviewDisambiguation.disambiguate(

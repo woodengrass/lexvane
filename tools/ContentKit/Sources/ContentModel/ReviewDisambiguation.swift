@@ -111,7 +111,18 @@ public enum ReviewDisambiguation {
     @discardableResult
     public static func disambiguate(sourceDir: URL, outputDir: URL) throws -> ReviewDisambiguationReport {
         let fm = FileManager.default
-        // Phase 0: path safety. No reads, no writes on violation.
+        // Phase 0: preflight. Missing raw input fails actionably before any
+        // read or write; nothing is created at outputDir on this path. The
+        // full raw history is private local input from the data owner or a
+        // controlled backup (see tools/ReviewDisambiguate/README.md).
+        var isDir: ObjCBool = false
+        guard fm.fileExists(atPath: sourceDir.path, isDirectory: &isDir), isDir.boolValue else {
+            throw ReviewCoverageFailure(
+                "disambiguation_missing_source:\(sourceDir.lastPathComponent):" +
+                "raw review history is private local input from the data owner/controlled backup; " +
+                "place it at --source and rerun; nothing was written")
+        }
+        // Path safety. No reads, no writes on violation.
         try validatePaths(sourceDir: sourceDir, outputDir: outputDir)
 
         // Phase 1: parse inputs into memory. No writes.

@@ -450,6 +450,37 @@ final class ReviewDisambiguationTests: XCTestCase {
         XCTAssertFalse(fm.fileExists(atPath: out.path), "empty runs must not create output")
     }
 
+    func testMissingSourceFailsActionablyWithoutCreatingOutput() throws {
+        let fm = FileManager.default
+        let temp = fm.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        try fm.createDirectory(at: temp, withIntermediateDirectories: true)
+        defer { try? FileManager.default.removeItem(at: temp) }
+        let missing = temp.appendingPathComponent("no-such-raw-history")
+        let out = temp.appendingPathComponent("out")
+        XCTAssertThrowsError(try ReviewDisambiguation.disambiguate(sourceDir: missing, outputDir: out)) {
+            let text = String(describing: $0)
+            XCTAssertTrue(text.contains("disambiguation_missing_source"), "\(text)")
+            XCTAssertFalse(text.contains("NSCocoaErrorDomain"), "typed message, not a Cocoa traceback: \(text)")
+        }
+        XCTAssertFalse(fm.fileExists(atPath: out.path), "missing input must not create output")
+        XCTAssertFalse(fm.fileExists(atPath: missing.path))
+    }
+
+    func testSyntheticSingleRowPrepWorks() throws {
+        let row = try sealedReview(recordId: "review/synth-preflight", subjectId: "lx:sense:synth",
+                                   verdict: "passed", session: "ses-a", reason: "thorough")
+        let (temp, source) = try sourceDir(with: ["review-a.jsonl": [row]])
+        defer { try? FileManager.default.removeItem(at: temp) }
+        let out = temp.appendingPathComponent("out")
+        let report = try ReviewDisambiguation.disambiguate(sourceDir: source, outputDir: out)
+        XCTAssertEqual(report.totalRows, 1)
+        XCTAssertEqual(report.outputRows, 1)
+        let outRow = try Data(contentsOf: out.appendingPathComponent("reviews-disambiguated.jsonl"))
+        guard case .review = try ContractJSON.decode(Data(outRow.dropLast())) else {
+            return XCTFail("synthetic prep must reseal cleanly")
+        }
+    }
+
     // MARK: - Helpers
 
     private func resealed(_ data: Data, mutate: (inout [String: Any]) -> Void) throws -> Data {
