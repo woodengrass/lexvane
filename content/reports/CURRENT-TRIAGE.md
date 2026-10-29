@@ -26,16 +26,21 @@ Use `audit-current-recheck` with the same inputs to verify byte-identical output
 Dataset, review and profile file sets/hashes must all match before quality-audit
 items are used; stale data cannot silently enter the current queue.
 
+Canonical collection bootstrap: the `content/reviews/pilot-230-current/`
+directory is generated local state (see
+`tools/ReviewDisambiguate/README.md` for the private-input prep command,
+preflight, and `provenance.json` hash verification).
+
 ## Latest verified packet
 
 4,370 subjects; 7,041 unique reviews; 720/720 question bindings current.
-8,717 issues: 2,502 machine/author, 1,128 current human judgment, 5,087 historical.
+8,718 issues: 2,502 machine/author, 1,129 current human judgment, 5,087 historical.
 
 | Action | Issue count |
 | --- | ---: |
 | Author revision | 418 |
 | Excluded from supply (writing; no reauthoring requested) | 4 |
-| Independent review needed | 1,618 |
+| Independent review needed | 1,619 |
 | Machine/evidence fix | 1,590 |
 | Historical context | 5,087 |
 
@@ -50,6 +55,11 @@ Historical unresolved findings preserve their severity and source references,
 even when the current revision lacks a review. They are context, not proof that
 the current revision failed or that a prior defect was fixed. Identical review
 copies are deduplicated while all locations remain inspectable.
+
+Current `changes_requested` and `quarantined` verdicts with empty findings do not
+disappear: failed checklist items remain actionable, and a non-passed verdict
+without a specific reason is marked incomplete evidence. Checklist reasons that
+repeat an existing finding share that issue while retaining both review locations.
 
 Read `content/reviews/pilot-230-current/triage/OWNER-RECHECK-CURRENT.md`;
 machine tasks can be handled before owner judgments. Generation never changes

@@ -101848,6 +101848,35 @@
       "issue_kind" : "unresolved-finding",
       "occurrence_count" : 1,
       "priority" : "high",
+      "reason" : "Checklist failed (family-independence): Same-model separate-session answer-visible REVIEW; permanently not a blind solver; no cross-model claim. Full paired CHECK and teaching inspected, not merely author distance rationale. Remaining near duplication: both TRAIN and CHECK use verb plus noun X, blank connector, noun Y, followed by a clause establishing both; the identical ordered rather than/as well as option pair and identical additive-versus-exclusive inference survive the domain swap.",
+      "release_eligible" : false,
+      "severity" : "major",
+      "source_count" : 2,
+      "source_refs" : [
+        {
+          "line" : 699,
+          "source" : "../../../records/pilot-230/merged/pilot-230-question.jsonl"
+        },
+        {
+          "line" : 110,
+          "review_record_id" : "review/diverge/055/question",
+          "source" : "../reviews-disambiguated.jsonl",
+          "verdict" : "quarantined"
+        }
+      ],
+      "subject_id" : "lx:question:f667505b-75ba-4b2e-8063-4ef0efc8f856",
+      "subject_kind" : "question",
+      "subject_revision" : 2,
+      "subject_sha256" : "6e19f323934700d027582568e8ba8f2dc877161f83b17caa4042ebb76c4723c3"
+    },
+    {
+      "action" : "independent-review-needed",
+      "bucket" : "human",
+      "human_decision" : null,
+      "human_status" : "pending",
+      "issue_kind" : "unresolved-finding",
+      "occurrence_count" : 1,
+      "priority" : "high",
       "reason" : "Remaining near duplication: both TRAIN and CHECK use verb plus noun X, blank connector, noun Y, followed by a clause establishing both; the identical ordered rather than/as well as option pair and identical additive-versus-exclusive inference survive the domain swap.",
       "release_eligible" : false,
       "severity" : "major",
@@ -281125,13 +281154,13 @@
     "by_action" : {
       "author-revision-needed" : 418,
       "excluded-from-supply" : 4,
-      "independent-review-needed" : 1618,
+      "independent-review-needed" : 1619,
       "machine-fix" : 1590,
       "monitor-context" : 5087
     },
     "by_bucket" : {
       "historical" : 5087,
-      "human" : 1128,
+      "human" : 1129,
       "machine" : 2502
     },
     "by_kind" : {
@@ -281143,15 +281172,15 @@
       "missing-current-review" : 490,
       "review-disagreement" : 54,
       "scope-excluded" : 4,
-      "unresolved-finding" : 357,
+      "unresolved-finding" : 358,
       "unresolved-provenance" : 1590
     },
     "by_priority" : {
-      "high" : 7062,
+      "high" : 7063,
       "low" : 1337,
       "medium" : 318
     },
-    "issue_count" : 8717,
+    "issue_count" : 8718,
     "subject_count" : 4370
   }
 }

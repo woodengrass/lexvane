@@ -2,7 +2,7 @@
 
 No human decisions have been made. This packet grants no approval and no release eligibility. Source rights pending; costs unknown.
 
-Dataset subjects: 4370; disambiguated reviews: 7041; issues: 8717 (machine 2502, human 1128, historical 5087).
+Dataset subjects: 4370; disambiguated reviews: 7041; issues: 8718 (machine 2502, human 1129, historical 5087).
 
 Ambiguous raw-ID conflicts retained without auto-resolution: 548; mapping entries: 7041. Quality items bound to current revisions: 720.
 
@@ -11,7 +11,7 @@ Ambiguous raw-ID conflicts retained without auto-resolution: 548; mapping entrie
 ### by_bucket
 
 - historical: 5087
-- human: 1128
+- human: 1129
 - machine: 2502
 
 ### by_kind
@@ -24,20 +24,20 @@ Ambiguous raw-ID conflicts retained without auto-resolution: 548; mapping entrie
 - missing-current-review: 490
 - review-disagreement: 54
 - scope-excluded: 4
-- unresolved-finding: 357
+- unresolved-finding: 358
 - unresolved-provenance: 1590
 
 ### by_action
 
 - author-revision-needed: 418
 - excluded-from-supply: 4
-- independent-review-needed: 1618
+- independent-review-needed: 1619
 - machine-fix: 1590
 - monitor-context: 5087
 
 ### by_priority
 
-- high: 7062
+- high: 7063
 - low: 1337
 - medium: 318
 
@@ -3444,6 +3444,7 @@ Full rows live in [current-triage.json](current-triage.json) and [current-human-
 - [human/assessment-pending] `lx:question:f65bf8b7-45e2-4654-82fd-1c2668deba3a` r1 · medium · independent-review-needed — Quality audit (pending): independent_semantic_assessment_missing (current binding lx:question:f65bf8b7-45e2-4654-82fd-1c2668deba3a r1).
 - [human/assessment-pending] `lx:question:f667505b-75ba-4b2e-8063-4ef0efc8f856` r2 · high · independent-review-needed — Quality audit (rejected): current_review_checklist_incomplete (current binding lx:question:f667505b-75ba-4b2e-8063-4ef0efc8f856 r2).
 - [human/assessment-pending] `lx:question:f667505b-75ba-4b2e-8063-4ef0efc8f856` r2 · high · independent-review-needed — Quality audit (rejected): independent_semantic_assessment_missing (current binding lx:question:f667505b-75ba-4b2e-8063-4ef0efc8f856 r2).
+- [human/unresolved-finding] `lx:question:f667505b-75ba-4b2e-8063-4ef0efc8f856` r2 · high · independent-review-needed — Checklist failed (family-independence): Same-model separate-session answer-visible REVIEW; permanently not a blind solver; no cross-model claim. Full paired CHECK and teaching inspected, not merely author distance rationale. Remaining near duplication: both TRAIN and CHECK use verb plus noun X, blank connector, noun Y, followed by a clause establishing both; the identical ordered rather than/as well as option pair and identical additive-versus-exclusive inference survive the domain swap.
 - [human/unresolved-finding] `lx:question:f667505b-75ba-4b2e-8063-4ef0efc8f856` r2 · high · independent-review-needed — Remaining near duplication: both TRAIN and CHECK use verb plus noun X, blank connector, noun Y, followed by a clause establishing both; the identical ordered rather than/as well as option pair and identical additive-versus-exclusive inference survive the domain swap.
 - [human/assessment-pending] `lx:question:f6a05c9e-a64d-43ed-8a17-44c2e7844c1b` r3 · high · independent-review-needed — Quality audit (rejected): independent_semantic_assessment_missing (current binding lx:question:f6a05c9e-a64d-43ed-8a17-44c2e7844c1b r3).
 - [human/assessment-pending] `lx:question:f6b42362-9f1e-42b9-9155-5d750456ac97` r2 · high · independent-review-needed — Quality audit (rejected): independent_semantic_assessment_missing (current binding lx:question:f6b42362-9f1e-42b9-9155-5d750456ac97 r2).
