@@ -11,6 +11,16 @@ import XCTest
 /// The repair empties current review_refs (pending review, no passed claims),
 /// reseals r4 -> r5, and preserves the exact old row plus all candidates in
 /// content/history/review-reference-repair/.
+///
+/// This test uses ONLY tracked fixtures. The full 7,041-row canonical
+/// collection (content/reviews/pilot-230-current/reviews-disambiguated.jsonl)
+/// is a generated local artifact and is intentionally untracked (see
+/// .gitignore and tools/ReviewDisambiguate/README.md). The three candidate
+/// rows below are sealed copies, byte-identical to the canonical rows with
+/// the same record_id, stored at
+/// content/history/review-reference-repair/review-candidates.jsonl so a
+/// clean checkout still audits green. No test in this file skips when a
+/// file is missing: a missing tracked fixture fails loudly.
 final class ReviewReferenceRepairTests: XCTestCase {
     private static var repoRoot: URL {
         URL(fileURLWithPath: #filePath).deletingLastPathComponent()
@@ -58,17 +68,24 @@ final class ReviewReferenceRepairTests: XCTestCase {
         // Candidates decode: singleton binds entry r1, both 0464 variants bind
         // entry r3 -- neither matches the r5 subject, so empty is the only
         // honest binding (no candidate picked, no verdict fabricated).
+        // Tracked fixture: byte-identical sealed copies of the same three
+        // canonical rows (see tools/ReviewDisambiguate/README.md). The full
+        // 7,041-row canonical file is untracked and must not be read here.
         let wanted: Set<String> = [
             stale0573,
             "review/pilot-230/review-rereview1-b/0464~h08c36e50d5e2",
             "review/pilot-230/review-rereview1-b/0464~hd7ec8f388e7c",
         ]
         var found: [String: Review] = [:]
-        for line in try CKJSONL.readLines(at: Self.repoRoot.appendingPathComponent(
-            "content/reviews/pilot-230-current/reviews-disambiguated.jsonl"))
+        let fixtureLines = try CKJSONL.readLines(at: Self.repoRoot.appendingPathComponent(
+            "content/history/review-reference-repair/review-candidates.jsonl"))
+        XCTAssertEqual(fixtureLines.count, 3, "fixture must hold exactly the 3 sealed candidates")
+        for line in fixtureLines
         {
             let record = try ContractJSON.decode(Data(line.utf8))
-            guard case .review(let review) = record, wanted.contains(review.recordId) else { continue }
+            guard case .review(let review) = record, wanted.contains(review.recordId) else {
+                return XCTFail("fixture holds only the 3 wanted sealed candidates")
+            }
             found[review.recordId] = review
         }
         XCTAssertEqual(Set(found.keys), wanted)
