@@ -291,7 +291,7 @@ public enum CurrentRecheckReport {
             var provenanceBlocked: Set<String> = []
             for (_, record) in records where record.document.kind == .provenance {
                 let current = (bySubject[record.recordId] ?? []).filter { isCurrentBinding($0.record, datasetRecord: record) }
-                if current.contains(where: { hasUnresolvedFindings($0.record) }) {
+                if current.contains(where: { $0.record.payload.verdict != .passed }) {
                     provenanceBlocked.insert(record.recordId)
                 }
             }
@@ -358,11 +358,18 @@ public enum CurrentRecheckReport {
                 }
 
                 if !current.isEmpty {
-                    if kind == .provenance, current.contains(where: { hasUnresolvedFindings($0.record) }) {
+                    if kind == .provenance, current.contains(where: { $0.record.payload.verdict != .passed }) {
                         for entry in groupUnresolved(current) {
                             emit(bucket: "machine", kind: "unresolved-provenance",
                                  action: "machine-fix", priority: "high",
                                  subjectID: id, severity: entry.severity, reason: entry.reason,
+                                 sources: [datasetRef(key)] + reviewRefs(entry.items),
+                                 extra: ["occurrence_count": entry.items.count])
+                        }
+                        for entry in groupFailedChecklist(current, knownSnippets: groupUnresolvedSnippets(current)) {
+                            emit(bucket: "machine", kind: "unresolved-provenance",
+                                 action: "machine-fix", priority: "high",
+                                 subjectID: id, severity: "major", reason: entry.reason,
                                  sources: [datasetRef(key)] + reviewRefs(entry.items),
                                  extra: ["occurrence_count": entry.items.count])
                         }
@@ -390,15 +397,34 @@ public enum CurrentRecheckReport {
                              sources: [datasetRef(key)] + reviewRefs(entry.items), extra: extra)
                     }
 
-                    let quarantinedBare = current.filter { hit in
-                        hit.record.payload.verdict == .quarantined && !hasUnresolvedFindings(hit.record)
+                    // Failed checklist items are actionable too, unless their
+                    // reason is already reported as a known unresolved finding.
+                    for entry in groupFailedChecklist(current, knownSnippets: groupUnresolvedSnippets(current)) where kind != .provenance {
+                        var extra: Row = ["occurrence_count": entry.items.count]
+                        if case .question(let question) = record {
+                            let blocked = question.payload.provenanceRefs.filter { provenanceBlocked.contains($0) }
+                            if !blocked.isEmpty { extra["blocked_by_unresolved_provenance"] = blocked.sorted() }
+                        }
+                        emit(bucket: "human", kind: "unresolved-finding",
+                             action: "independent-review-needed", priority: "high",
+                             subjectID: id, severity: "major", reason: entry.reason,
+                             sources: [datasetRef(key)] + reviewRefs(entry.items), extra: extra)
                     }
-                    if !quarantinedBare.isEmpty, verdicts.count <= 1, groupUnresolved(current).isEmpty {
+
+                    // A non-passed current verdict (quarantined or
+                    // changes_requested) with no itemized findings and no
+                    // failed checklist stays pending for independent review
+                    // instead of vanishing. A clean pass never does.
+                    let nonPassedBare = current.filter { hit in
+                        hit.record.payload.verdict != .passed && !hasUnresolvedFindings(hit.record) && !hasFailedChecklist(hit.record)
+                    }
+                    if !nonPassedBare.isEmpty, verdicts.count <= 1,
+                       groupUnresolved(current).isEmpty, groupFailedChecklist(current, knownSnippets: []).isEmpty {
                         emit(bucket: "human", kind: "incomplete-evidence",
                              action: "independent-review-needed", priority: "medium",
                              subjectID: id, severity: "major",
-                             reason: "Current review quarantines without itemized unresolved findings; evidence is incomplete so the subject stays pending independent review.",
-                             sources: [datasetRef(key)] + reviewRefs(quarantinedBare))
+                             reason: "Current review \(nonPassedBare.first!.record.payload.verdict.rawValue) without itemized unresolved findings; evidence is incomplete so the subject stays pending independent review.",
+                             sources: [datasetRef(key)] + reviewRefs(nonPassedBare))
                     }
                 }
 
@@ -608,20 +634,74 @@ public enum CurrentRecheckReport {
         review.payload.findings.contains { $0.state == .unresolved }
     }
 
+    private static func hasFailedChecklist(_ review: Review) -> Bool {
+        review.payload.checklist.contains { $0.result == .failed }
+    }
+
     private static func hasResolvedFindings(_ review: Review) -> Bool {
         review.payload.findings.contains { $0.state == .resolved }
+    }
+
+    private struct FailedChecklistGroup {
+        let reason: String
+        let items: [ReviewHit]
+    }
+
+    private static func groupUnresolvedSnippets(_ hits: [ReviewHit]) -> Set<String> {
+        var out: Set<String> = []
+        for hit in hits {
+            for finding in hit.record.payload.findings where finding.state == .unresolved {
+                out.insert(reasonSnippet(finding.reason, limit: 300))
+            }
+        }
+        return out
+    }
+
+    private static func groupFailedChecklist(_ hits: [ReviewHit], knownSnippets: Set<String>) -> [FailedChecklistGroup] {
+        var groups: [String: [ReviewHit]] = [:]
+        var meta: [String: String] = [:]
+        for hit in hits {
+            for item in hit.record.payload.checklist where item.result == .failed {
+                let snippet = reasonSnippet(item.reason, limit: 300)
+                guard !knownSnippets.contains(snippet) else { continue }
+                let key = "\(item.item)|\(snippet)"
+                groups[key, default: []].append(hit)
+                meta[key] = "Checklist failed (\(item.item)): \(item.reason)"
+            }
+        }
+        return groups.keys.sorted().compactMap { key in
+            guard let reason = meta[key], let list = groups[key] else { return nil }
+            var seen: Set<String> = []
+            let unique = list.filter { seen.insert($0.record.recordId).inserted }
+            return FailedChecklistGroup(reason: reason, items: unique)
+        }
     }
 
     private static func groupUnresolved(_ hits: [ReviewHit]) -> [UnresolvedGroup] {
         var groups: [String: [ReviewHit]] = [:]
         var meta: [String: (severity: String, reason: String)] = [:]
+        var keysBySnippet: [String: [String]] = [:]
         for hit in hits {
             for finding in hit.record.payload.findings where finding.state == .unresolved {
                 let severity = finding.severity.rawValue
                 let reason = finding.reason
-                let key = "\(severity)|\(reasonSnippet(reason, limit: 300))"
+                let snippet = reasonSnippet(reason, limit: 300)
+                let key = "\(severity)|\(snippet)"
                 groups[key, default: []].append(hit)
                 meta[key] = (severity, reason)
+                if !(keysBySnippet[snippet]?.contains(key) ?? false) {
+                    keysBySnippet[snippet, default: []].append(key)
+                }
+            }
+        }
+        // Failed-checklist reviews matching a known finding reason join that
+        // finding's group, so no review location is lost and nothing duplicates.
+        for hit in hits {
+            for item in hit.record.payload.checklist where item.result == .failed {
+                let snippet = reasonSnippet(item.reason, limit: 300)
+                for key in keysBySnippet[snippet] ?? [] {
+                    groups[key, default: []].append(hit)
+                }
             }
         }
         return groups.keys.sorted().compactMap { key in

@@ -457,4 +457,169 @@ final class CurrentRecheckTests: XCTestCase {
         let profileURL = try v3Profile(fixture.dataset)
         XCTAssertNotEqual(run("current-recheck", fixture, qualityProfile: profileURL), 0)
     }
+
+    /// P2 red-first: a current changes_requested with a failed checklist and
+    /// empty findings must not vanish (currently 0 issues).
+    func testChangesRequestedFailedChecklistEmptyFindingsStaysPending() throws {
+        let question = qid("016")
+        let fixture = try makeFixture { dataset, reviews in
+            let sealed = try writeSealed([questionRow(question, revision: 1)], dataset.appendingPathComponent("rows.jsonl"))
+            let sha = sealed[0].contentSha256
+            try writeSealed([reviewRow("r-a", subject: question, revision: 1, sha: sha, verdict: "changes_requested",
+                                        checklistPassed: false, findings: [])],
+                            reviews.appendingPathComponent("reviews-disambiguated.jsonl"))
+        }
+        defer { teardown(fixture) }
+        XCTAssertEqual(run("current-recheck", fixture), 0)
+        let rows = try issues(fixture)
+        XCTAssertFalse(rows.isEmpty, "changes_requested with failed checklist and empty findings must not vanish")
+        XCTAssertTrue(rows.allSatisfy { ($0["human_status"] as? String) == "pending" })
+        XCTAssertTrue(rows.contains { ($0["action"] as? String) == "independent-review-needed" },
+                      "failed checklist reasons must stay actionable: \(rows)")
+    }
+
+    /// Both non-passed verdicts with failed checklist and empty findings stay
+    /// pending instead of vanishing.
+    func testBothNonPassedFailedChecklistEmptyFindingsStayPending() throws {
+        for (tag, verdict) in [("017", "quarantined"), ("018", "changes_requested")] {
+            let question = qid(tag)
+            let fixture = try makeFixture { dataset, reviews in
+                let sealed = try writeSealed([questionRow(question, revision: 1)], dataset.appendingPathComponent("rows.jsonl"))
+                let sha = sealed[0].contentSha256
+                try writeSealed([reviewRow("r-a", subject: question, revision: 1, sha: sha, verdict: verdict,
+                                            checklistPassed: false, findings: [])],
+                                reviews.appendingPathComponent("reviews-disambiguated.jsonl"))
+            }
+            XCTAssertEqual(run("current-recheck", fixture), 0, "verdict \(verdict) must generate")
+            let rows = try issues(fixture)
+            XCTAssertFalse(rows.isEmpty, "\(verdict) with failed checklist and empty findings must not vanish")
+            XCTAssertTrue(rows.contains { ($0["action"] as? String) == "independent-review-needed" },
+                          "\(verdict) checklist failure must stay actionable: \(rows)")
+            XCTAssertTrue(rows.allSatisfy { ($0["human_status"] as? String) == "pending" })
+            XCTAssertFalse(rows.contains { ($0["approval"] as? String) == "approved" },
+                           "\(verdict) must never fabricate approval")
+            teardown(fixture)
+        }
+    }
+
+    /// Both non-passed verdicts with no failed items and no findings become
+    /// incomplete-evidence; a clean pass never does just because findings[].
+    func testBothNonPassedBareBecomeIncompleteEvidence() throws {
+        for (tag, verdict) in [("019", "quarantined"), ("020", "changes_requested")] {
+            let question = qid(tag)
+            let fixture = try makeFixture { dataset, reviews in
+                let sealed = try writeSealed([questionRow(question, revision: 1)], dataset.appendingPathComponent("rows.jsonl"))
+                let sha = sealed[0].contentSha256
+                try writeSealed([reviewRow("r-a", subject: question, revision: 1, sha: sha, verdict: verdict,
+                                            checklistPassed: true, findings: [])],
+                                reviews.appendingPathComponent("reviews-disambiguated.jsonl"))
+            }
+            XCTAssertEqual(run("current-recheck", fixture), 0, "verdict \(verdict) must generate")
+            let rows = try issues(fixture)
+            XCTAssertEqual(rows.count, 1, "\(verdict) bare must yield exactly one pending action, got: \(rows)")
+            XCTAssertEqual(rows.first?["issue_kind"] as? String, "incomplete-evidence")
+            XCTAssertEqual(rows.first?["action"] as? String, "independent-review-needed")
+            XCTAssertEqual(rows.first?["human_status"] as? String, "pending")
+            teardown(fixture)
+        }
+        let question = qid("021")
+        let fixture = try makeFixture { dataset, reviews in
+            let sealed = try writeSealed([questionRow(question, revision: 1)], dataset.appendingPathComponent("rows.jsonl"))
+            let sha = sealed[0].contentSha256
+            try writeSealed([reviewRow("r-a", subject: question, revision: 1, sha: sha, verdict: "passed",
+                                        checklistPassed: true, findings: [])],
+                            reviews.appendingPathComponent("reviews-disambiguated.jsonl"))
+        }
+        defer { teardown(fixture) }
+        XCTAssertEqual(run("current-recheck", fixture), 0)
+        XCTAssertTrue(try issues(fixture).isEmpty, "a clean pass must not become incomplete just because findings[]")
+    }
+
+    /// Repeated identical failed-checklist reasons dedup into one row keeping
+    /// every review location linked.
+    func testFailedChecklistDedupRetainsLocations() throws {
+        let question = qid("022")
+        let fixture = try makeFixture { dataset, reviews in
+            let sealed = try writeSealed([questionRow(question, revision: 1)], dataset.appendingPathComponent("rows.jsonl"))
+            let sha = sealed[0].contentSha256
+            try writeSealed([
+                reviewRow("r-a", subject: question, revision: 1, sha: sha, verdict: "changes_requested",
+                          checklistPassed: false, findings: []),
+                reviewRow("r-b", subject: question, revision: 1, sha: sha, verdict: "changes_requested",
+                          checklistPassed: false, findings: []),
+            ], reviews.appendingPathComponent("reviews-disambiguated.jsonl"))
+        }
+        defer { teardown(fixture) }
+        XCTAssertEqual(run("current-recheck", fixture), 0)
+        let rows = try issues(fixture)
+        let actionable = rows.filter { ($0["bucket"] as? String) == "human" && ($0["historical_only"] as? Bool != true) }
+        XCTAssertEqual(actionable.count, 1, "identical checklist failures must dedup, got: \(actionable)")
+        XCTAssertEqual(actionable.first?["source_count"] as? Int, 3, "dataset ref plus both review locations")
+        XCTAssertEqual(actionable.first?["action"] as? String, "independent-review-needed")
+    }
+
+    /// A failed checklist repeating an already-known finding reason must not
+    /// duplicate it, and stale historical context stays bound as history.
+    func testChecklistMatchingAnotherReviewFindingRetainsBothLocations() throws {
+        let question = qid("024")
+        let fixture = try makeFixture { dataset, reviews in
+            let sealed = try writeSealed([questionRow(question, revision: 1)], dataset.appendingPathComponent("rows.jsonl"))
+            try writeSealed([
+                reviewRow("r-finding", subject: question, revision: 1, sha: sealed[0].contentSha256,
+                          verdict: "changes_requested", findings: [findingRow("Checked subject-binding.")]),
+                reviewRow("r-checklist", subject: question, revision: 1, sha: sealed[0].contentSha256,
+                          verdict: "changes_requested", checklistPassed: false),
+            ], reviews.appendingPathComponent("reviews-disambiguated.jsonl"))
+        }
+        defer { teardown(fixture) }
+        XCTAssertEqual(run("current-recheck", fixture), 0)
+        let actionable = try issues(fixture).filter { ($0["bucket"] as? String) == "human" }
+        XCTAssertEqual(actionable.count, 1)
+        XCTAssertEqual(actionable.first?["source_count"] as? Int, 3)
+    }
+
+    func testChecklistSameAsKnownFindingDoesNotDuplicateAndKeepsHistory() throws {
+        let question = qid("023")
+        let fixture = try makeFixture { dataset, reviews in
+            let sealed = try writeSealed([questionRow(question, revision: 2)], dataset.appendingPathComponent("rows.jsonl"))
+            let sha = sealed[0].contentSha256
+            try writeSealed([
+                reviewRow("r-cur", subject: question, revision: 2, sha: sha, verdict: "changes_requested",
+                          checklistPassed: false, findings: [findingRow("Checked subject-binding.")]),
+                reviewRow("r-old", subject: question, revision: 1, sha: zeroHash, verdict: "quarantined",
+                          findings: [findingRow("stale major flaw")]),
+            ], reviews.appendingPathComponent("reviews-disambiguated.jsonl"))
+        }
+        defer { teardown(fixture) }
+        XCTAssertEqual(run("current-recheck", fixture), 0)
+        let rows = try issues(fixture)
+        let current = rows.filter { ($0["historical_only"] as? Bool != true) && ($0["bucket"] as? String) == "human" }
+        XCTAssertEqual(current.count, 1, "checklist repeating a known finding must not duplicate, got: \(current)")
+        XCTAssertTrue(try issues(fixture).contains { ($0["issue_kind"] as? String) == "historical-unresolved-stale" },
+                      "stale historical context must be retained: \(rows)")
+    }
+
+    /// A failed-checklist-only review matching a known finding reason must
+    /// join that finding's row, keeping every review location.
+    func testChecklistFailureMatchingKnownFindingKeepsAllLocations() throws {
+        let question = qid("024")
+        let fixture = try makeFixture { dataset, reviews in
+            let sealed = try writeSealed([questionRow(question, revision: 1)], dataset.appendingPathComponent("rows.jsonl"))
+            let sha = sealed[0].contentSha256
+            try writeSealed([
+                reviewRow("r-a", subject: question, revision: 1, sha: sha, verdict: "changes_requested",
+                          checklistPassed: true, findings: [findingRow("Checked subject-binding.")]),
+                reviewRow("r-b", subject: question, revision: 1, sha: sha, verdict: "changes_requested",
+                          checklistPassed: false, findings: []),
+            ], reviews.appendingPathComponent("reviews-disambiguated.jsonl"))
+        }
+        defer { teardown(fixture) }
+        XCTAssertEqual(run("current-recheck", fixture), 0)
+        let rows = try issues(fixture)
+        let current = rows.filter { ($0["historical_only"] as? Bool != true) && ($0["bucket"] as? String) == "human" }
+        XCTAssertEqual(current.count, 1, "matching checklist failure must join the finding row, not duplicate: \(current)")
+        XCTAssertEqual(current.first?["source_count"] as? Int, 3, "dataset plus both review locations: \(current)")
+        XCTAssertEqual(current.first?["severity"] as? String, "major", "original finding severity retained: \(current)")
+        XCTAssertEqual(current.first?["action"] as? String, "independent-review-needed")
+    }
 }
