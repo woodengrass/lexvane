@@ -46,6 +46,15 @@ enum PackageBuilder {
 
     static func build(dataset: URL, sources: URL, reviews: URL, ledger: URL,
                       profile: URL, mode: String, out: URL) throws {
+        try build(dataset: dataset, sources: sources, reviews: reviews, ledger: ledger,
+                  profile: profile, mode: mode, out: out, graphAudit: DatasetValidator.validate)
+    }
+
+    /// Per-call graph injection leaves the disk-backed family audit and real
+    /// pack assembly intact; production callers use the non-injected overload.
+    static func build(dataset: URL, sources: URL, reviews: URL, ledger: URL,
+                      profile: URL, mode: String, out: URL,
+                      graphAudit: (URL, URL, URL, URL, URL) -> DatasetGraphReport) throws {
         try requireMode(mode)
         let output = out.standardizedFileURL.resolvingSymlinksInPath()
         for input in [dataset, sources.deletingLastPathComponent(), reviews, ledger, profile] {
@@ -60,7 +69,7 @@ enum PackageBuilder {
         // or substitute a permissive overlay for its full evidence/rights gate.
         let merged = dataset.appendingPathComponent("merged")
         let directory = fm.fileExists(atPath: merged.path) ? merged : dataset
-        let report = DatasetValidator.validate(at: directory, sources: sources, reviews: reviews, ledger: ledger, profile: profile)
+        let report = graphAudit(directory, sources, reviews, ledger, profile)
         guard report.valid else {
             let counts = Dictionary(grouping: report.defects, by: { $0.code.rawValue })
                 .map { "\($0.key)=\($0.value.count)" }.sorted().joined(separator: ",")
@@ -68,7 +77,21 @@ enum PackageBuilder {
         }
         let decoder = JSONDecoder(); decoder.keyDecodingStrategy = .convertFromSnakeCase
         let quality = try decoder.decode(QualityProfile.self, from: Data(contentsOf: profile))
-        _ = try FamiliesAudit.audit(dataset: directory, reviews: reviews, profile: quality)
+        let families: FamiliesAuditReport
+        do {
+            families = try FamiliesAudit.audit(dataset: directory, reviews: reviews, profile: quality)
+        } catch {
+            throw PackageFailure(reason: "family_audit_failed:\(error)")
+        }
+        guard families.valid else {
+            var parts: [String] = []
+            let shortages = (families.shortages ?? []).sorted()
+            let missing = (families.missingFamilyWork ?? []).sorted()
+            if !shortages.isEmpty { parts.append("shortages=\(shortages.joined(separator: ","))") }
+            if !missing.isEmpty { parts.append("missing=\(missing.joined(separator: ","))") }
+            if parts.isEmpty { parts.append("valid=false") }
+            throw PackageFailure(reason: "family_supply_short:\(parts.joined(separator: ";"))")
+        }
         let content = ledger.deletingLastPathComponent().deletingLastPathComponent()
         let index = content.appendingPathComponent("derived/pilot-v1/index.json")
         let generated = try SearchIndex.bytes(SearchIndex.build(records: loaded.records))

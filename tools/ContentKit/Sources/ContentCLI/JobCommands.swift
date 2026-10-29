@@ -81,6 +81,15 @@ private struct JobAuditReport: Encodable {
 }
 public enum JobCommands {
     public static func validateDataset(_ arguments: [String]) -> Int32 {
+        validateDataset(arguments, graphAudit: {
+            DatasetValidator.validate(at: $0, sources: $1, reviews: $2, ledger: $3, profile: $4)
+        })
+    }
+
+    /// Boundary tests inject only this call's graph report; the family audit
+    /// remains real, and the public entrypoint always uses DatasetValidator.
+    static func validateDataset(_ arguments: [String],
+        graphAudit: (URL, URL, URL, URL, URL) -> DatasetGraphReport) -> Int32 {
         do {
             let required = ["--dataset", "--stage", "--sources", "--reviews", "--ledger", "--profile", "--evidence"]
             guard arguments.count == required.count * 2 else { throw JobFailure("required_graph_flags") }
@@ -98,12 +107,26 @@ public enum JobCommands {
             let contentRoot = URL(fileURLWithPath: ledger).deletingLastPathComponent().deletingLastPathComponent()
             let output = try safeOutput(evidence, inputs: [sources, ledger, profile],
                 protectedDirectories: [dataset, reviews, contentRoot.path])
-            var report = DatasetValidator.validate(at: URL(fileURLWithPath: dataset), sources: URL(fileURLWithPath: sources),
-                reviews: URL(fileURLWithPath: reviews), ledger: URL(fileURLWithPath: ledger), profile: URL(fileURLWithPath: profile))
+            var report = graphAudit(URL(fileURLWithPath: dataset), URL(fileURLWithPath: sources),
+                URL(fileURLWithPath: reviews), URL(fileURLWithPath: ledger), URL(fileURLWithPath: profile))
             do {
                 let decoder = JSONDecoder(); decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let quality = try decoder.decode(QualityProfile.self, from: Data(contentsOf: URL(fileURLWithPath: profile)))
-                _ = try FamiliesAudit.audit(dataset: URL(fileURLWithPath: dataset), reviews: URL(fileURLWithPath: reviews), profile: quality)
+                let families = try FamiliesAudit.audit(dataset: URL(fileURLWithPath: dataset), reviews: URL(fileURLWithPath: reviews), profile: quality)
+                if !families.valid {
+                    for shortage in families.shortages ?? [] {
+                        report.defects.append(.init(code: .familyMismatch, recordId: Self.familyRecordId(in: shortage) ?? dataset,
+                            field: "payload.family_id", detail: "family_supply_short:\(shortage)"))
+                    }
+                    for work in families.missingFamilyWork ?? [] {
+                        report.defects.append(.init(code: .familyMismatch, recordId: Self.familyRecordId(in: work) ?? dataset,
+                            field: "payload.family_id", detail: "family_missing_work:\(work)"))
+                    }
+                    if families.shortages?.isEmpty != false && families.missingFamilyWork?.isEmpty != false {
+                        report.defects.append(.init(code: .familyMismatch, recordId: dataset,
+                            field: "payload.family_id", detail: "family_supply_short:valid=false"))
+                    }
+                }
             } catch {
                 let detail = String(describing: error)
                 let id = detail.range(of: #"lx:(?:target|question|usage|sense|word|phrase):[0-9a-fA-F-]{36}"#, options: .regularExpression)
@@ -166,6 +189,10 @@ public enum JobCommands {
             fputs("\((error as? JobFailure)?.description ?? "JobFailure(reason=io_or_decode:\(error))")\n", stderr)
             return 65
         }
+    }
+    private static func familyRecordId(in detail: String) -> String? {
+        detail.range(of: #"lx:(?:target|question|usage|sense|word|phrase):[0-9a-fA-F-]{36}"#, options: .regularExpression)
+            .map { String(detail[$0]) }
     }
     private static func safeOutput(_ path: String, inputs: [String], protectedDirectories: [String]) throws -> URL {
         let output = URL(fileURLWithPath: path).standardizedFileURL.resolvingSymlinksInPath()
