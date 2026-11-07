@@ -305,10 +305,2330 @@
             "sealed current row lx:question:46a35e8b-d76b-46e8-b899-45b30fd9534d revision 5 content_sha256 389f99a8fc0551844ea8183398c22d80240e435bc63f5f52fa38a5f156635cbd"
           ]
         }
+      },
+      {
+        "question_id": "lx:question:5ca33009-0859-4c2e-a5cc-750d5675078c",
+        "revision": 4,
+        "content_sha256": "ade4de21493bbb20d21d9cfd6b9a5cd86023004eef3c01eadf96a9a43618f2d2",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/fix-batch-6.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "12 hours is the half-day confusion a learner who misreads day as daytime might pick.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:5ca33009-0859-4c2e-a5cc-750d5675078c revision 4 content_sha256 ade4de21493bbb20d21d9cfd6b9a5cd86023004eef3c01eadf96a9a43618f2d2 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section day (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "24 hours is the one-day total a learner who ignores \"three\" would pick.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:5ca33009-0859-4c2e-a5cc-750d5675078c revision 4 content_sha256 ade4de21493bbb20d21d9cfd6b9a5cd86023004eef3c01eadf96a9a43618f2d2 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section day (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "168 hours is a week total, a plausible unit confusion between day and week.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:5ca33009-0859-4c2e-a5cc-750d5675078c revision 4 content_sha256 ade4de21493bbb20d21d9cfd6b9a5cd86023004eef3c01eadf96a9a43618f2d2 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section day (train)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Three full 24-hour days total 72 hours; no other option equals that.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:5ca33009-0859-4c2e-a5cc-750d5675078c revision 4 content_sha256 ade4de21493bbb20d21d9cfd6b9a5cd86023004eef3c01eadf96a9a43618f2d2 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section day (train)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem uses \"days\" because the target is meaning recognition; the answer is a computed total, not a spelled form.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:5ca33009-0859-4c2e-a5cc-750d5675078c revision 4 content_sha256 ade4de21493bbb20d21d9cfd6b9a5cd86023004eef3c01eadf96a9a43618f2d2 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section day (train)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:7b2e4d2b-3d9b-4950-91c6-304d49637cd8",
+        "revision": 6,
+        "content_sha256": "3787cfdeae203b9dc798415e7621db849df927dfb11dc1604f58e6978c6d279f",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/check-fix5.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "A week-long block is a credible grouping unit for a photo album.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:7b2e4d2b-3d9b-4950-91c6-304d49637cd8 revision 6 content_sha256 3787cfdeae203b9dc798415e7621db849df927dfb11dc1604f58e6978c6d279f (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section day (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "Sunrise-to-sunset is the competing daytime sense of day and the most tempting wrong reading.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:7b2e4d2b-3d9b-4950-91c6-304d49637cd8 revision 6 content_sha256 3787cfdeae203b9dc798415e7621db849df927dfb11dc1604f58e6978c6d279f (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section day (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "Monthly grouping is a credible album unit and is excluded by the 8 May / 9 May split.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:7b2e4d2b-3d9b-4950-91c6-304d49637cd8 revision 6 content_sha256 3787cfdeae203b9dc798415e7621db849df927dfb11dc1604f58e6978c6d279f (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section day (check)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Morning and late-evening photos of one date share a heading while the next date starts a new group, which fits only the calendar-date reading.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:7b2e4d2b-3d9b-4950-91c6-304d49637cd8 revision 6 content_sha256 3787cfdeae203b9dc798415e7621db849df927dfb11dc1604f58e6978c6d279f (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section day (check)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The options paraphrase units; none restates the stem wording.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:7b2e4d2b-3d9b-4950-91c6-304d49637cd8 revision 6 content_sha256 3787cfdeae203b9dc798415e7621db849df927dfb11dc1604f58e6978c6d279f (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section day (check)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:286a2493-4fa2-48f6-836e-c2ca7ffac2a1",
+        "revision": 3,
+        "content_sha256": "6b2d682221bf4c743a22af27ae6f99e18bb7153f9b1d54475644bf0ccc32c664",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/fix-batch-5.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "One week later is a credible interval slip.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:286a2493-4fa2-48f6-836e-c2ca7ffac2a1 revision 3 content_sha256 6b2d682221bf4c743a22af27ae6f99e18bb7153f9b1d54475644bf0ccc32c664 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section year (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "One month later is a credible interval slip.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:286a2493-4fa2-48f6-836e-c2ca7ffac2a1 revision 3 content_sha256 6b2d682221bf4c743a22af27ae6f99e18bb7153f9b1d54475644bf0ccc32c664 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section year (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "One day later tests confusing year with day.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:286a2493-4fa2-48f6-836e-c2ca7ffac2a1 revision 3 content_sha256 6b2d682221bf4c743a22af27ae6f99e18bb7153f9b1d54475644bf0ccc32c664 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section year (train)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Exactly one year after May 6, 2026 is May 6, 2027; the other dates are earlier intervals.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:286a2493-4fa2-48f6-836e-c2ca7ffac2a1 revision 3 content_sha256 6b2d682221bf4c743a22af27ae6f99e18bb7153f9b1d54475644bf0ccc32c664 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section year (train)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The answer is a date, not the word year.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:286a2493-4fa2-48f6-836e-c2ca7ffac2a1 revision 3 content_sha256 6b2d682221bf4c743a22af27ae6f99e18bb7153f9b1d54475644bf0ccc32c664 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section year (train)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:7e3b09f3-64b5-426d-b2eb-3514cde3a480",
+        "revision": 3,
+        "content_sha256": "f13c8ee6c86c32fe3ea4782ec9b980dfbff54c39658232f2e92976f002c527a2",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/check-fix2.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "A month-remaining message is a credible misreading of the calendar change.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:7e3b09f3-64b5-426d-b2eb-3514cde3a480 revision 3 content_sha256 f13c8ee6c86c32fe3ea4782ec9b980dfbff54c39658232f2e92976f002c527a2 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section year (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "A new day within the same year is the main competing reading of midnight.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:7e3b09f3-64b5-426d-b2eb-3514cde3a480 revision 3 content_sha256 f13c8ee6c86c32fe3ea4782ec9b980dfbff54c39658232f2e92976f002c527a2 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section year (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "An hour-remaining message is a credible timing confusion.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:7e3b09f3-64b5-426d-b2eb-3514cde3a480 revision 3 content_sha256 f13c8ee6c86c32fe3ea4782ec9b980dfbff54c39658232f2e92976f002c527a2 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section year (check)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "The year number changes from 2026 to 2027, so only a new annual cycle fits.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:7e3b09f3-64b5-426d-b2eb-3514cde3a480 revision 3 content_sha256 f13c8ee6c86c32fe3ea4782ec9b980dfbff54c39658232f2e92976f002c527a2 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section year (check)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem says \"new year\", which signals the context but does not paraphrase option-c; the item is easy rather than leaked.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:7e3b09f3-64b5-426d-b2eb-3514cde3a480 revision 3 content_sha256 f13c8ee6c86c32fe3ea4782ec9b980dfbff54c39658232f2e92976f002c527a2 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section year (check)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:4b5bedbf-92dc-4e2c-aa1c-62e1508ecd31",
+        "revision": 6,
+        "content_sha256": "af3221b21bee493a9fcd9616fd66297b71d649c699a85a29245eb1a2d38987b8",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/check-fix5.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "Cultural preservation is a credible museum-related field.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:4b5bedbf-92dc-4e2c-aa1c-62e1508ecd31 revision 6 content_sha256 af3221b21bee493a9fcd9616fd66297b71d649c699a85a29245eb1a2d38987b8 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section science (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": true,
+              "reason": "Fiction writing is a credible alternative field definition.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:4b5bedbf-92dc-4e2c-aa1c-62e1508ecd31 revision 6 content_sha256 af3221b21bee493a9fcd9616fd66297b71d649c699a85a29245eb1a2d38987b8 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section science (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "Commerce is a credible alternative field definition.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:4b5bedbf-92dc-4e2c-aa1c-62e1508ecd31 revision 6 content_sha256 af3221b21bee493a9fcd9616fd66297b71d649c699a85a29245eb1a2d38987b8 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section science (check)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Thermometers as instruments that helped a field develop fits only the evidence-based study of nature.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:4b5bedbf-92dc-4e2c-aa1c-62e1508ecd31 revision 6 content_sha256 af3221b21bee493a9fcd9616fd66297b71d649c699a85a29245eb1a2d38987b8 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section science (check)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "Definitions are paraphrased; the word science appears because the item is meaning recognition.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:4b5bedbf-92dc-4e2c-aa1c-62e1508ecd31 revision 6 content_sha256 af3221b21bee493a9fcd9616fd66297b71d649c699a85a29245eb1a2d38987b8 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section science (check)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:b3c8c6bd-0e1e-40f9-90b7-764421a2654a",
+        "revision": 6,
+        "content_sha256": "6581d85e311ac98bc3d47896d24b516d1a21d22f5ae40d09f1554bd85140a4bc",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/fix-batch-8.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "History is a same-category school subject.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:b3c8c6bd-0e1e-40f9-90b7-764421a2654a revision 6 content_sha256 6581d85e311ac98bc3d47896d24b516d1a21d22f5ae40d09f1554bd85140a4bc (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section science (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "Music is a same-category school subject.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:b3c8c6bd-0e1e-40f9-90b7-764421a2654a revision 6 content_sha256 6581d85e311ac98bc3d47896d24b516d1a21d22f5ae40d09f1554bd85140a4bc (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section science (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": true,
+              "reason": "Literature is a same-category school subject.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:b3c8c6bd-0e1e-40f9-90b7-764421a2654a revision 6 content_sha256 6581d85e311ac98bc3d47896d24b516d1a21d22f5ae40d09f1554bd85140a4bc (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section science (train)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Controlled, repeated melting trials describe experimental science only.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:b3c8c6bd-0e1e-40f9-90b7-764421a2654a revision 6 content_sha256 6581d85e311ac98bc3d47896d24b516d1a21d22f5ae40d09f1554bd85140a4bc (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section science (train)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem describes an experiment without using the word science.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:b3c8c6bd-0e1e-40f9-90b7-764421a2654a revision 6 content_sha256 6581d85e311ac98bc3d47896d24b516d1a21d22f5ae40d09f1554bd85140a4bc (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section science (train)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:2324b8cf-27f9-451f-a8bf-f57da5ea4844",
+        "revision": 2,
+        "content_sha256": "221f55ef468b4ca9ea3ebadcef1cdd433fa1eb86d212fdefc34c24224b5579f9",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/fix-batch-6.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "promise is a speech act that can be repeated louder.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:2324b8cf-27f9-451f-a8bf-f57da5ea4844 revision 2 content_sha256 221f55ef468b4ca9ea3ebadcef1cdd433fa1eb86d212fdefc34c24224b5579f9 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section question (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "warning is a speech act shouted in emergencies and is the most tempting distractor.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:2324b8cf-27f9-451f-a8bf-f57da5ea4844 revision 2 content_sha256 221f55ef468b4ca9ea3ebadcef1cdd433fa1eb86d212fdefc34c24224b5579f9 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section question (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": true,
+              "reason": "greeting is a speech act that can be repeated.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:2324b8cf-27f9-451f-a8bf-f57da5ea4844 revision 2 content_sha256 221f55ef468b4ca9ea3ebadcef1cdd433fa1eb86d212fdefc34c24224b5579f9 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section question (train)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "The quoted sentence ends with a question mark and seeks a reply, so only question fits.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:2324b8cf-27f9-451f-a8bf-f57da5ea4844 revision 2 content_sha256 221f55ef468b4ca9ea3ebadcef1cdd433fa1eb86d212fdefc34c24224b5579f9 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section question (train)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The quoted utterance is a question but the stem never uses the word question.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:2324b8cf-27f9-451f-a8bf-f57da5ea4844 revision 2 content_sha256 221f55ef468b4ca9ea3ebadcef1cdd433fa1eb86d212fdefc34c24224b5579f9 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section question (train)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:40953897-6bc3-4ff7-a0c5-b573f29f0634",
+        "revision": 2,
+        "content_sha256": "994335274145aa255e91188d1894572c06841696d9f5272edbff7e7246afe1b0",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/check-batch-2.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "verdict is a form-related noun and is excluded only by the decisions-on-another-sheet clause.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:40953897-6bc3-4ff7-a0c5-b573f29f0634 revision 2 content_sha256 994335274145aa255e91188d1894572c06841696d9f5272edbff7e7246afe1b0 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section question (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "instruction is a form-related noun and is excluded only by the instructions-on-another-sheet clause.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:40953897-6bc3-4ff7-a0c5-b573f29f0634 revision 2 content_sha256 994335274145aa255e91188d1894572c06841696d9f5272edbff7e7246afe1b0 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section question (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "signature is a credible form field.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:40953897-6bc3-4ff7-a0c5-b573f29f0634 revision 2 content_sha256 994335274145aa255e91188d1894572c06841696d9f5272edbff7e7246afe1b0 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section question (check)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "A reply box beside every item fits only question.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:40953897-6bc3-4ff7-a0c5-b573f29f0634 revision 2 content_sha256 994335274145aa255e91188d1894572c06841696d9f5272edbff7e7246afe1b0 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section question (check)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem does not contain question or a form of it.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:40953897-6bc3-4ff7-a0c5-b573f29f0634 revision 2 content_sha256 994335274145aa255e91188d1894572c06841696d9f5272edbff7e7246afe1b0 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section question (check)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:43e7fdc6-57e6-4088-883d-be532a1a2742",
+        "revision": 5,
+        "content_sha256": "a777e720ad16fcbace1cebd45b30b0a5ab0037243ea526af0413e39e2c469cf2",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/check-fix4.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "assemble is a product-handling verb that fits the syntax.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:43e7fdc6-57e6-4088-883d-be532a1a2742 revision 5 content_sha256 a777e720ad16fcbace1cebd45b30b0a5ab0037243ea526af0413e39e2c469cf2 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section market (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": true,
+              "reason": "recycle is a product-handling verb that fits the syntax.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:43e7fdc6-57e6-4088-883d-be532a1a2742 revision 5 content_sha256 a777e720ad16fcbace1cebd45b30b0a5ab0037243ea526af0413e39e2c469cf2 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section market (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "license is a business verb that fits the syntax.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:43e7fdc6-57e6-4088-883d-be532a1a2742 revision 5 content_sha256 a777e720ad16fcbace1cebd45b30b0a5ab0037243ea526af0413e39e2c469cf2 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section market (check)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Repositioning an unchanged product for a new buyer group with demonstrations is marketing.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:43e7fdc6-57e6-4088-883d-be532a1a2742 revision 5 content_sha256 a777e720ad16fcbace1cebd45b30b0a5ab0037243ea526af0413e39e2c469cf2 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section market (check)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem does not contain market.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:43e7fdc6-57e6-4088-883d-be532a1a2742 revision 5 content_sha256 a777e720ad16fcbace1cebd45b30b0a5ab0037243ea526af0413e39e2c469cf2 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section market (check)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:b425e032-b16b-4a5a-8713-a0a94255d436",
+        "revision": 4,
+        "content_sha256": "d5ad15539ad175602b2305c32b80713221566fee57a8ad157a1f8565a16c3c3a",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/fix-batch-7.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "repair is a software-company verb that fits the syntax.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:b425e032-b16b-4a5a-8713-a0a94255d436 revision 4 content_sha256 d5ad15539ad175602b2305c32b80713221566fee57a8ad157a1f8565a16c3c3a (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section market (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "encrypt is a software-company verb that fits the syntax.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:b425e032-b16b-4a5a-8713-a0a94255d436 revision 4 content_sha256 d5ad15539ad175602b2305c32b80713221566fee57a8ad157a1f8565a16c3c3a (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section market (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": true,
+              "reason": "archive is a software-company verb that fits the syntax.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:b425e032-b16b-4a5a-8713-a0a94255d436 revision 4 content_sha256 d5ad15539ad175602b2305c32b80713221566fee57a8ad157a1f8565a16c3c3a (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section market (train)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "A free trial meant to lead to paid subscriptions is a marketing action.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:b425e032-b16b-4a5a-8713-a0a94255d436 revision 4 content_sha256 d5ad15539ad175602b2305c32b80713221566fee57a8ad157a1f8565a16c3c3a (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section market (train)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem does not contain market.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:b425e032-b16b-4a5a-8713-a0a94255d436 revision 4 content_sha256 d5ad15539ad175602b2305c32b80713221566fee57a8ad157a1f8565a16c3c3a (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section market (train)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:7d4deea2-bbec-4f9c-a795-6bf368984735",
+        "revision": 4,
+        "content_sha256": "0a97c46d43efe073250f5f444ff20226a69b5ddd6ef58c7fe195eb0d0ef1f4de",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/check-fix3.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "training is an activity a studio could measure in halves.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:7d4deea2-bbec-4f9c-a795-6bf368984735 revision 4 content_sha256 0a97c46d43efe073250f5f444ff20226a69b5ddd6ef58c7fe195eb0d0ef1f4de (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section business (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": true,
+              "reason": "research is an activity a studio could measure in halves.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:7d4deea2-bbec-4f9c-a795-6bf368984735 revision 4 content_sha256 0a97c46d43efe073250f5f444ff20226a69b5ddd6ef58c7fe195eb0d0ef1f4de (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section business (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "exercise is a same-form noun; weaker but grammatical.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:7d4deea2-bbec-4f9c-a795-6bf368984735 revision 4 content_sha256 0a97c46d43efe073250f5f444ff20226a69b5ddd6ef58c7fe195eb0d0ef1f4de (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section business (check)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Online orders and showroom sales are sales channels, so only business fits.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:7d4deea2-bbec-4f9c-a795-6bf368984735 revision 4 content_sha256 0a97c46d43efe073250f5f444ff20226a69b5ddd6ef58c7fe195eb0d0ef1f4de (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section business (check)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem does not contain business.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:7d4deea2-bbec-4f9c-a795-6bf368984735 revision 4 content_sha256 0a97c46d43efe073250f5f444ff20226a69b5ddd6ef58c7fe195eb0d0ef1f4de (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section business (check)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:da532e6d-8034-4d73-a22f-5733409699e4",
+        "revision": 3,
+        "content_sha256": "ea256bf5cef56659aeb7c4d9907c0ae99708dcdb2c665b04abf7146f4e162a80",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/fix-batch-6.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "international research can be interrupted and fits the syntax.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:da532e6d-8034-4d73-a22f-5733409699e4 revision 3 content_sha256 ea256bf5cef56659aeb7c4d9907c0ae99708dcdb2c665b04abf7146f4e162a80 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section business (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": true,
+              "reason": "international training can be interrupted and fits the syntax.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:da532e6d-8034-4d73-a22f-5733409699e4 revision 3 content_sha256 ea256bf5cef56659aeb7c4d9907c0ae99708dcdb2c665b04abf7146f4e162a80 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section business (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "mourning is grammatical but weak; kept because the other two carry the item.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:da532e6d-8034-4d73-a22f-5733409699e4 revision 3 content_sha256 ea256bf5cef56659aeb7c4d9907c0ae99708dcdb2c665b04abf7146f4e162a80 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section business (train)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Import duty and contracted deliveries point to trade, so only business fits.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:da532e6d-8034-4d73-a22f-5733409699e4 revision 3 content_sha256 ea256bf5cef56659aeb7c4d9907c0ae99708dcdb2c665b04abf7146f4e162a80 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section business (train)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem does not contain business.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:da532e6d-8034-4d73-a22f-5733409699e4 revision 3 content_sha256 ea256bf5cef56659aeb7c4d9907c0ae99708dcdb2c665b04abf7146f4e162a80 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section business (train)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:46a50a14-b7bd-43ea-befd-93c0b0486790",
+        "revision": 5,
+        "content_sha256": "6f7f4da0e600d0118ade0e7f47a9c0d5c40acd6d2cba3751fdc7c8b4a710bc9b",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/fix-batch-9.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "\"the rest of her lease\" is a real collocation and the strongest distractor.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:46a50a14-b7bd-43ea-befd-93c0b0486790 revision 5 content_sha256 6f7f4da0e600d0118ade0e7f47a9c0d5c40acd6d2cba3751fdc7c8b4a710bc9b (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section life (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "\"the rest of her journey\" is a real collocation.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:46a50a14-b7bd-43ea-befd-93c0b0486790 revision 5 content_sha256 6f7f4da0e600d0118ade0e7f47a9c0d5c40acd6d2cba3751fdc7c8b4a710bc9b (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section life (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": true,
+              "reason": "\"the rest of her illness\" is grammatical and topically near.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:46a50a14-b7bd-43ea-befd-93c0b0486790 revision 5 content_sha256 6f7f4da0e600d0118ade0e7f47a9c0d5c40acd6d2cba3751fdc7c8b4a710bc9b (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section life (train)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Payments continue until she dies, which fixes the period as her life.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:46a50a14-b7bd-43ea-befd-93c0b0486790 revision 5 content_sha256 6f7f4da0e600d0118ade0e7f47a9c0d5c40acd6d2cba3751fdc7c8b4a710bc9b (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section life (train)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem does not contain life.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:46a50a14-b7bd-43ea-befd-93c0b0486790 revision 5 content_sha256 6f7f4da0e600d0118ade0e7f47a9c0d5c40acd6d2cba3751fdc7c8b4a710bc9b (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section life (train)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:6a8dff44-26b2-43aa-99d8-a4d297a1092e",
+        "revision": 7,
+        "content_sha256": "d0c88020bbf2fe32070a5f16bf4a67a6cf36521694ca39e09886dfd469cb4010",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/check-fix6.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "friction is a physical cause a learner might attach to dough rising.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:6a8dff44-26b2-43aa-99d8-a4d297a1092e revision 7 content_sha256 d0c88020bbf2fe32070a5f16bf4a67a6cf36521694ca39e09886dfd469cb4010 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section life (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "gravity is a physical cause a learner might attach to dough rising.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:6a8dff44-26b2-43aa-99d8-a4d297a1092e revision 7 content_sha256 d0c88020bbf2fe32070a5f16bf4a67a6cf36521694ca39e09886dfd469cb4010 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section life (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": true,
+              "reason": "electricity is a physical cause a learner might attach to a process.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:6a8dff44-26b2-43aa-99d8-a4d297a1092e revision 7 content_sha256 d0c88020bbf2fe32070a5f16bf4a67a6cf36521694ca39e09886dfd469cb4010 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section life (check)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Only life names multiplying, sugar-consuming cells.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:6a8dff44-26b2-43aa-99d8-a4d297a1092e revision 7 content_sha256 d0c88020bbf2fe32070a5f16bf4a67a6cf36521694ca39e09886dfd469cb4010 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section life (check)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem says \"living cells\", which supports but does not spell the answer.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:6a8dff44-26b2-43aa-99d8-a4d297a1092e revision 7 content_sha256 d0c88020bbf2fe32070a5f16bf4a67a6cf36521694ca39e09886dfd469cb4010 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section life (check)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:32331447-9db8-4d16-a491-6558eea443c2",
+        "revision": 4,
+        "content_sha256": "92f6488f775d3d4f959f0f23328582897c531b93a08deafb3286af2167722137",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/fix-batch-5.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "\"repeat the question\" is a real collocation.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:32331447-9db8-4d16-a491-6558eea443c2 revision 4 content_sha256 92f6488f775d3d4f959f0f23328582897c531b93a08deafb3286af2167722137 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section answer (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": true,
+              "reason": "\"translate the question\" is a real collocation.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:32331447-9db8-4d16-a491-6558eea443c2 revision 4 content_sha256 92f6488f775d3d4f959f0f23328582897c531b93a08deafb3286af2167722137 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section answer (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "\"withdraw the question\" is a real collocation.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:32331447-9db8-4d16-a491-6558eea443c2 revision 4 content_sha256 92f6488f775d3d4f959f0f23328582897c531b93a08deafb3286af2167722137 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section answer (train)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Saying \"Mercury\" after buzzing in is answering.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:32331447-9db8-4d16-a491-6558eea443c2 revision 4 content_sha256 92f6488f775d3d4f959f0f23328582897c531b93a08deafb3286af2167722137 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section answer (train)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem does not contain answer.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:32331447-9db8-4d16-a491-6558eea443c2 revision 4 content_sha256 92f6488f775d3d4f959f0f23328582897c531b93a08deafb3286af2167722137 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section answer (train)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:ca7391b0-e011-409e-856a-86d7fc33d465",
+        "revision": 2,
+        "content_sha256": "660cc5057abd37da0c60bc89a50058719cedd2462bd772d956c9a6cc1e06c78b",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/check-batch-2.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "erase is a form-related verb.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:ca7391b0-e011-409e-856a-86d7fc33d465 revision 2 content_sha256 660cc5057abd37da0c60bc89a50058719cedd2462bd772d956c9a6cc1e06c78b (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section answer (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": true,
+              "reason": "refuse is a form-related verb that fits intransitively.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:ca7391b0-e011-409e-856a-86d7fc33d465 revision 2 content_sha256 660cc5057abd37da0c60bc89a50058719cedd2462bd772d956c9a6cc1e06c78b (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section answer (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "sleep is grammatical but weak; kept because the other two carry the item.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:ca7391b0-e011-409e-856a-86d7fc33d465 revision 2 content_sha256 660cc5057abd37da0c60bc89a50058719cedd2462bd772d956c9a6cc1e06c78b (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section answer (check)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Selecting the entrance used is responding to the form's question.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:ca7391b0-e011-409e-856a-86d7fc33d465 revision 2 content_sha256 660cc5057abd37da0c60bc89a50058719cedd2462bd772d956c9a6cc1e06c78b (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section answer (check)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem does not contain answer.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:ca7391b0-e011-409e-856a-86d7fc33d465 revision 2 content_sha256 660cc5057abd37da0c60bc89a50058719cedd2462bd772d956c9a6cc1e06c78b (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section answer (check)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:0cc4903f-f0f0-44f7-8100-0959c63cb7e7",
+        "revision": 2,
+        "content_sha256": "652a744078156004dfa1475031b3bac0eac006f50054cf411b7d9ec53c71f25e",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/check-batch-2.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "\"public transport\" is a strong collocation that tempts by form.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:0cc4903f-f0f0-44f7-8100-0959c63cb7e7 revision 2 content_sha256 652a744078156004dfa1475031b3bac0eac006f50054cf411b7d9ec53c71f25e (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section art (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "\"public advertising\" is a real collocation.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:0cc4903f-f0f0-44f7-8100-0959c63cb7e7 revision 2 content_sha256 652a744078156004dfa1475031b3bac0eac006f50054cf411b7d9ec53c71f25e (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section art (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": true,
+              "reason": "\"public insurance\" is a real collocation.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:0cc4903f-f0f0-44f7-8100-0959c63cb7e7 revision 2 content_sha256 652a744078156004dfa1475031b3bac0eac006f50054cf411b7d9ec53c71f25e (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section art (check)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "A tile image made to express feelings is art; the stem excludes selling, directions and repair.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:0cc4903f-f0f0-44f7-8100-0959c63cb7e7 revision 2 content_sha256 652a744078156004dfa1475031b3bac0eac006f50054cf411b7d9ec53c71f25e (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section art (check)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem does not contain art.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:0cc4903f-f0f0-44f7-8100-0959c63cb7e7 revision 2 content_sha256 652a744078156004dfa1475031b3bac0eac006f50054cf411b7d9ec53c71f25e (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section art (check)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:8e73bbfc-4af2-4b3b-b9eb-78bf4308c49b",
+        "revision": 2,
+        "content_sha256": "3ce3a8540b9d21ca4b9dee45b31e616b7652730107598d0a6013e065e9d31cf7",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/fix-batch-6.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": false,
+              "reason": "\"protect the original law\" makes no sense in a studio fire; a learner can discard it without knowing art.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:8e73bbfc-4af2-4b3b-b9eb-78bf4308c49b revision 2 content_sha256 3ce3a8540b9d21ca4b9dee45b31e616b7652730107598d0a6013e065e9d31cf7 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section art (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": false,
+              "reason": "\"protect the original war\" makes no sense in a studio fire; trivially eliminated.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:8e73bbfc-4af2-4b3b-b9eb-78bf4308c49b revision 2 content_sha256 3ce3a8540b9d21ca4b9dee45b31e616b7652730107598d0a6013e065e9d31cf7 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section art (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": false,
+              "reason": "\"protect the original aid\" makes no sense here; trivially eliminated.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:8e73bbfc-4af2-4b3b-b9eb-78bf4308c49b revision 2 content_sha256 3ce3a8540b9d21ca4b9dee45b31e616b7652730107598d0a6013e065e9d31cf7 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section art (train)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Finished portraits in an artist's studio are art; the answer is unique.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:8e73bbfc-4af2-4b3b-b9eb-78bf4308c49b revision 2 content_sha256 3ce3a8540b9d21ca4b9dee45b31e616b7652730107598d0a6013e065e9d31cf7 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section art (train)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem does not contain art.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:8e73bbfc-4af2-4b3b-b9eb-78bf4308c49b revision 2 content_sha256 3ce3a8540b9d21ca4b9dee45b31e616b7652730107598d0a6013e065e9d31cf7 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section art (train)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:afecd769-4823-49d5-a519-1ba202128b9c",
+        "revision": 9,
+        "content_sha256": "4c958b6f53e0adc9166c23b38aa9cdfc3cef830c03f4d54c0ba2c78943158135",
+        "author_session": "receipt:content/jobs/pilot-230/receipts/checkfix-r3-c.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": false,
+              "reason": "\"the weather of diving equipment\" is meaningless; trivially eliminated.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:afecd769-4823-49d5-a519-1ba202128b9c revision 9 content_sha256 4c958b6f53e0adc9166c23b38aa9cdfc3cef830c03f4d54c0ba2c78943158135 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section history (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "\"the balance of diving equipment\" is a credible equipment property.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:afecd769-4823-49d5-a519-1ba202128b9c revision 9 content_sha256 4c958b6f53e0adc9166c23b38aa9cdfc3cef830c03f4d54c0ba2c78943158135 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section history (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": false,
+              "reason": "\"the flavour of diving equipment\" is meaningless; trivially eliminated.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:afecd769-4823-49d5-a519-1ba202128b9c revision 9 content_sha256 4c958b6f53e0adc9166c23b38aa9cdfc3cef830c03f4d54c0ba2c78943158135 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section history (check)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Tracing equipment from early helmets to today is its history.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:afecd769-4823-49d5-a519-1ba202128b9c revision 9 content_sha256 4c958b6f53e0adc9166c23b38aa9cdfc3cef830c03f4d54c0ba2c78943158135 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section history (check)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem does not contain history.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:afecd769-4823-49d5-a519-1ba202128b9c revision 9 content_sha256 4c958b6f53e0adc9166c23b38aa9cdfc3cef830c03f4d54c0ba2c78943158135 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section history (check)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:b128b18a-c7a1-48a8-99fa-ac88884dc0e5",
+        "revision": 2,
+        "content_sha256": "3fc1f5b38bf156dfdae68db38b6d349a52a247ed8bf5950c400fea20a0a1f176",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/fix-batch-5.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "climate is an aspect of a place.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:b128b18a-c7a1-48a8-99fa-ac88884dc0e5 revision 2 content_sha256 3fc1f5b38bf156dfdae68db38b6d349a52a247ed8bf5950c400fea20a0a1f176 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section history (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "cuisine is an aspect of a place.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:b128b18a-c7a1-48a8-99fa-ac88884dc0e5 revision 2 content_sha256 3fc1f5b38bf156dfdae68db38b6d349a52a247ed8bf5950c400fea20a0a1f176 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section history (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "scenery is an aspect of a place.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:b128b18a-c7a1-48a8-99fa-ac88884dc0e5 revision 2 content_sha256 3fc1f5b38bf156dfdae68db38b6d349a52a247ed8bf5950c400fea20a0a1f176 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section history (train)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "A forgotten siege is a past event, so only history fits.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:b128b18a-c7a1-48a8-99fa-ac88884dc0e5 revision 2 content_sha256 3fc1f5b38bf156dfdae68db38b6d349a52a247ed8bf5950c400fea20a0a1f176 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section history (train)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem does not contain history.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:b128b18a-c7a1-48a8-99fa-ac88884dc0e5 revision 2 content_sha256 3fc1f5b38bf156dfdae68db38b6d349a52a247ed8bf5950c400fea20a0a1f176 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section history (train)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:8f433bea-17e3-4852-b5dd-0fda0ccee31f",
+        "revision": 5,
+        "content_sha256": "e54f352acf884742a24e2609ce6fe2de174310d42f9d8a0511fe714b30d75083",
+        "author_session": "receipt:content/jobs/pilot-230/receipts/checkfix-r3-b.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "experiment fits a greenhouse context.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:8f433bea-17e3-4852-b5dd-0fda0ccee31f revision 5 content_sha256 e54f352acf884742a24e2609ce6fe2de174310d42f9d8a0511fe714b30d75083 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section environment (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": true,
+              "reason": "measurement fits a greenhouse context.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:8f433bea-17e3-4852-b5dd-0fda0ccee31f revision 5 content_sha256 e54f352acf884742a24e2609ce6fe2de174310d42f9d8a0511fe714b30d75083 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section environment (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "observation fits a greenhouse context.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:8f433bea-17e3-4852-b5dd-0fda0ccee31f revision 5 content_sha256 e54f352acf884742a24e2609ce6fe2de174310d42f9d8a0511fe714b30d75083 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section environment (check)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "\"a warm, humid ___ in which orchids can survive\" needs surrounding conditions.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:8f433bea-17e3-4852-b5dd-0fda0ccee31f revision 5 content_sha256 e54f352acf884742a24e2609ce6fe2de174310d42f9d8a0511fe714b30d75083 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section environment (check)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem does not contain environment.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:8f433bea-17e3-4852-b5dd-0fda0ccee31f revision 5 content_sha256 e54f352acf884742a24e2609ce6fe2de174310d42f9d8a0511fe714b30d75083 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section environment (check)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:cc009b68-552b-4550-992a-af994b1c7d97",
+        "revision": 2,
+        "content_sha256": "841f64a84de303e30f861626f71613174185db512f56076889c59c126dd29042",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/fix-batch-6.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "damage to an island's government is grammatical after a disaster.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:cc009b68-552b-4550-992a-af994b1c7d97 revision 2 content_sha256 841f64a84de303e30f861626f71613174185db512f56076889c59c126dd29042 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section environment (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "damage to an island's employment is grammatical after a disaster.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:cc009b68-552b-4550-992a-af994b1c7d97 revision 2 content_sha256 841f64a84de303e30f861626f71613174185db512f56076889c59c126dd29042 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section environment (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "invitation is grammatical but weak; kept because the other two carry the item.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:cc009b68-552b-4550-992a-af994b1c7d97 revision 2 content_sha256 841f64a84de303e30f861626f71613174185db512f56076889c59c126dd29042 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section environment (train)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Ash on lake and shoreline and lost fish describe the natural environment.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:cc009b68-552b-4550-992a-af994b1c7d97 revision 2 content_sha256 841f64a84de303e30f861626f71613174185db512f56076889c59c126dd29042 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section environment (train)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem does not contain environment.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:cc009b68-552b-4550-992a-af994b1c7d97 revision 2 content_sha256 841f64a84de303e30f861626f71613174185db512f56076889c59c126dd29042 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section environment (train)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:13f1b7f1-792a-4cc1-9fc5-30bbc73899d3",
+        "revision": 6,
+        "content_sha256": "61da7b54645c507cff53e8edef397018971ca8741455cf0c5a4366512758d0fd",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/fix-batch-9.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "\"years of funding\" is a real collocation.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:13f1b7f1-792a-4cc1-9fc5-30bbc73899d3 revision 6 content_sha256 61da7b54645c507cff53e8edef397018971ca8741455cf0c5a4366512758d0fd (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section experience (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "\"years of insurance\" is a real collocation in an insurance context.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:13f1b7f1-792a-4cc1-9fc5-30bbc73899d3 revision 6 content_sha256 61da7b54645c507cff53e8edef397018971ca8741455cf0c5a4366512758d0fd (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section experience (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": true,
+              "reason": "\"years of publicity\" is grammatical.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:13f1b7f1-792a-4cc1-9fc5-30bbc73899d3 revision 6 content_sha256 61da7b54645c507cff53e8edef397018971ca8741455cf0c5a4366512758d0fd (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section experience (train)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Eight years doing the work answers a requirement for experience.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:13f1b7f1-792a-4cc1-9fc5-30bbc73899d3 revision 6 content_sha256 61da7b54645c507cff53e8edef397018971ca8741455cf0c5a4366512758d0fd (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section experience (train)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem does not contain experience.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:13f1b7f1-792a-4cc1-9fc5-30bbc73899d3 revision 6 content_sha256 61da7b54645c507cff53e8edef397018971ca8741455cf0c5a4366512758d0fd (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section experience (train)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:481aa81a-2490-446a-b4ab-00d4628d2ccf",
+        "revision": 10,
+        "content_sha256": "987e26f6482b33fe24049ea93352426a6cbc2604403bc098db576491b03a96eb",
+        "author_session": "receipt:content/jobs/pilot-230/receipts/check-rewrite4-a.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "permission is something a young sailor might lack.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:481aa81a-2490-446a-b4ab-00d4628d2ccf revision 10 content_sha256 987e26f6482b33fe24049ea93352426a6cbc2604403bc098db576491b03a96eb (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section experience (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "equipment is something a young sailor might lack.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:481aa81a-2490-446a-b4ab-00d4628d2ccf revision 10 content_sha256 987e26f6482b33fe24049ea93352426a6cbc2604403bc098db576491b03a96eb (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section experience (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "qualification is the strongest near-synonym distractor.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:481aa81a-2490-446a-b4ab-00d4628d2ccf revision 10 content_sha256 987e26f6482b33fe24049ea93352426a6cbc2604403bc098db576491b03a96eb (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section experience (check)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "\"comes from steering a boat through real storms\" defines experience.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:481aa81a-2490-446a-b4ab-00d4628d2ccf revision 10 content_sha256 987e26f6482b33fe24049ea93352426a6cbc2604403bc098db576491b03a96eb (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section experience (check)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem does not contain experience.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:481aa81a-2490-446a-b4ab-00d4628d2ccf revision 10 content_sha256 987e26f6482b33fe24049ea93352426a6cbc2604403bc098db576491b03a96eb (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section experience (check)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:17f16e2b-36bc-42ae-b04d-bc292d86346b",
+        "revision": 2,
+        "content_sha256": "18b2f4cbe2869aead50e5c4f2b037c294efd3a164f1d51c8b16176525a19454c",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/fix-batch-6.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "reward is grammatical after \"deal with\".",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:17f16e2b-36bc-42ae-b04d-bc292d86346b revision 2 content_sha256 18b2f4cbe2869aead50e5c4f2b037c294efd3a164f1d51c8b16176525a19454c (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section problem (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": true,
+              "reason": "promise is grammatical after \"deal with\".",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:17f16e2b-36bc-42ae-b04d-bc292d86346b revision 2 content_sha256 18b2f4cbe2869aead50e5c4f2b037c294efd3a164f1d51c8b16176525a19454c (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section problem (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "journey is grammatical but weak.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:17f16e2b-36bc-42ae-b04d-bc292d86346b revision 2 content_sha256 18b2f4cbe2869aead50e5c4f2b037c294efd3a164f1d51c8b16176525a19454c (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section problem (train)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Unbaked batter is a difficulty to fix, so only problem fits.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:17f16e2b-36bc-42ae-b04d-bc292d86346b revision 2 content_sha256 18b2f4cbe2869aead50e5c4f2b037c294efd3a164f1d51c8b16176525a19454c (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section problem (train)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem does not contain problem.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:17f16e2b-36bc-42ae-b04d-bc292d86346b revision 2 content_sha256 18b2f4cbe2869aead50e5c4f2b037c294efd3a164f1d51c8b16176525a19454c (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section problem (train)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:c8da43d4-e5a9-463e-a98f-c4afd36db7c6",
+        "revision": 5,
+        "content_sha256": "36cccb81a88a80b710c8be51469bc2c6733f0c704103369fd9baad99dda3609f",
+        "author_session": "receipt:content/jobs/pilot-230/receipts/checkfix-r3-c.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "success is the antonym distractor.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:c8da43d4-e5a9-463e-a98f-c4afd36db7c6 revision 5 content_sha256 36cccb81a88a80b710c8be51469bc2c6733f0c704103369fd9baad99dda3609f (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section problem (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": true,
+              "reason": "routine is grammatical in the greenhouse context.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:c8da43d4-e5a9-463e-a98f-c4afd36db7c6 revision 5 content_sha256 36cccb81a88a80b710c8be51469bc2c6733f0c704103369fd9baad99dda3609f (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section problem (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "solution is the strongest associative distractor.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:c8da43d4-e5a9-463e-a98f-c4afd36db7c6 revision 5 content_sha256 36cccb81a88a80b710c8be51469bc2c6733f0c704103369fd9baad99dda3609f (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section problem (check)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Seedlings drying before repair shows a difficulty, so only problem fits.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:c8da43d4-e5a9-463e-a98f-c4afd36db7c6 revision 5 content_sha256 36cccb81a88a80b710c8be51469bc2c6733f0c704103369fd9baad99dda3609f (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section problem (check)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem does not contain problem.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:c8da43d4-e5a9-463e-a98f-c4afd36db7c6 revision 5 content_sha256 36cccb81a88a80b710c8be51469bc2c6733f0c704103369fd9baad99dda3609f (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section problem (check)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:39927719-6821-4b14-a3ee-0afc98f81be9",
+        "revision": 2,
+        "content_sha256": "691cacb5b78d64b51a9b5c3959dcb4af0cdd7984f4edd4037e3223b54c2b4884",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/fix-batch-6.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "currency is a real app setting.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:39927719-6821-4b14-a3ee-0afc98f81be9 revision 2 content_sha256 691cacb5b78d64b51a9b5c3959dcb4af0cdd7984f4edd4037e3223b54c2b4884 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section language (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "province is a real region setting.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:39927719-6821-4b14-a3ee-0afc98f81be9 revision 2 content_sha256 691cacb5b78d64b51a9b5c3959dcb4af0cdd7984f4edd4037e3223b54c2b4884 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section language (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "festival is grammatical but weak.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:39927719-6821-4b14-a3ee-0afc98f81be9 revision 2 content_sha256 691cacb5b78d64b51a9b5c3959dcb4af0cdd7984f4edd4037e3223b54c2b4884 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section language (train)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Switching labels from English to Polish is the language setting.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:39927719-6821-4b14-a3ee-0afc98f81be9 revision 2 content_sha256 691cacb5b78d64b51a9b5c3959dcb4af0cdd7984f4edd4037e3223b54c2b4884 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section language (train)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem names English and Polish but not the word language.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:39927719-6821-4b14-a3ee-0afc98f81be9 revision 2 content_sha256 691cacb5b78d64b51a9b5c3959dcb4af0cdd7984f4edd4037e3223b54c2b4884 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section language (train)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:a63621bb-7594-42d7-b594-704fcc6ca1e2",
+        "revision": 2,
+        "content_sha256": "daa76cb5245e23bc2ebebee60548b90108f8f6bc50032f5271c4ef3ced813c2b",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/check-batch-2.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "gesture is the strongest distractor because the stem mentions gestures.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:a63621bb-7594-42d7-b594-704fcc6ca1e2 revision 2 content_sha256 daa76cb5245e23bc2ebebee60548b90108f8f6bc50032f5271c4ef3ced813c2b (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section language (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "noise is grammatical.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:a63621bb-7594-42d7-b594-704fcc6ca1e2 revision 2 content_sha256 daa76cb5245e23bc2ebebee60548b90108f8f6bc50032f5271c4ef3ced813c2b (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section language (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "costume is grammatical but weak.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:a63621bb-7594-42d7-b594-704fcc6ca1e2 revision 2 content_sha256 daa76cb5245e23bc2ebebee60548b90108f8f6bc50032f5271c4ef3ced813c2b (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section language (check)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "A sign system with grammar and complete sentences is a language.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:a63621bb-7594-42d7-b594-704fcc6ca1e2 revision 2 content_sha256 daa76cb5245e23bc2ebebee60548b90108f8f6bc50032f5271c4ef3ced813c2b (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section language (check)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem does not contain language.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:a63621bb-7594-42d7-b594-704fcc6ca1e2 revision 2 content_sha256 daa76cb5245e23bc2ebebee60548b90108f8f6bc50032f5271c4ef3ced813c2b (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section language (check)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:23003285-3da0-47fb-b84f-4a6ac70849fe",
+        "revision": 2,
+        "content_sha256": "91b92aba0b9420a1bb0aeed21ffac6e72dab5659d68c954d262a171ceafdebc6",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/fix-batch-6.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "static is a sound-related noun.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:23003285-3da0-47fb-b84f-4a6ac70849fe revision 2 content_sha256 91b92aba0b9420a1bb0aeed21ffac6e72dab5659d68c954d262a171ceafdebc6 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section music (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "speech is a soundtrack component.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:23003285-3da0-47fb-b84f-4a6ac70849fe revision 2 content_sha256 91b92aba0b9420a1bb0aeed21ffac6e72dab5659d68c954d262a171ceafdebc6 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section music (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "silence is the contrast distractor.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:23003285-3da0-47fb-b84f-4a6ac70849fe revision 2 content_sha256 91b92aba0b9420a1bb0aeed21ffac6e72dab5659d68c954d262a171ceafdebc6 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section music (train)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "An orchestral soundtrack with rapid notes is music.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:23003285-3da0-47fb-b84f-4a6ac70849fe revision 2 content_sha256 91b92aba0b9420a1bb0aeed21ffac6e72dab5659d68c954d262a171ceafdebc6 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section music (train)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem says \"orchestral soundtrack\" but not music.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:23003285-3da0-47fb-b84f-4a6ac70849fe revision 2 content_sha256 91b92aba0b9420a1bb0aeed21ffac6e72dab5659d68c954d262a171ceafdebc6 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section music (train)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:257df3e6-8aba-4ebe-af7a-3aab642e1b2b",
+        "revision": 2,
+        "content_sha256": "f2196af1eca8c5feafed55567ee53ee3f080cc5abac199456f4a3fdce8cedf10",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/check-batch-2.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "\"vocal noise\" is grammatical.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:257df3e6-8aba-4ebe-af7a-3aab642e1b2b revision 2 content_sha256 f2196af1eca8c5feafed55567ee53ee3f080cc5abac199456f4a3fdce8cedf10 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section music (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": true,
+              "reason": "\"vocal speech\" is grammatical.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:257df3e6-8aba-4ebe-af7a-3aab642e1b2b revision 2 content_sha256 f2196af1eca8c5feafed55567ee53ee3f080cc5abac199456f4a3fdce8cedf10 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section music (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "\"vocal static\" is grammatical but weak.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:257df3e6-8aba-4ebe-af7a-3aab642e1b2b revision 2 content_sha256 f2196af1eca8c5feafed55567ee53ee3f080cc5abac199456f4a3fdce8cedf10 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section music (check)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Singing in harmony from a score is music.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:257df3e6-8aba-4ebe-af7a-3aab642e1b2b revision 2 content_sha256 f2196af1eca8c5feafed55567ee53ee3f080cc5abac199456f4a3fdce8cedf10 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section music (check)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem does not contain music.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:257df3e6-8aba-4ebe-af7a-3aab642e1b2b revision 2 content_sha256 f2196af1eca8c5feafed55567ee53ee3f080cc5abac199456f4a3fdce8cedf10 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section music (check)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:4f9b7f34-17d4-4024-a874-1e0e17e3e24a",
+        "revision": 2,
+        "content_sha256": "d274b1d4f623bacc45b0053adca68da6f4609e6af326ba2c06a08085c89959a5",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/fix-batch-6.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "\"accepted the disappointment\" is grammatical.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:4f9b7f34-17d4-4024-a874-1e0e17e3e24a revision 2 content_sha256 d274b1d4f623bacc45b0053adca68da6f4609e6af326ba2c06a08085c89959a5 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section opportunity (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": true,
+              "reason": "\"accepted the restriction\" is a real collocation.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:4f9b7f34-17d4-4024-a874-1e0e17e3e24a revision 2 content_sha256 d274b1d4f623bacc45b0053adca68da6f4609e6af326ba2c06a08085c89959a5 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section opportunity (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "\"accepted the disagreement\" is grammatical.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:4f9b7f34-17d4-4024-a874-1e0e17e3e24a revision 2 content_sha256 d274b1d4f623bacc45b0053adca68da6f4609e6af326ba2c06a08085c89959a5 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section opportunity (train)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "An invitation to perform that he accepts and rehearses for is an opportunity.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:4f9b7f34-17d4-4024-a874-1e0e17e3e24a revision 2 content_sha256 d274b1d4f623bacc45b0053adca68da6f4609e6af326ba2c06a08085c89959a5 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section opportunity (train)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem does not contain opportunity.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:4f9b7f34-17d4-4024-a874-1e0e17e3e24a revision 2 content_sha256 d274b1d4f623bacc45b0053adca68da6f4609e6af326ba2c06a08085c89959a5 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section opportunity (train)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:ca5dba38-5a71-4965-8a90-fa90c1ee1ae9",
+        "revision": 2,
+        "content_sha256": "dcdf9c5607e653bae40ca5ba7d7bf1d50f7a93abe60d29aa4070757fcfd0e434",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/check-batch-2.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "prohibition is grammatical and is the contrast distractor.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:ca5dba38-5a71-4965-8a90-fa90c1ee1ae9 revision 2 content_sha256 dcdf9c5607e653bae40ca5ba7d7bf1d50f7a93abe60d29aa4070757fcfd0e434 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section opportunity (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "\"a brief delay\" is a real collocation and the strongest distractor.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:ca5dba38-5a71-4965-8a90-fa90c1ee1ae9 revision 2 content_sha256 dcdf9c5607e653bae40ca5ba7d7bf1d50f7a93abe60d29aa4070757fcfd0e434 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section opportunity (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": true,
+              "reason": "failure is grammatical.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:ca5dba38-5a71-4965-8a90-fa90c1ee1ae9 revision 2 content_sha256 dcdf9c5607e653bae40ca5ba7d7bf1d50f7a93abe60d29aa4070757fcfd0e434 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section opportunity (check)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "A clear patch that lets them photograph the eclipse is an opportunity.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:ca5dba38-5a71-4965-8a90-fa90c1ee1ae9 revision 2 content_sha256 dcdf9c5607e653bae40ca5ba7d7bf1d50f7a93abe60d29aa4070757fcfd0e434 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section opportunity (check)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem does not contain opportunity.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:ca5dba38-5a71-4965-8a90-fa90c1ee1ae9 revision 2 content_sha256 dcdf9c5607e653bae40ca5ba7d7bf1d50f7a93abe60d29aa4070757fcfd0e434 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section opportunity (check)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:04b5aa2f-f0f4-47e9-b32b-3f36dfe6cc36",
+        "revision": 2,
+        "content_sha256": "ada3d4aa92e5c193b73f2cc14f437d25097f30357b6660a8f01ef111ab297f60",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/check-batch-2.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "pension is a work-related loss.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:04b5aa2f-f0f4-47e9-b32b-3f36dfe6cc36 revision 2 content_sha256 ada3d4aa92e5c193b73f2cc14f437d25097f30357b6660a8f01ef111ab297f60 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section job (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": true,
+              "reason": "hobby is grammatical.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:04b5aa2f-f0f4-47e9-b32b-3f36dfe6cc36 revision 2 content_sha256 ada3d4aa92e5c193b73f2cc14f437d25097f30357b6660a8f01ef111ab297f60 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section job (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "license is a work-related loss.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:04b5aa2f-f0f4-47e9-b32b-3f36dfe6cc36 revision 2 content_sha256 ada3d4aa92e5c193b73f2cc14f437d25097f30357b6660a8f01ef111ab297f60 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section job (check)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Losing a paid position when the restaurant closes is losing a job.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:04b5aa2f-f0f4-47e9-b32b-3f36dfe6cc36 revision 2 content_sha256 ada3d4aa92e5c193b73f2cc14f437d25097f30357b6660a8f01ef111ab297f60 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section job (check)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem says \"paid position\", which defines job; acceptable for contextual choice but lowers difficulty.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:04b5aa2f-f0f4-47e9-b32b-3f36dfe6cc36 revision 2 content_sha256 ada3d4aa92e5c193b73f2cc14f437d25097f30357b6660a8f01ef111ab297f60 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section job (check)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:d2e48691-5eb9-4d04-9f10-f8ee05862b2b",
+        "revision": 2,
+        "content_sha256": "ffe852cb0de170c4574fbe2f8d9cf4fde5981ce56830e1fa0c7021dcbc9f1d8c",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/fix-batch-6.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": false,
+              "reason": "\"formally accept the map\" after a salary negotiation makes no sense; trivially eliminated.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:d2e48691-5eb9-4d04-9f10-f8ee05862b2b revision 2 content_sha256 ffe852cb0de170c4574fbe2f8d9cf4fde5981ce56830e1fa0c7021dcbc9f1d8c (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section job (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": false,
+              "reason": "\"formally accept the bet\" does not fit an employment contract; trivially eliminated.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:d2e48691-5eb9-4d04-9f10-f8ee05862b2b revision 2 content_sha256 ffe852cb0de170c4574fbe2f8d9cf4fde5981ce56830e1fa0c7021dcbc9f1d8c (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section job (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": false,
+              "reason": "\"formally accept the toy\" makes no sense; trivially eliminated.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:d2e48691-5eb9-4d04-9f10-f8ee05862b2b revision 2 content_sha256 ffe852cb0de170c4574fbe2f8d9cf4fde5981ce56830e1fa0c7021dcbc9f1d8c (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section job (train)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Negotiating salary and leave and signing an employment contract leads to accepting a job.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:d2e48691-5eb9-4d04-9f10-f8ee05862b2b revision 2 content_sha256 ffe852cb0de170c4574fbe2f8d9cf4fde5981ce56830e1fa0c7021dcbc9f1d8c (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section job (train)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem does not contain job.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:d2e48691-5eb9-4d04-9f10-f8ee05862b2b revision 2 content_sha256 ffe852cb0de170c4574fbe2f8d9cf4fde5981ce56830e1fa0c7021dcbc9f1d8c (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section job (train)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:0a1c63dd-7b85-463e-8d04-e477ac8de58e",
+        "revision": 2,
+        "content_sha256": "552a1d8f4ed6b62af13290bb1f6271575dea36894350d5d90710ca1db4efd46b",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/check-batch-2.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "household is a group noun and the main contrast.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:0a1c63dd-7b85-463e-8d04-e477ac8de58e revision 2 content_sha256 552a1d8f4ed6b62af13290bb1f6271575dea36894350d5d90710ca1db4efd46b (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section community (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "army is a group noun.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:0a1c63dd-7b85-463e-8d04-e477ac8de58e revision 2 content_sha256 552a1d8f4ed6b62af13290bb1f6271575dea36894350d5d90710ca1db4efd46b (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section community (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "species is a group noun.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:0a1c63dd-7b85-463e-8d04-e477ac8de58e revision 2 content_sha256 552a1d8f4ed6b62af13290bb1f6271575dea36894350d5d90710ca1db4efd46b (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section community (check)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "A lasting network with shared bonds and no shared residence is a community.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:0a1c63dd-7b85-463e-8d04-e477ac8de58e revision 2 content_sha256 552a1d8f4ed6b62af13290bb1f6271575dea36894350d5d90710ca1db4efd46b (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section community (check)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem does not contain community.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:0a1c63dd-7b85-463e-8d04-e477ac8de58e revision 2 content_sha256 552a1d8f4ed6b62af13290bb1f6271575dea36894350d5d90710ca1db4efd46b (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section community (check)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:9915cf55-1418-4246-a2dc-939e779de499",
+        "revision": 2,
+        "content_sha256": "4c1352a7210cb80e0ad51ff0c05b892efadd171465824c13b704fb0d500c6d8d",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/fix-batch-6.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "orchestra is a collective noun.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:9915cf55-1418-4246-a2dc-939e779de499 revision 2 content_sha256 4c1352a7210cb80e0ad51ff0c05b892efadd171465824c13b704fb0d500c6d8d (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section community (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": true,
+              "reason": "audience is a collective noun.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:9915cf55-1418-4246-a2dc-939e779de499 revision 2 content_sha256 4c1352a7210cb80e0ad51ff0c05b892efadd171465824c13b704fb0d500c6d8d (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section community (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "workforce is a collective noun and the strongest distractor.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:9915cf55-1418-4246-a2dc-939e779de499 revision 2 content_sha256 4c1352a7210cb80e0ad51ff0c05b892efadd171465824c13b704fb0d500c6d8d (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section community (train)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Residents from all over the village acting together is the community.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:9915cf55-1418-4246-a2dc-939e779de499 revision 2 content_sha256 4c1352a7210cb80e0ad51ff0c05b892efadd171465824c13b704fb0d500c6d8d (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section community (train)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem says \"village\" and \"neighbors\" but not community.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:9915cf55-1418-4246-a2dc-939e779de499 revision 2 content_sha256 4c1352a7210cb80e0ad51ff0c05b892efadd171465824c13b704fb0d500c6d8d (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section community (train)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:96634db5-a510-4a10-b9f4-03f4afb1d9c9",
+        "revision": 5,
+        "content_sha256": "a85f6334afec587345332b70218d34f66e298847d6af0656fd3686a687f58da1",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/check-fix4.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "permit is a parking-related item.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:96634db5-a510-4a10-b9f4-03f4afb1d9c9 revision 5 content_sha256 a85f6334afec587345332b70218d34f66e298847d6af0656fd3686a687f58da1 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section money (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "notice is a parking-related item.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:96634db5-a510-4a10-b9f4-03f4afb1d9c9 revision 5 content_sha256 a85f6334afec587345332b70218d34f66e298847d6af0656fd3686a687f58da1 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section money (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "key is a car-related item.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:96634db5-a510-4a10-b9f4-03f4afb1d9c9 revision 5 content_sha256 a85f6334afec587345332b70218d34f66e298847d6af0656fd3686a687f58da1 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section money (check)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Coins fed into a meter to pay are money.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:96634db5-a510-4a10-b9f4-03f4afb1d9c9 revision 5 content_sha256 a85f6334afec587345332b70218d34f66e298847d6af0656fd3686a687f58da1 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section money (check)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem says \"coins\" but not money.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:96634db5-a510-4a10-b9f4-03f4afb1d9c9 revision 5 content_sha256 a85f6334afec587345332b70218d34f66e298847d6af0656fd3686a687f58da1 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section money (check)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:9c77b333-de91-4847-82d1-432a6759c7dc",
+        "revision": 3,
+        "content_sha256": "76a1af90b682a028f8ca631de927092d9eb3bc81c4231340f751d182eb623842",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/fix-batch-7.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "luggage is something a traveler takes somewhere.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:9c77b333-de91-4847-82d1-432a6759c7dc revision 3 content_sha256 76a1af90b682a028f8ca631de927092d9eb3bc81c4231340f751d182eb623842 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section money (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "medicine is something a traveler carries.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:9c77b333-de91-4847-82d1-432a6759c7dc revision 3 content_sha256 76a1af90b682a028f8ca631de927092d9eb3bc81c4231340f751d182eb623842 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section money (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": true,
+              "reason": "tools is grammatical.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:9c77b333-de91-4847-82d1-432a6759c7dc revision 3 content_sha256 76a1af90b682a028f8ca631de927092d9eb3bc81c4231340f751d182eb623842 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section money (train)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Foreign notes and coins taken to an exchange counter are money.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:9c77b333-de91-4847-82d1-432a6759c7dc revision 3 content_sha256 76a1af90b682a028f8ca631de927092d9eb3bc81c4231340f751d182eb623842 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section money (train)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem says \"notes and coins\" but not money.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:9c77b333-de91-4847-82d1-432a6759c7dc revision 3 content_sha256 76a1af90b682a028f8ca631de927092d9eb3bc81c4231340f751d182eb623842 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section money (train)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:8110d6c0-5583-4b1e-a388-78bdf9369425",
+        "revision": 4,
+        "content_sha256": "bbe3ba8c87958a2a2d8bc180f090cd668c06b0f74bbbc903a0bd81896bb2aba8",
+        "author_session": "receipt:content/jobs/pilot-230/receipts/check-rewrite3-ab.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "\"protect employees' privacy\" is a real collocation.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:8110d6c0-5583-4b1e-a388-78bdf9369425 revision 4 content_sha256 bbe3ba8c87958a2a2d8bc180f090cd668c06b0f74bbbc903a0bd81896bb2aba8 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section health (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": true,
+              "reason": "\"protect employees' income\" is a real collocation.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:8110d6c0-5583-4b1e-a388-78bdf9369425 revision 4 content_sha256 bbe3ba8c87958a2a2d8bc180f090cd668c06b0f74bbbc903a0bd81896bb2aba8 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section health (check)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-d",
+            "plausibility": {
+              "passed": true,
+              "reason": "\"protect employees' reputation\" is a real collocation.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:8110d6c0-5583-4b1e-a388-78bdf9369425 revision 4 content_sha256 bbe3ba8c87958a2a2d8bc180f090cd668c06b0f74bbbc903a0bd81896bb2aba8 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section health (check)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Dust that damages lungs threatens health.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:8110d6c0-5583-4b1e-a388-78bdf9369425 revision 4 content_sha256 bbe3ba8c87958a2a2d8bc180f090cd668c06b0f74bbbc903a0bd81896bb2aba8 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section health (check)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem does not contain health.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:8110d6c0-5583-4b1e-a388-78bdf9369425 revision 4 content_sha256 bbe3ba8c87958a2a2d8bc180f090cd668c06b0f74bbbc903a0bd81896bb2aba8 (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section health (check)"
+          ]
+        }
+      },
+      {
+        "question_id": "lx:question:dcb82b2b-7299-431d-9169-bb1bc5bf2282",
+        "revision": 2,
+        "content_sha256": "e6f351a669936f70f16586588fbe7be721beb0ad07547011f6a0ff7484c9c53b",
+        "author_session": "receipt:content/jobs/pilot-50/receipts/fix-batch-6.json",
+        "evaluator_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+        "distractors": [
+          {
+            "option_id": "option-a",
+            "plausibility": {
+              "passed": true,
+              "reason": "\"regained his wealth\" is a real collocation.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:dcb82b2b-7299-431d-9169-bb1bc5bf2282 revision 2 content_sha256 e6f351a669936f70f16586588fbe7be721beb0ad07547011f6a0ff7484c9c53b (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section health (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-b",
+            "plausibility": {
+              "passed": true,
+              "reason": "\"regained his beauty\" is grammatical.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:dcb82b2b-7299-431d-9169-bb1bc5bf2282 revision 2 content_sha256 e6f351a669936f70f16586588fbe7be721beb0ad07547011f6a0ff7484c9c53b (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section health (train)"
+              ]
+            }
+          },
+          {
+            "option_id": "option-c",
+            "plausibility": {
+              "passed": true,
+              "reason": "\"regained his status\" is a real collocation.",
+              "evidence": [
+                "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:dcb82b2b-7299-431d-9169-bb1bc5bf2282 revision 2 content_sha256 e6f351a669936f70f16586588fbe7be721beb0ad07547011f6a0ff7484c9c53b (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+                "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section health (train)"
+              ]
+            }
+          }
+        ],
+        "unique_answer": {
+          "passed": true,
+          "reason": "Recovery from infection is regaining health.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:dcb82b2b-7299-431d-9169-bb1bc5bf2282 revision 2 content_sha256 e6f351a669936f70f16586588fbe7be721beb0ad07547011f6a0ff7484c9c53b (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section health (train)"
+          ]
+        },
+        "no_leakage": {
+          "passed": true,
+          "reason": "The stem does not contain health.",
+          "evidence": [
+            "sealed current row content/records/pilot-230/merged/pilot-230-question.jsonl lx:question:dcb82b2b-7299-431d-9169-bb1bc5bf2282 revision 2 content_sha256 e6f351a669936f70f16586588fbe7be721beb0ad07547011f6a0ff7484c9c53b (stem, all options, accepted_answers, distractor_rationales and post_answer_feedback inspected)",
+            "assessment report content/history/question-assessments-slice20/ASSESSMENT.md section health (train)"
+          ]
+        }
       }
     ]
   },
-  "quality_note": "Three independent v3 semantic assessments have been supplied for 3 revised questions; all other empty assessments means PENDING, never passed. Current content is not rewritten, quarantined or promoted. Census intent is not completed human review. Four options is only a structural gate. Binary train practice requires an explicit current independent contrast assessment; binary check and all three-option serving are denied. First-batch linguistic assessments for 3 revised questions recorded in content/policies/question-assessments-first-batch.json (author session ses_e9bb16cadffeuVCQNDBplNY1xX, evaluator session ses_e9bc60208ffegwAOliKMGqzTpX; proposal/reviewer evidence bound to current revision/hash). These are not full current reviews, independent family evidence, or human approval; full v3 gates still apply and the items may stay ineligible. Full evidence closure remains pending.",
+  "quality_note": "Three independent v3 semantic assessments have been supplied for 3 revised questions; all other empty assessments means PENDING, never passed. Current content is not rewritten, quarantined or promoted. Census intent is not completed human review. Four options is only a structural gate. Binary train practice requires an explicit current independent contrast assessment; binary check and all three-option serving are denied. First-batch linguistic assessments for 3 revised questions recorded in content/policies/question-assessments-first-batch.json (author session ses_e9bb16cadffeuVCQNDBplNY1xX, evaluator session ses_e9bc60208ffegwAOliKMGqzTpX; proposal/reviewer evidence bound to current revision/hash). These are not full current reviews, independent family evidence, or human approval; full v3 gates still apply and the items may stay ineligible. Full evidence closure remains pending. Slice-20 semantic assessments for 40 more questions recorded in content/policies/question-assessments-slice20.json (evaluator claude-code:session_01EynPmDmZZcntYrnq6Y1gGn; 37 pass, 3 fail distractor plausibility). Same limits: not full review, family evidence or human approval.",
   "release_eligible": false,
   "human_review_pending": true
 }

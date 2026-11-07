@@ -4,6 +4,51 @@ Engineering repairs are applied. **The candidate bank is not approved or ready
 to serve:** v3 currently qualifies zero questions. No human approval, source
 permission, historical execution receipt or release eligibility was invented.
 
+## 2026-11-07 update
+
+- Owner decisions D1 (private preview: owner alone approves) and D2 (S01
+  `private_pack` allowed for the owner's own devices; distribution pending):
+  `content/docs/DECISIONS-OWNER-2026-11-07.md`.
+- Why the pass rate is low: `content/reports/PASS-RATE-ANALYSIS.md`. 418 of
+  424 MCQ rejections are option count alone (v1 prompts allowed two options).
+- Authoring rules v2: `content/prompts/v2/`.
+- 20-word slice `content/pilot/slice-20.json`: 40 independent semantic
+  assessments added to the v3 policy (37 pass, 3 fail distractor
+  plausibility). Owner packet: `content/reviews/slice-20/OWNER-REVIEW.md`.
+- No content record changed. The v3 policy and source registry changed, so
+  `question-quality-current.json` and the current triage packet below are
+  stale until re-run. Counts in the rest of this file predate the update.
+
+Re-run on a Mac (no Swift toolchain was available in the session that made
+these changes):
+
+```sh
+set -o pipefail
+swift test --package-path tools/ContentKit
+swift test --package-path tools/ProvenanceRepair
+swift run --package-path tools/QuestionQualityAudit QuestionQualityAudit \
+  --datasets content/records/pilot-230/merged \
+  --reviews content/reviews/pilot-230-current \
+  --profile content/policies/pilot-quality-v3.json \
+  --out content/reports/question-quality-current.json
+swift run --package-path tools/ContentKit contentkit families audit \
+  --dataset content/records/pilot-230/merged --reviews content/reviews/pilot-230-current \
+  --profile content/policies/pilot-quality-v3.json --evidence /tmp/families-v3.json
+```
+
+Expected after the audit: `eligible_questions` 37 (was 0), `pending_questions`
+252 (was 292), `rejected_questions` 431 (was 428; the three slice failures
+show `semantic_assessment_failed`). If the numbers differ, the difference is
+the finding. Then regenerate the triage packet with the commands in
+`content/reports/CURRENT-TRIAGE.md`.
+
+Known limit: `author_session` in the slice assessments names the run receipt
+(`receipt:content/jobs/...`), because author session ids live only in the
+local receipts. The evaluator's `self_review` check therefore cannot compare
+real session ids here. The evaluator is a different session and a different
+model family from the author, so the check would not fire, but a Mac run with
+the receipts can replace the receipt refs with session ids.
+
 ## Effective inputs
 
 - Content: `content/records/pilot-230/merged/`.

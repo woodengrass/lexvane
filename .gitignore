@@ -26,6 +26,8 @@ content/reviews/pilot-230-current/*
 !content/reviews/pilot-230-current/triage/
 content/reviews/pilot-230-current/triage/evidence.json
 content/reviews/pilot-230-current/triage/evidence-*.json
+# Slice-20 owner review packet and unapplied proposals (pending owner reply).
+!content/reviews/slice-20/
 content/records/*/*
 !content/records/*/merged/
 # Original authored word/phrase batches (read by WordPilot/PhrasePilot tests).

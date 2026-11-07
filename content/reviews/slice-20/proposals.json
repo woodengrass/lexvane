@@ -1,0 +1,60 @@
+{
+  "schema": "lexvane.question-proposals.v1",
+  "batch": "slice-20",
+  "author_session": "claude-code:session_01EynPmDmZZcntYrnq6Y1gGn",
+  "note": "Unapplied proposals. Applying one creates a new sealed revision; the author of the proposal cannot also be its semantic evaluator.",
+  "proposals": [
+    {
+      "question_id": "lx:question:8e73bbfc-4af2-4b3b-b9eb-78bf4308c49b",
+      "base_revision": 2,
+      "base_content_sha256": "3ce3a8540b9d21ca4b9dee45b31e616b7652730107598d0a6013e065e9d31cf7",
+      "reason": "Distractors fail plausibility in content/history/question-assessments-slice20/ASSESSMENT.md; replacement follows content/prompts/v2/author.md rules 2 and 6.",
+      "replace_options": {
+        "option-a": "furniture",
+        "option-c": "equipment",
+        "option-d": "paperwork"
+      },
+      "replace_distractor_rationales": {
+        "option-a": "furniture 是家具；保存人員搬出的是完成的肖像畫，不是家具。",
+        "option-c": "equipment 是器材；被搶救的是肖像作品，不是作畫工具。",
+        "option-d": "paperwork 是文件資料；題中搶救的是肖像畫，不是文書。"
+      },
+      "replace_feedback_explanation": "art 指藝術作品。保存人員從工作室搶救出完成的肖像畫，這些原作就是藝術作品。",
+      "status": "proposal_pending_owner"
+    },
+    {
+      "question_id": "lx:question:afecd769-4823-49d5-a519-1ba202128b9c",
+      "base_revision": 9,
+      "base_content_sha256": "4c958b6f53e0adc9166c23b38aa9cdfc3cef830c03f4d54c0ba2c78943158135",
+      "reason": "Distractors fail plausibility in content/history/question-assessments-slice20/ASSESSMENT.md; replacement follows content/prompts/v2/author.md rules 2 and 6.",
+      "replace_options": {
+        "option-a": "price",
+        "option-d": "repair"
+      },
+      "replace_distractor_rationales": {
+        "option-a": "price 是價格；展覽依序呈現從早期頭盔到現今呼吸系統的演變，不是價格。",
+        "option-d": "repair 是修理；展品是不同年代的裝備，不是修理過程。"
+      },
+      "replace_feedback_explanation": null,
+      "status": "proposal_pending_owner"
+    },
+    {
+      "question_id": "lx:question:d2e48691-5eb9-4d04-9f10-f8ee05862b2b",
+      "base_revision": 2,
+      "base_content_sha256": "ffe852cb0de170c4574fbe2f8d9cf4fde5981ce56830e1fa0c7021dcbc9f1d8c",
+      "reason": "Distractors fail plausibility in content/history/question-assessments-slice20/ASSESSMENT.md; replacement follows content/prompts/v2/author.md rules 2 and 6.",
+      "replace_options": {
+        "option-a": "loan",
+        "option-c": "lease",
+        "option-d": "award"
+      },
+      "replace_distractor_rationales": {
+        "option-a": "loan 是貸款；薪資和有薪假是雇用條件，不是借款條件。",
+        "option-c": "lease 是租約；她簽的是雇用契約，不是租賃契約。",
+        "option-d": "award 是獎項；接受獎項不需要談薪資和休假。"
+      },
+      "replace_feedback_explanation": "job 指一份工作職位。談妥薪資和有薪假、簽下雇用契約後，她正式接受了這份工作。",
+      "status": "proposal_pending_owner"
+    }
+  ]
+}

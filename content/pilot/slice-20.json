@@ -1,0 +1,614 @@
+{
+  "schema": "lexvane.pilot-slice.v1",
+  "slice": "slice-20",
+  "created": "2026-11-07",
+  "purpose": "First end-to-end vertical slice: owner review, private pack, M2 app development. Chosen from the 50-word trial subset because both questions of each target already have four options and need only semantic assessment and owner review.",
+  "selection_rule": "Every trial-subset word whose single active target has one train and one check question, both four-option and pending only on independent semantic assessment in content/reports/question-quality-current.json (policy question-eligibility-v3). Exactly 20 words met the rule.",
+  "dataset": "content/records/pilot-230/merged",
+  "owner_decisions": "content/docs/DECISIONS-OWNER-2026-11-07.md",
+  "owner_review": "content/reviews/slice-20/OWNER-REVIEW.md",
+  "release_eligible": false,
+  "human_review_pending": true,
+  "entries": [
+    {
+      "lemma": "day",
+      "entry_id": "lx:word:251a6d32-f681-47d9-88b4-bc1f29d2bb45",
+      "sense_id": "lx:sense:3844b991-0b78-4d83-820d-a2cafa93d8aa",
+      "target_id": "lx:target:0797a6a4-aa00-4dc2-a695-c229b4701b85",
+      "tested_ability": "meaning_recognition",
+      "teachings": [
+        {
+          "record_id": "lx:usage:51d2a6e1-0537-424d-91a2-bfa28b573d7b",
+          "revision": 2,
+          "content_sha256": "58d6ee023bfd0ab3de336ea387ab2a04f266eb8ce65455abfee4847f32973d4b"
+        }
+      ],
+      "questions": [
+        {
+          "record_id": "lx:question:5ca33009-0859-4c2e-a5cc-750d5675078c",
+          "split": "train",
+          "revision": 4,
+          "content_sha256": "ade4de21493bbb20d21d9cfd6b9a5cd86023004eef3c01eadf96a9a43618f2d2",
+          "semantic_assessment": "passed"
+        },
+        {
+          "record_id": "lx:question:7b2e4d2b-3d9b-4950-91c6-304d49637cd8",
+          "split": "check",
+          "revision": 6,
+          "content_sha256": "3787cfdeae203b9dc798415e7621db849df927dfb11dc1604f58e6978c6d279f",
+          "semantic_assessment": "passed"
+        }
+      ]
+    },
+    {
+      "lemma": "year",
+      "entry_id": "lx:word:d34d8c89-6262-42db-a6aa-555eeb73d25b",
+      "sense_id": "lx:sense:56197c02-27aa-4434-b649-71d1a94ba377",
+      "target_id": "lx:target:791c2ddc-328b-466c-a089-96f00d635998",
+      "tested_ability": "meaning_recognition",
+      "teachings": [
+        {
+          "record_id": "lx:usage:451930bc-89f9-40af-9b8b-696db88e96a0",
+          "revision": 1,
+          "content_sha256": "0397f33f4a40175edd185e935a6a37da1c5bf4fbcbcdc567914bb9176e48b97e"
+        }
+      ],
+      "questions": [
+        {
+          "record_id": "lx:question:286a2493-4fa2-48f6-836e-c2ca7ffac2a1",
+          "split": "train",
+          "revision": 3,
+          "content_sha256": "6b2d682221bf4c743a22af27ae6f99e18bb7153f9b1d54475644bf0ccc32c664",
+          "semantic_assessment": "passed"
+        },
+        {
+          "record_id": "lx:question:7e3b09f3-64b5-426d-b2eb-3514cde3a480",
+          "split": "check",
+          "revision": 3,
+          "content_sha256": "f13c8ee6c86c32fe3ea4782ec9b980dfbff54c39658232f2e92976f002c527a2",
+          "semantic_assessment": "passed"
+        }
+      ]
+    },
+    {
+      "lemma": "science",
+      "entry_id": "lx:word:5d0909b2-4119-4f17-ab99-276c884a5b0e",
+      "sense_id": "lx:sense:c3b4b098-fbee-4ed7-9563-edd054199ff6",
+      "target_id": "lx:target:6e41092b-a022-44aa-9968-28e1e78b4d38",
+      "tested_ability": "meaning_recognition",
+      "teachings": [
+        {
+          "record_id": "lx:usage:f90200b5-6318-4267-9b85-a2ebdfbfbda6",
+          "revision": 2,
+          "content_sha256": "946a870a6187894a76c074b247d56aecac20bdb691f6df497af38220c3d4bc79"
+        }
+      ],
+      "questions": [
+        {
+          "record_id": "lx:question:b3c8c6bd-0e1e-40f9-90b7-764421a2654a",
+          "split": "train",
+          "revision": 6,
+          "content_sha256": "6581d85e311ac98bc3d47896d24b516d1a21d22f5ae40d09f1554bd85140a4bc",
+          "semantic_assessment": "passed"
+        },
+        {
+          "record_id": "lx:question:4b5bedbf-92dc-4e2c-aa1c-62e1508ecd31",
+          "split": "check",
+          "revision": 6,
+          "content_sha256": "af3221b21bee493a9fcd9616fd66297b71d649c699a85a29245eb1a2d38987b8",
+          "semantic_assessment": "passed"
+        }
+      ]
+    },
+    {
+      "lemma": "question",
+      "entry_id": "lx:word:83c23811-f2ae-4dc1-84a2-18c5d676e950",
+      "sense_id": "lx:sense:d6cf50b4-eed2-41e2-9adf-87ffa6611335",
+      "target_id": "lx:target:65c37c4a-0503-42a2-83e2-f9c7ea6e657e",
+      "tested_ability": "contextual_choice",
+      "teachings": [
+        {
+          "record_id": "lx:usage:f37d9531-566c-4ca8-9c5b-b35c61d12c69",
+          "revision": 1,
+          "content_sha256": "3c83ccaac0a519eae2278cc2f6dc386a7686b00b97795b0b641ccdb92ebd8174"
+        }
+      ],
+      "questions": [
+        {
+          "record_id": "lx:question:2324b8cf-27f9-451f-a8bf-f57da5ea4844",
+          "split": "train",
+          "revision": 2,
+          "content_sha256": "221f55ef468b4ca9ea3ebadcef1cdd433fa1eb86d212fdefc34c24224b5579f9",
+          "semantic_assessment": "passed"
+        },
+        {
+          "record_id": "lx:question:40953897-6bc3-4ff7-a0c5-b573f29f0634",
+          "split": "check",
+          "revision": 2,
+          "content_sha256": "994335274145aa255e91188d1894572c06841696d9f5272edbff7e7246afe1b0",
+          "semantic_assessment": "passed"
+        }
+      ]
+    },
+    {
+      "lemma": "market",
+      "entry_id": "lx:word:d0d4d1e6-abb0-41cb-bf05-ed0ffb9a9247",
+      "sense_id": "lx:sense:76d0b4c9-9c14-48cd-a312-581dbdf850ba",
+      "target_id": "lx:target:b38a15c0-d922-428a-8f6c-dac47c2f8cb6",
+      "tested_ability": "contextual_choice",
+      "teachings": [
+        {
+          "record_id": "lx:usage:7fb4e59f-59d7-43ab-ab28-1c51f3f22b4b",
+          "revision": 2,
+          "content_sha256": "30c4c40ed505b96056267eb087ebb5e9c66bdb93fcd42f6fb294b10531e2d404"
+        }
+      ],
+      "questions": [
+        {
+          "record_id": "lx:question:b425e032-b16b-4a5a-8713-a0a94255d436",
+          "split": "train",
+          "revision": 4,
+          "content_sha256": "d5ad15539ad175602b2305c32b80713221566fee57a8ad157a1f8565a16c3c3a",
+          "semantic_assessment": "passed"
+        },
+        {
+          "record_id": "lx:question:43e7fdc6-57e6-4088-883d-be532a1a2742",
+          "split": "check",
+          "revision": 5,
+          "content_sha256": "a777e720ad16fcbace1cebd45b30b0a5ab0037243ea526af0413e39e2c469cf2",
+          "semantic_assessment": "passed"
+        }
+      ]
+    },
+    {
+      "lemma": "business",
+      "entry_id": "lx:word:b32ae243-2d4e-46d3-89c7-d7b737f34596",
+      "sense_id": "lx:sense:65de9bd7-d390-4c5e-a66d-cafc47e06540",
+      "target_id": "lx:target:0be02e96-24af-4866-83fe-ec1d7b7c37a9",
+      "tested_ability": "contextual_choice",
+      "teachings": [
+        {
+          "record_id": "lx:usage:258cd6a4-d94d-4c99-b473-2b5e82a11902",
+          "revision": 3,
+          "content_sha256": "0e3208e7964babf88e4812d69238e3778241b2ef459413555afbe29ef87bee72"
+        }
+      ],
+      "questions": [
+        {
+          "record_id": "lx:question:da532e6d-8034-4d73-a22f-5733409699e4",
+          "split": "train",
+          "revision": 3,
+          "content_sha256": "ea256bf5cef56659aeb7c4d9907c0ae99708dcdb2c665b04abf7146f4e162a80",
+          "semantic_assessment": "passed"
+        },
+        {
+          "record_id": "lx:question:7d4deea2-bbec-4f9c-a795-6bf368984735",
+          "split": "check",
+          "revision": 4,
+          "content_sha256": "0a97c46d43efe073250f5f444ff20226a69b5ddd6ef58c7fe195eb0d0ef1f4de",
+          "semantic_assessment": "passed"
+        }
+      ]
+    },
+    {
+      "lemma": "life",
+      "entry_id": "lx:word:1a73ecc1-38ba-4c08-a60d-c541e52b446d",
+      "sense_id": "lx:sense:5a214c5a-4067-4a89-9edf-d96ed4a04000",
+      "target_id": "lx:target:acf67d28-a922-4729-8f4c-353a0a415d07",
+      "tested_ability": "contextual_choice",
+      "teachings": [
+        {
+          "record_id": "lx:usage:36d37672-8973-4bee-80d8-48c0e260e603",
+          "revision": 2,
+          "content_sha256": "ba8d0cfe131ed127648f11d1b218552bf7876692bc9a879e969bc33aebe9119c"
+        }
+      ],
+      "questions": [
+        {
+          "record_id": "lx:question:46a50a14-b7bd-43ea-befd-93c0b0486790",
+          "split": "train",
+          "revision": 5,
+          "content_sha256": "6f7f4da0e600d0118ade0e7f47a9c0d5c40acd6d2cba3751fdc7c8b4a710bc9b",
+          "semantic_assessment": "passed"
+        },
+        {
+          "record_id": "lx:question:6a8dff44-26b2-43aa-99d8-a4d297a1092e",
+          "split": "check",
+          "revision": 7,
+          "content_sha256": "d0c88020bbf2fe32070a5f16bf4a67a6cf36521694ca39e09886dfd469cb4010",
+          "semantic_assessment": "passed"
+        }
+      ]
+    },
+    {
+      "lemma": "answer",
+      "entry_id": "lx:word:2597a4b8-e581-48ad-9f09-d6266affb8dc",
+      "sense_id": "lx:sense:7d62af1a-f2e9-4b26-87f7-9d3646474bcf",
+      "target_id": "lx:target:0e390fb1-c6d1-4cda-b362-9a19a217b6c4",
+      "tested_ability": "contextual_choice",
+      "teachings": [
+        {
+          "record_id": "lx:usage:173d5a85-0391-4227-95c3-4985b2a6779f",
+          "revision": 2,
+          "content_sha256": "cf99119b32d2869e0309736ff2dc0d3e27a3d9b5d11e8ce9b27b7a37de021d63"
+        }
+      ],
+      "questions": [
+        {
+          "record_id": "lx:question:32331447-9db8-4d16-a491-6558eea443c2",
+          "split": "train",
+          "revision": 4,
+          "content_sha256": "92f6488f775d3d4f959f0f23328582897c531b93a08deafb3286af2167722137",
+          "semantic_assessment": "passed"
+        },
+        {
+          "record_id": "lx:question:ca7391b0-e011-409e-856a-86d7fc33d465",
+          "split": "check",
+          "revision": 2,
+          "content_sha256": "660cc5057abd37da0c60bc89a50058719cedd2462bd772d956c9a6cc1e06c78b",
+          "semantic_assessment": "passed"
+        }
+      ]
+    },
+    {
+      "lemma": "art",
+      "entry_id": "lx:word:046e407d-c84d-4729-9d0e-4c63c78d56b6",
+      "sense_id": "lx:sense:37795a56-6523-4ab2-8ce2-cfd7ee53a924",
+      "target_id": "lx:target:de34b25a-ced6-4d47-aca4-8f14120b34e2",
+      "tested_ability": "contextual_choice",
+      "teachings": [
+        {
+          "record_id": "lx:usage:ae8b56b2-da22-4ead-b237-c57ebc62fbba",
+          "revision": 2,
+          "content_sha256": "6cedc887faaa47837a804c943e90b6c87a1112c1935f9002714a764e99143c64"
+        }
+      ],
+      "questions": [
+        {
+          "record_id": "lx:question:8e73bbfc-4af2-4b3b-b9eb-78bf4308c49b",
+          "split": "train",
+          "revision": 2,
+          "content_sha256": "3ce3a8540b9d21ca4b9dee45b31e616b7652730107598d0a6013e065e9d31cf7",
+          "semantic_assessment": "failed_distractor_plausibility"
+        },
+        {
+          "record_id": "lx:question:0cc4903f-f0f0-44f7-8100-0959c63cb7e7",
+          "split": "check",
+          "revision": 2,
+          "content_sha256": "652a744078156004dfa1475031b3bac0eac006f50054cf411b7d9ec53c71f25e",
+          "semantic_assessment": "passed"
+        }
+      ]
+    },
+    {
+      "lemma": "history",
+      "entry_id": "lx:word:5ad028ca-bc8c-4052-9666-8b71134ddbce",
+      "sense_id": "lx:sense:00d7e1b4-a359-4168-a6d3-dd7bc3c32291",
+      "target_id": "lx:target:f97195fc-07a2-499f-a278-23c3cee014e6",
+      "tested_ability": "contextual_choice",
+      "teachings": [
+        {
+          "record_id": "lx:usage:6cf21c4e-e6db-4f6c-8177-17d63f7e1284",
+          "revision": 2,
+          "content_sha256": "4bde06e36643e313e15d8e91a5cf6422788ddabe887cec24ce4dd50eb30f123d"
+        }
+      ],
+      "questions": [
+        {
+          "record_id": "lx:question:b128b18a-c7a1-48a8-99fa-ac88884dc0e5",
+          "split": "train",
+          "revision": 2,
+          "content_sha256": "3fc1f5b38bf156dfdae68db38b6d349a52a247ed8bf5950c400fea20a0a1f176",
+          "semantic_assessment": "passed"
+        },
+        {
+          "record_id": "lx:question:afecd769-4823-49d5-a519-1ba202128b9c",
+          "split": "check",
+          "revision": 9,
+          "content_sha256": "4c958b6f53e0adc9166c23b38aa9cdfc3cef830c03f4d54c0ba2c78943158135",
+          "semantic_assessment": "failed_distractor_plausibility"
+        }
+      ]
+    },
+    {
+      "lemma": "environment",
+      "entry_id": "lx:word:82d2cf5e-3c7d-49b7-b6e4-18873599838e",
+      "sense_id": "lx:sense:f8552635-88f5-4767-b6fd-3ca4a6a72761",
+      "target_id": "lx:target:6d9e77fd-b5b3-4318-a16b-fbcb45f29b6e",
+      "tested_ability": "contextual_choice",
+      "teachings": [
+        {
+          "record_id": "lx:usage:4f077e10-7aa1-4a97-8067-2b6b4bb5c9fa",
+          "revision": 1,
+          "content_sha256": "a61c33be8bf7ad30ed0cb61c86e6cf1666be98f47201a23ec44577bf34a360ef"
+        }
+      ],
+      "questions": [
+        {
+          "record_id": "lx:question:cc009b68-552b-4550-992a-af994b1c7d97",
+          "split": "train",
+          "revision": 2,
+          "content_sha256": "841f64a84de303e30f861626f71613174185db512f56076889c59c126dd29042",
+          "semantic_assessment": "passed"
+        },
+        {
+          "record_id": "lx:question:8f433bea-17e3-4852-b5dd-0fda0ccee31f",
+          "split": "check",
+          "revision": 5,
+          "content_sha256": "e54f352acf884742a24e2609ce6fe2de174310d42f9d8a0511fe714b30d75083",
+          "semantic_assessment": "passed"
+        }
+      ]
+    },
+    {
+      "lemma": "experience",
+      "entry_id": "lx:word:dd2a3b30-f5d5-4350-a3b2-c41ce1138abf",
+      "sense_id": "lx:sense:004d2ed5-8b48-4711-aa03-5194a37b6e66",
+      "target_id": "lx:target:c3ddcded-f719-4377-8c38-176d1ebf40d2",
+      "tested_ability": "contextual_choice",
+      "teachings": [
+        {
+          "record_id": "lx:usage:07c58889-6e77-4efb-a75f-2b9c576dd8ac",
+          "revision": 3,
+          "content_sha256": "f837786dbf9e00529dadd71378d93fd4daec2a06f6f8b0c109131e4822743217"
+        }
+      ],
+      "questions": [
+        {
+          "record_id": "lx:question:13f1b7f1-792a-4cc1-9fc5-30bbc73899d3",
+          "split": "train",
+          "revision": 6,
+          "content_sha256": "61da7b54645c507cff53e8edef397018971ca8741455cf0c5a4366512758d0fd",
+          "semantic_assessment": "passed"
+        },
+        {
+          "record_id": "lx:question:481aa81a-2490-446a-b4ab-00d4628d2ccf",
+          "split": "check",
+          "revision": 10,
+          "content_sha256": "987e26f6482b33fe24049ea93352426a6cbc2604403bc098db576491b03a96eb",
+          "semantic_assessment": "passed"
+        }
+      ]
+    },
+    {
+      "lemma": "problem",
+      "entry_id": "lx:word:fe474a82-2d41-4fb7-9f77-743de1a834ac",
+      "sense_id": "lx:sense:0ae2a6a0-4b63-4238-8228-2a6d1cae236a",
+      "target_id": "lx:target:435550c0-5f9b-4b23-926b-07602a399c24",
+      "tested_ability": "contextual_choice",
+      "teachings": [
+        {
+          "record_id": "lx:usage:be54a19c-b4ee-430c-8dba-19d8d74e8658",
+          "revision": 1,
+          "content_sha256": "547c1a194decfd682ebce7d7646d8a48cf7c0fb92d1fdb94b46b15f5998d49c2"
+        }
+      ],
+      "questions": [
+        {
+          "record_id": "lx:question:17f16e2b-36bc-42ae-b04d-bc292d86346b",
+          "split": "train",
+          "revision": 2,
+          "content_sha256": "18b2f4cbe2869aead50e5c4f2b037c294efd3a164f1d51c8b16176525a19454c",
+          "semantic_assessment": "passed"
+        },
+        {
+          "record_id": "lx:question:c8da43d4-e5a9-463e-a98f-c4afd36db7c6",
+          "split": "check",
+          "revision": 5,
+          "content_sha256": "36cccb81a88a80b710c8be51469bc2c6733f0c704103369fd9baad99dda3609f",
+          "semantic_assessment": "passed"
+        }
+      ]
+    },
+    {
+      "lemma": "language",
+      "entry_id": "lx:word:acce30d0-e119-4fbb-a15e-01362d07c0e9",
+      "sense_id": "lx:sense:eb14aebc-73b2-480b-852b-4603a707c78d",
+      "target_id": "lx:target:6d557f33-7134-4eca-b1f4-86b6e82a54d8",
+      "tested_ability": "contextual_choice",
+      "teachings": [
+        {
+          "record_id": "lx:usage:8a4767d2-9b42-44f4-a913-97ca514300dd",
+          "revision": 1,
+          "content_sha256": "892e089f7dc5f45c89b2f052bad173c7e6f617caccaf5f769c24dcaa6b576034"
+        }
+      ],
+      "questions": [
+        {
+          "record_id": "lx:question:39927719-6821-4b14-a3ee-0afc98f81be9",
+          "split": "train",
+          "revision": 2,
+          "content_sha256": "691cacb5b78d64b51a9b5c3959dcb4af0cdd7984f4edd4037e3223b54c2b4884",
+          "semantic_assessment": "passed"
+        },
+        {
+          "record_id": "lx:question:a63621bb-7594-42d7-b594-704fcc6ca1e2",
+          "split": "check",
+          "revision": 2,
+          "content_sha256": "daa76cb5245e23bc2ebebee60548b90108f8f6bc50032f5271c4ef3ced813c2b",
+          "semantic_assessment": "passed"
+        }
+      ]
+    },
+    {
+      "lemma": "music",
+      "entry_id": "lx:word:710aef09-ae5d-4df3-913f-9469e6467fd6",
+      "sense_id": "lx:sense:89f8857f-7c9d-426a-b595-fb383bc2afb7",
+      "target_id": "lx:target:3c3fe5cc-8ef9-4554-946f-dd0869ec00ef",
+      "tested_ability": "contextual_choice",
+      "teachings": [
+        {
+          "record_id": "lx:usage:5c0287fe-a95a-4348-ba0b-cf44f2f19532",
+          "revision": 1,
+          "content_sha256": "02b43e3d6f43763e4e31bf99b6a008e694f5a2df5baa8461f987206d9c7b6316"
+        }
+      ],
+      "questions": [
+        {
+          "record_id": "lx:question:23003285-3da0-47fb-b84f-4a6ac70849fe",
+          "split": "train",
+          "revision": 2,
+          "content_sha256": "91b92aba0b9420a1bb0aeed21ffac6e72dab5659d68c954d262a171ceafdebc6",
+          "semantic_assessment": "passed"
+        },
+        {
+          "record_id": "lx:question:257df3e6-8aba-4ebe-af7a-3aab642e1b2b",
+          "split": "check",
+          "revision": 2,
+          "content_sha256": "f2196af1eca8c5feafed55567ee53ee3f080cc5abac199456f4a3fdce8cedf10",
+          "semantic_assessment": "passed"
+        }
+      ]
+    },
+    {
+      "lemma": "opportunity",
+      "entry_id": "lx:word:48a56aa3-86e2-4795-8af8-843bf1209e57",
+      "sense_id": "lx:sense:48a93cf3-ad5c-4c8f-bf71-a61f80643532",
+      "target_id": "lx:target:aba5389c-1367-49af-8b64-f7d67212c32d",
+      "tested_ability": "contextual_choice",
+      "teachings": [
+        {
+          "record_id": "lx:usage:648d1045-7dde-4c61-831e-4e6e4982138b",
+          "revision": 1,
+          "content_sha256": "3d83fdf8a64f49c7cbf36ed1b08643da7c6bbe7bb84d16e9549fd11b6eee9a84"
+        }
+      ],
+      "questions": [
+        {
+          "record_id": "lx:question:4f9b7f34-17d4-4024-a874-1e0e17e3e24a",
+          "split": "train",
+          "revision": 2,
+          "content_sha256": "d274b1d4f623bacc45b0053adca68da6f4609e6af326ba2c06a08085c89959a5",
+          "semantic_assessment": "passed"
+        },
+        {
+          "record_id": "lx:question:ca5dba38-5a71-4965-8a90-fa90c1ee1ae9",
+          "split": "check",
+          "revision": 2,
+          "content_sha256": "dcdf9c5607e653bae40ca5ba7d7bf1d50f7a93abe60d29aa4070757fcfd0e434",
+          "semantic_assessment": "passed"
+        }
+      ]
+    },
+    {
+      "lemma": "job",
+      "entry_id": "lx:word:0965d003-bf36-40e6-89cc-f9d5e44ede41",
+      "sense_id": "lx:sense:78ab3f62-f697-4d18-b5c9-70ac73c0b6c4",
+      "target_id": "lx:target:2b8ae164-aea4-4049-a9eb-a61170823de7",
+      "tested_ability": "contextual_choice",
+      "teachings": [
+        {
+          "record_id": "lx:usage:ab3a9ad9-8ef2-4438-911e-2640b221e252",
+          "revision": 1,
+          "content_sha256": "07af1d385e34e53755e2adfa8fd6bf39d4432282ebbd2ca9d8fc9a81171008fa"
+        }
+      ],
+      "questions": [
+        {
+          "record_id": "lx:question:d2e48691-5eb9-4d04-9f10-f8ee05862b2b",
+          "split": "train",
+          "revision": 2,
+          "content_sha256": "ffe852cb0de170c4574fbe2f8d9cf4fde5981ce56830e1fa0c7021dcbc9f1d8c",
+          "semantic_assessment": "failed_distractor_plausibility"
+        },
+        {
+          "record_id": "lx:question:04b5aa2f-f0f4-47e9-b32b-3f36dfe6cc36",
+          "split": "check",
+          "revision": 2,
+          "content_sha256": "ada3d4aa92e5c193b73f2cc14f437d25097f30357b6660a8f01ef111ab297f60",
+          "semantic_assessment": "passed"
+        }
+      ]
+    },
+    {
+      "lemma": "community",
+      "entry_id": "lx:word:223133ab-c13e-4a0a-90da-02417549d697",
+      "sense_id": "lx:sense:84ddf50b-e1b9-4520-911a-eb52bbcff6a5",
+      "target_id": "lx:target:e27c68ee-31a7-4084-8edc-f36c2fb10e5e",
+      "tested_ability": "contextual_choice",
+      "teachings": [
+        {
+          "record_id": "lx:usage:0507df34-4de5-4eeb-bc36-c2094e44e58a",
+          "revision": 1,
+          "content_sha256": "df69c66b91350dc15db2fcbc2c55fe6973c38be9e6dd374de630448be7dfac7d"
+        }
+      ],
+      "questions": [
+        {
+          "record_id": "lx:question:9915cf55-1418-4246-a2dc-939e779de499",
+          "split": "train",
+          "revision": 2,
+          "content_sha256": "4c1352a7210cb80e0ad51ff0c05b892efadd171465824c13b704fb0d500c6d8d",
+          "semantic_assessment": "passed"
+        },
+        {
+          "record_id": "lx:question:0a1c63dd-7b85-463e-8d04-e477ac8de58e",
+          "split": "check",
+          "revision": 2,
+          "content_sha256": "552a1d8f4ed6b62af13290bb1f6271575dea36894350d5d90710ca1db4efd46b",
+          "semantic_assessment": "passed"
+        }
+      ]
+    },
+    {
+      "lemma": "money",
+      "entry_id": "lx:word:a19c1f72-72cc-425f-bee5-08955e905a6c",
+      "sense_id": "lx:sense:2e76ef8e-0aa4-435d-b3b7-56cc01e6ade8",
+      "target_id": "lx:target:972b6428-6167-4297-a3e8-05f43575d836",
+      "tested_ability": "contextual_choice",
+      "teachings": [
+        {
+          "record_id": "lx:usage:a45ef516-f631-4a63-879c-488340f6ab07",
+          "revision": 1,
+          "content_sha256": "232333a07f8cb5e8da4a1fe34554d5ed70e56c6179cf8f5f697b365fe8aa4d22"
+        }
+      ],
+      "questions": [
+        {
+          "record_id": "lx:question:9c77b333-de91-4847-82d1-432a6759c7dc",
+          "split": "train",
+          "revision": 3,
+          "content_sha256": "76a1af90b682a028f8ca631de927092d9eb3bc81c4231340f751d182eb623842",
+          "semantic_assessment": "passed"
+        },
+        {
+          "record_id": "lx:question:96634db5-a510-4a10-b9f4-03f4afb1d9c9",
+          "split": "check",
+          "revision": 5,
+          "content_sha256": "a85f6334afec587345332b70218d34f66e298847d6af0656fd3686a687f58da1",
+          "semantic_assessment": "passed"
+        }
+      ]
+    },
+    {
+      "lemma": "health",
+      "entry_id": "lx:word:300965d6-f825-4656-87e9-ff08d9372440",
+      "sense_id": "lx:sense:70b4d10d-64be-442a-9728-16d2599a590a",
+      "target_id": "lx:target:e6582068-da06-44d0-8364-d9df2fdf7f70",
+      "tested_ability": "contextual_choice",
+      "teachings": [
+        {
+          "record_id": "lx:usage:49facfd5-5719-4041-b331-d30b170f03b0",
+          "revision": 1,
+          "content_sha256": "f63416d121b452a292a0a1793fb4d2fff88c283aeb9f46c0670807ae62e5c546"
+        }
+      ],
+      "questions": [
+        {
+          "record_id": "lx:question:dcb82b2b-7299-431d-9169-bb1bc5bf2282",
+          "split": "train",
+          "revision": 2,
+          "content_sha256": "e6f351a669936f70f16586588fbe7be721beb0ad07547011f6a0ff7484c9c53b",
+          "semantic_assessment": "passed"
+        },
+        {
+          "record_id": "lx:question:8110d6c0-5583-4b1e-a388-78bdf9369425",
+          "split": "check",
+          "revision": 4,
+          "content_sha256": "bbe3ba8c87958a2a2d8bc180f090cd668c06b0f74bbbc903a0bd81896bb2aba8",
+          "semantic_assessment": "passed"
+        }
+      ]
+    }
+  ]
+}
